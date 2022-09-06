@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-import { View,  Image, Dimensions, StyleSheet,ImageBackground,TouchableWithoutFeedback } from 'react-native';
+import { View, Text,  Dimensions, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+
+
 const { width, height } = Dimensions.get('window');
 
-import { verticalScale, moderateScale } from '../styles/scaling.js';
-import themes from '../styles/theme.style.js';
+import {  verticalScale, moderateScale } from '../styles/scaling.js';
+import themes from '../styles/theme.style';
+
+
+
+
 
 let box_count = 3;
 let box_height = height / box_count;
+
+
 
 
 
@@ -29,66 +37,22 @@ export default class SplashScreen extends Component {
             tituloHint: '',
             isConnected: '',
             isType: '',
+            heightx:height,
+            widthx:width,
+            cambiax : true
         };
 
         
-
+ 
     }
 
 
- setTimePassed = async () => {
-    let porc = this.state.porcentaje;
 
-    let result = porc + (width * 0.1);
 
-    let x = result;
-    switch (x) {
-                
-        case (x >= 100):
-            this.setState({ texto: '¡Estamos listos!' });
-            this.setState({ barColor: '#06973e' });
-            this.setState({ color: '#5cbb81' });
-            this.setState({ status: true });
-            break;
-    }
-
-    if (result < 100) {
-        this.setState({ porcentaje: result });
-    } else {
-        result = width - (width * 0.40);
-        this.setState({ porcentaje: result });
-    }
-
-    if (result >= 100) {
-        clearInterval(this._interval);
-      
-                console.log("==> Auth");
-                this.props.navigation.navigate('Splash');
-      
-        
-    }
-
-}
+ 
 
 
     //-----------------------------------------------------------------
-
-    async componentDidMount() {
-
-        // try {
-
-           
-                   
-                   
-                   
-            this._interval = setInterval(async () => {
-                this.setTimePassed();
-            }, 1000);
-                        
-        
-           
-            }
-
 
     componentWillUnmount() {
 
@@ -107,33 +71,18 @@ export default class SplashScreen extends Component {
 
 
 
+
     render() {
 
         return (
-            <View style={styles.wrapper} >
-
-
-<TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Splash')}>
-<View >
-                        <View style={{ backgroundColor: '#58C0AD' }}>
-
-                        {/* <Image style={{ height:'100%',width:'100%', resizeMode: 'cover'}} source={require('../assets/img/splash_fondo_1.png')} /> */}
-
-                        <ImageBackground
-                        style={{height:'100%',width:'100%'}}
-                        imageStyle={{ resizeMode: 'cover'}}
-                        source={require('../assets/img/splash_fondo_1.png')}>
-                                <Image style={{marginTop:'80%', marginLeft:'37%' }} source={require('../assets/img/splash_fondo_2.png')} />
-                        </ImageBackground>
-                       
-                        </View>
-
-                
-
-                </View>
+            <View  style={{ alignItems:'baseline',flex:1}} >
                
-                
-                </TouchableWithoutFeedback>
+            <Text>hholax</Text>
+
+            
+         
+
+
             </View>
             
         );
@@ -191,8 +140,52 @@ const styles = StyleSheet.create({
     barColor: {
         height: 10,
         borderRadius: 4,
-    }
-
+    },
+   
+  slide1: {
+    flex: 1,
+    
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB'
+  },
+  slide2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#97CAE5'
+  },
+  slide3: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#92BBD9'
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold'
+  },
+  containerImageBackground: {
+    backgroundColor: 'transparent',
+    height: height / 2.3,
+    width: width,
+    position: 'absolute',
+    bottom: 0,
+    paddingTop: verticalScale(50),
+    paddingLeft: 20,
+    paddingRight: 20
+  },
+  iconBox: {
+    width: moderateScale(40),
+    height: verticalScale(40),
+    marginBottom: verticalScale(10),
+  },
+  iconBox2: {
+    width: moderateScale(70),
+    height: verticalScale(40),
+    marginBottom: verticalScale(10),
+  },
 
 
 });	  

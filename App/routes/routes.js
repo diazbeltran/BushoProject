@@ -1,7 +1,7 @@
 
-import { View, Text, TouchableOpacity, Alert, Image, Dimensions, SafeAreaView, ScrollView, StyleSheet, Pressable, Platform, StatusBar, ToastAndroid } from 'react-native';
+import {  Dimensions,  Platform } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
-import { DefaultTheme, NavigationContainer, getFocusedRouteNameFromRoute } from '@react-navigation/native';
+import { DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Component } from "react";
@@ -61,12 +61,14 @@ navTheme.colors.background = '#fff';
 
 //---- AuthLoadingStack ----
 import Splash0Screen from '../views/Splash0Screen.js';
-//import SplashScreen from '../views/SplashScreen.js';
+import SplashScreen from '../views/SplashScreen.js';
 //import Splash2Screen from '../views/Splash2Screen.js';
 //import initializingScreen from '../views/initializing';
 //---- FIN AuthLoadingStack ----
 
-                
+import LoginScreen from '../views/Login/Login.view.js';                
+
+
 
 
 
@@ -82,12 +84,66 @@ function InitialNavigator() {
             }}
         >
             <Stack.Screen name="Splash0" component={Splash0Screen} options={{headerShown:false}} />
-            {/* <Stack.Screen name="Splash" component={SplashScreen} options={{headerShown:false}} />
-            <Stack.Screen name="Splash2" component={Splash2Screen} options={{headerShown:false}} /> */}
+            <Stack.Screen name="Splash" component={SplashScreen} options={{headerShown:false}} />
+            {/* <Stack.Screen name="Splash2" component={Splash2Screen} options={{headerShown:false}} /> */}
             
         </Stack.Navigator>
     );
 }
+
+function AuthNavigator() {
+    return (
+        <Stack.Navigator
+            initialRouteName="Login"
+            screenOptions={{
+                gestureEnabled: false,
+                headerTitleAlign: 'center',
+                headerStyle: {
+                    backgroundColor: 'red',
+                    height: BarHeightAuth
+                },
+            }}
+            options={{
+                gestureEnabled: false,
+            }}
+        >
+            <Stack.Screen name="Login" 
+                options={{ headerShown: false }} 
+                component={LoginScreen} />
+                
+
+                
+               
+         {/* <Stack.Screen name="Recupera" 
+                options={{ headerShown: false }} 
+                component={RecuperaScreen} />
+            
+
+            <Stack.Screen name="IngresoCodigo" 
+                options={{ headerShown: false }} 
+                component={IngresaCodigoScreen} />
+         
+
+         <Stack.Screen name="CreaContraseña" 
+                options={{ headerShown: false }} 
+                component={CreaContraseñaScreen} />
+         
+
+            <Stack.Screen name="Registra" 
+                    options={{ headerShown: false }} 
+                    component={RegistraScreen} />
+
+
+                <Stack.Screen name="RegistraFoto" 
+                options={{ headerShown: false }} 
+                component={RegistraFotoScreen} /> */}
+
+            
+        </Stack.Navigator>
+    );
+}
+
+
 
 
 
@@ -113,8 +169,8 @@ class routes extends Component {
                 
                 <Stack.Navigator>
                     <Stack.Screen options={{ headerShown: false, gestureEnabled: false }} name="Initial" component={InitialNavigator} />
-                    {/* <Stack.Screen options={{ headerShown: false, gestureEnabled: false }} name="Auth" component={AuthNavigator} /> 
-                    <Stack.Screen options={{ headerShown: false, gestureEnabled: false }} name="App" component={MainNavigator} /> */}
+                    <Stack.Screen options={{ headerShown: false, gestureEnabled: false }} name="Auth" component={AuthNavigator} /> 
+                    {/* <Stack.Screen options={{ headerShown: false, gestureEnabled: false }} name="App" component={MainNavigator} /> */}
                 </Stack.Navigator>
 
             </NavigationContainer>
