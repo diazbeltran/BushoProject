@@ -7,7 +7,7 @@ const { width, height } = Dimensions.get('window');
 import {FlatListSlider} from 'react-native-flatlist-slider';
 import Preview from './src/Preview.js';
 import { SwiperFlatList } from 'react-native-swiper-flatlist';
-
+import Carousel from 'react-native-reanimated-carousel';
 
 
 
@@ -187,16 +187,39 @@ export default class Publicar1 extends Component {
                     
                 <View style={{borderTopWidth:1, borderColor:'#D7D7D7'}}>
                 <Text style={{marginTop:20, marginLeft:20, fontFamily:'NunitoSans-Blod',fontWeight:'bold', fontSize:16, color:'black'}}>Seleccione la propiedad </Text>
-                    <View style={{ flex:1, marginTop:20}}>
+                    <View style={{ flex:0.5, marginTop:20}}>
 
-                  
+                    <View style={{ alignItems:'center'  }}>
+            <Carousel
+                loop
+                width={width/1.2}
+                height={width / 2}
+                autoPlay={true}
+                data={[...new Array(6).keys()]}
+                scrollAnimationDuration={1000}
+                onSnapToItem={(index) => console.log('current index:', index)}
+                renderItem={({ index }) => (
+                    <View
+                        style={{
+                            flex: 1,
+                            borderWidth: 1,
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Text style={{ textAlign: 'center', fontSize: 30 }}>
+                            {index}
+                        </Text>
+                    </View>
+                )}
+            />
+        </View>
 
                  
 
                        
                     
                     </View>
-                    <SwiperFlatList autoplay  showPagination
+                    {/* <SwiperFlatList autoplay  showPagination
             
             onPaginationSelectedIndex={item =>{
                 console.log("hay que puro actualizar viejaaaaa!!!",item)
@@ -205,9 +228,19 @@ export default class Publicar1 extends Component {
                 console.log("hay que puro actualizar viejaaaaa!!!",item)
             }}
             >
-      <View style={[styles1.child, { backgroundColor: 'tomato' }]}>
+      <View style={[styles1.child, { backgroundColor: 'red' }]}>
      
-                <Text>weweew</Text>
+      <ImageBackground
+                source={require('../../assets/img/inicio_1.png')} 
+                //style={styles.slide1}
+                imageStyle={{ height: 200, width: width, }}
+                >
+                 <View style={styles.containerImageBackground} >
+
+                      
+
+                </View>
+                </ImageBackground>
 
       </View>
       <View style={[styles1.child, { backgroundColor: 'thistle' }]}>
@@ -224,7 +257,8 @@ export default class Publicar1 extends Component {
                 </ImageBackground>
       </View>
       
-    </SwiperFlatList>
+    </SwiperFlatList> */}
+    <Text>wewe</Text>
                 </View>
 
                    
