@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text,  Dimensions, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
-
+import { View, Text,  Dimensions, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
 
 const { width, height } = Dimensions.get('window');
+const colors = ['tomato', 'thistle', 'skyblue', 'teal'];
+
 
 import {  verticalScale, moderateScale } from '../styles/scaling.js';
 import themes from '../styles/theme.style';
@@ -77,10 +79,71 @@ export default class SplashScreen extends Component {
         return (
             <View  style={{ alignItems:'baseline',flex:1}} >
                
-            <Text>hholax</Text>
+           
 
+            <SwiperFlatList autoplay  showPagination
             
-         
+            onPaginationSelectedIndex={item =>{
+                console.log("hay que puro actualizar viejaaaaa!!!",item)
+            }}
+            onMomentumScrollEnd={item =>{
+                console.log("hay que puro actualizar viejaaaaa!!!",item)
+            }}
+            >
+      <View style={[styles1.child, { backgroundColor: 'tomato' }]}>
+     
+                <ImageBackground
+                source={require('../assets/img/Frame1.jpg')} 
+                style={styles.slide1}
+                imageStyle={{ height: height, width: width, resizeMode: 'stretch' }}
+                >
+                 <View style={styles.containerImageBackground} >
+
+                    <View
+                    style={{ position: 'absolute', bottom: 0, width: width, paddingHorizontal: 20, backgroundColor: 'transparent', flexDirection: 'column', }}
+                    >
+                    
+
+                    <View style={{ marginLeft:'45%', marginTop:0 }} >
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Auth')}  >
+                        <Text style={{color:'white', marginBottom:100}}>Omitir</Text>
+                    </TouchableOpacity>
+                    
+                    </View>
+
+                    </View>
+
+                </View>
+                </ImageBackground>
+
+      </View>
+      <View style={[styles1.child, { backgroundColor: 'thistle' }]}>
+      <ImageBackground
+                source={require('../assets/img/Frame2.jpg')} 
+                style={styles.slide1}
+                imageStyle={{ height: height, width: width, resizeMode: 'stretch' }}
+                >
+                 <View style={styles.containerImageBackground} >
+
+                    <View
+                    style={{ position: 'absolute', bottom: 0, width: width, paddingHorizontal: 20, backgroundColor: 'transparent', flexDirection: 'column', }}
+                    >
+                    
+
+                    <View style={{ marginLeft:'45%', marginTop:0 }} >
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Auth')}  >
+                        <Text style={{color:'white', marginBottom:100}}>Omitir</Text>
+                    </TouchableOpacity>
+                    
+                    </View>
+
+                    </View>
+
+                </View>
+                </ImageBackground>
+      </View>
+      
+    </SwiperFlatList>
 
 
             </View>
@@ -88,6 +151,14 @@ export default class SplashScreen extends Component {
         );
     }
 }
+
+const styles1 = StyleSheet.create({
+    container: { flex: 1, backgroundColor: 'white' },
+    child: { width, justifyContent: 'center' },
+    text: { fontSize: width * 0.5, textAlign: 'center' },
+  });
+
+
 
 const styles = StyleSheet.create({
     box: {
