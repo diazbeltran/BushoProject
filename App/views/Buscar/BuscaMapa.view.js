@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput , StyleSheet, Modal, TouchableHighlight, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import { Dimensions,View, Text, TextInput , StyleSheet, Modal, TouchableHighlight, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 
-
-
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 import Svg, { Path, Circle,Rect } from 'react-native-svg';
 
@@ -14,7 +13,7 @@ import Icon4 from 'react-native-vector-icons/AntDesign';
 
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 
-
+const { width, height } = Dimensions.get('window');
 
 export default class BuscarMapa extends Component {
 
@@ -38,6 +37,16 @@ export default class BuscarMapa extends Component {
             rango_inicio:7000,
             rango_fin:25000,
             selectedItems:'',
+            ubicacionActual: "",
+            apiKey: "AIzaSyDMRG59nygLdl3HLo3jJQNekPrH2T__0eo",
+
+
+            region: {
+                latitude: -33.438711,
+                longitude: -70.691979,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+            },
         };
       
         
@@ -340,46 +349,21 @@ export default class BuscarMapa extends Component {
                         </View>
                         
                 </Modal>
-                <SafeAreaView >
-                    
-
-                <ScrollView  style={{borderTopWidth:1, borderColor:'#DDDDDD'}}>
-
-                {/* <MapView
-                minHeight={200}
-    initialRegion={{
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    }}
-  /> */}
- {/* <MapboxGL.MapView style={{flex:1}}  /> */}
-
-
-
-
-
-                {/* <Image style={{ marginTop:15,marginBottom:200, resizeMode:'stretch' }} source={require('../../assets/img/mapa_buscar.png')} /> */}
-                    
-                   
-
-
-
-
-                
-
-
-                
-
                
 
-               
-            </ScrollView>
-
-</SafeAreaView>
-
-
+                <View style={styles.container}>
+     <MapView
+       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+       style={styles.map}
+       region={{
+         latitude: 37.78825,
+         longitude: -122.4324,
+         latitudeDelta: 0.015,
+         longitudeDelta: 0.0121,
+       }}
+     >
+     </MapView>
+   </View>
 
                
 
@@ -402,4 +386,16 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       borderColor: '#dadee3',
     },
+    container: {
+        ...StyleSheet.absoluteFillObject,
+        height: height,
+        width: width,
+        marginTop:170,
+        marginLeft:0,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+      },
+      map: {
+        ...StyleSheet.absoluteFillObject,
+      },
   });
