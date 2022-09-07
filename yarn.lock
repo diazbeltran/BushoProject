@@ -5904,6 +5904,11 @@
   "resolved" "https://registry.npmjs.org/react-native-device-info/-/react-native-device-info-10.0.2.tgz"
   "version" "10.0.2"
 
+"react-native-flatlist-slider@^1.0.6":
+  "integrity" "sha512-F1C87eGIte9nfBU/MyNI6OOVKR/uCwFMrjVGv2j5u0LZjBm2WoEso96kPF2j0PIG8+XerD7Y2pmtGdCMCWxtcA=="
+  "resolved" "https://registry.npmjs.org/react-native-flatlist-slider/-/react-native-flatlist-slider-1.0.6.tgz"
+  "version" "1.0.6"
+
 "react-native-gesture-handler@^2.6.0", "react-native-gesture-handler@> 1.0.0", "react-native-gesture-handler@>= 1.0.0", "react-native-gesture-handler@>= 1.5.0":
   "integrity" "sha512-IwdYdt5FKjjbRSrSqh8hoNctlYZl5DFnqSJ6buKtrl4A4gyzkrtW6WcmOFl5LnCa6Bcw+znSD77O6UiZ8qda7g=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-2.6.0.tgz"

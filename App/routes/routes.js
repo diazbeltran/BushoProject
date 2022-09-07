@@ -1,5 +1,5 @@
 
-import {  Dimensions,  Platform } from 'react-native';
+import {  Dimensions,View,  Platform } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import { DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -95,10 +95,33 @@ import BuscarFinalScreen from '../views/Buscar/BuscaFinal.view.js';
 
 // -
 
+import PublicarRecomendacionScreen from '../views/Publicar/PublicarRecomendacion.view.js';
+import PublicarScreen from '../views/Publicar/PublicarInicio.view.js';
+import Publicar2Screen from '../views/Publicar/PublicarInicio2.view.js';
+import Publicar3Screen from '../views/Publicar/PublicarInicio3.view.js';
+import Publicar4Screen from '../views/Publicar/PublicarInicio4.view.js';
+import Publicar5Screen from '../views/Publicar/PublicarInicio5.view.js';
+import PerfilScreen from '../views/Home/Perfil.view.js';
+import PerfilInformacion from '../views/Perfil/PerfilInformacion.view.js';
+import PerfilInformacionEditar from '../views/Perfil/PerfilInformacionEditar.view.js';
+import PerfilPago from '../views/Perfil/PerfilPago.view.js';
+import PerfilPagoNuevo from '../views/Perfil/PerfilPagoNuevo.view.js';
+import PerfilCobroNuevo from '../views/Perfil/PerfilCobroNuevo.view.js';
+import PerfilPropiedad from '../views/Perfil/PerfilPropiedad.view.js';
+import PerfilPropiedadVer from '../views/Perfil/PerfilPropiedadVer.view.js';
+import PerfilPropiedadAgregar from '../views/Perfil/PerfilPropiedadAgregar.view.js';
+import PerfilPropiedadAgregarDocto from '../views/Perfil/PerfilPropiedadAgregarDocto.view.js';
+import PerfilPropiedadAgregarDoctoFinaliza from '../views/Perfil/PerfilPropiedadAgregarDoctoFinaliza.view.js'; 
+import PerfilAviso from '../views/Perfil/PerfilAviso.view.js';
+import PerfilHistorial from '../views/Perfil/PerfilHistorial.view.js';
+import PerfilPoliticas from '../views/Perfil/PerfilPoliticas.view.js';
+import PerfilPoliticasTerminos from '../views/Politicas/PerfilPoliticasTerminos.view.js';
+import PerfilPoliticasNuestra from '../views/Politicas/PerfilPoliticasNuestra.view.js';
+import PerfilPoliticasSanitaria from '../views/Politicas/PerfilPoliticasSanitaria.view.js';
+import PerfilPoliticasPago from '../views/Politicas/PerfilPoliticasPago.view.js';
 
-
-
-
+import BuscarMapaScreen from '../views/Buscar/BuscaMapa.view.js';
+import BuscarMapScreen from '../views/Buscar/BuscaMapInicio.view.js';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -202,9 +225,7 @@ function MainTabs() {
                 tabBarActiveTintColor: "#050d00",
                 tabBarStyle: { height:70, paddingBottom:10, },
                 tabBarIcon: ({ focused, color, size }) => {
-                    let iconName;
-                    let anchoIcono = 60;
-                    let altoIcono = 60;
+               
                     switch (route.name) {
                     
                         case 'Inicio':
@@ -231,7 +252,7 @@ function MainTabs() {
                                 </View>
                             </View>
                             }
-                            break;
+                            
 
                             case 'Favorito':
                                 if (focused) {
@@ -257,7 +278,7 @@ function MainTabs() {
                                     </View>
                                 </View>
                                 }
-                                break;
+                                
 
 
                                 case 'Buscar':
@@ -308,8 +329,7 @@ function MainTabs() {
                                 </View>
                             </View>
                             }
-                            break;
-
+                          
 
                             case 'Perfil':
                             if (focused) {
@@ -334,7 +354,7 @@ function MainTabs() {
                                 </View>
                             </View>
                             }
-                            break;
+                           
                         
                     }
                     
