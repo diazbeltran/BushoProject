@@ -46,8 +46,9 @@ export default class PerfilPago extends Component {
         return (
             <View style={{ 
               flex:1 }}>
-<View style={{flexDirection:'row', marginTop:30,}}>
-<TouchableHighlight 
+  <View style={{flexDirection:'row', marginTop:30, marginBottom:20,}}>
+                <View style={{flex:0.9,flexDirection:'row'}}>
+                <TouchableHighlight 
                         underlayColor='white'
                         style={{marginLeft:20, marginTop:5}}
                         title="Press me"
@@ -55,10 +56,9 @@ export default class PerfilPago extends Component {
 
                         <Icon2 name="arrow-back" size={25} color="#0B121F" />
                         </TouchableHighlight>
-                <View style={{flex:0.9}}>
-                <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:10, color:'black', fontWeight:'bold' }}>Métodos de pag...</Text>
+                <Text style={{ marginLeft:0,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Métodos de pag...</Text>
+                {/* <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold'}}></Text> */}
                 </View>
-
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
                         style={{marginLeft:20}}
@@ -86,9 +86,12 @@ export default class PerfilPago extends Component {
                 </Svg>
 
                     </TouchableHighlight> 
+                
+
+                
+
 
                 </View>
-
 
 
 
@@ -159,12 +162,12 @@ export default class PerfilPago extends Component {
                         
                         <Icon30 style={{marginLeft:20,marginTop:'5%', marginRight:20}}  name="payment" size={30} color="#0B121F" />
                         <View style={{flexDirection:'column', marginTop:'5%'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16}}>  ****57</Text>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16}}>  Débito</Text>
+                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16}}>Banco de Chile</Text>
+                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16}}>Cuenta Corriente</Text>
                         </View>
                         
 
-                        <Icon22 style={{marginLeft:'47%',marginTop:'10%', marginRight:20}}  name="checkcircleo" size={20} color="#00d6b9" />
+                        <Icon22 style={{marginLeft:'30%',marginTop:'10%', marginRight:20}}  name="checkcircleo" size={20} color="#00d6b9" />
 
                         </View>
                         {/* <View style={{flexDirection:'row', marginTop:'5%'}}>

@@ -1,19 +1,39 @@
 import React, { Component,} from 'react';
-import {Dimensions ,  View, Text, StyleSheet,Image,TouchableHighlight,ImageBackground, TouchableWithoutFeedback, ScrollView, SafeAreaView } from 'react-native';
+import {Dimensions ,  View, Text, StyleSheet,Image,TouchableHighlight,ImageBackground, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 
 
 import Icon2 from 'react-native-vector-icons/Ionicons';
 
-
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
 import Svg, { Path, Rect } from 'react-native-svg';
 
-
+const { width, height } = Dimensions.get('window');
 
 
 import { SimpleCarousel } from 'react-native-simple-banner-carousel';
 
 
 const { screen } = Dimensions.get('screen');
+const datax = [
+  {
+      title: 'Hokkaido',
+      source : require('../../assets/img/inicio_1.png'),
+    },
+    {
+      title: 'Hokkaido',
+      source : require('../../assets/img/inicio_2.png'),
+    },  
+  {
+    title: 'Hokkaido',
+    source : require('../../assets/img/inicio_3.png'),
+  },
+  {
+    title: 'Tokyo',
+   source: require('../../assets/img/inicio_2.png'),
+  },
+  
+];
+
 export default class Home extends Component {
 
     static navigationOptions = {
@@ -210,62 +230,45 @@ console.log("screen ", screen);
                     <Text style={{color:'black', marginTop:30,marginLeft:20, fontFamily:'NunitoSans-Bold',fontSize:18 }}>Agregado recientemente</Text>
                     
                
-                    <View style={{ flex: 1,marginTop:10, backgroundColor: 'white' , flexDirection: 'row', alignItems:'center'}}>
+                 <View>
+                 <View style={styles1.container}>
+                      <SwiperFlatList  >
+                        
+                        <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s1);
+                          this.setState({s1:!this.state.s1})}
+                        } >
+                        
+                        <ImageBackground   style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
+                        
+                        {this.state.s1== true ?( 
+                        <View style={{marginLeft:'80%'}}>
+<Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
+                        </View>
+                        
+                        ):( <View></View> )}
+                       
 
-              
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
 
+                        </View>
+                        <View style={[styles1.child, { backgroundColor: 'thistle' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_2.png')} /> 
+                        </View>
 
-                      <SimpleCarousel 
-                   
-          data={[
-            {
-                title: 'Hokkaido',
-                source : require('../../assets/img/inicio_1.png'),
-              },
-              {
-                title: 'Hokkaido',
-                source : require('../../assets/img/inicio_2.png'),
-              },  
-            {
-              title: 'Hokkaido',
-              source : require('../../assets/img/inicio_3.png'),
-            },
-            {
-              title: 'Tokyo',
-             source: require('../../assets/img/inicio_2.png'),
-            },
-            
-          ]}
-          renderItem={(props, i, width) => {
-            return (
-                <Image style={{borderRadius:10, paddingBottom:200, width: this.state.a1.width-(50), height: 242 }} id={`${props.title}_${i}`} source={props.source} />
+                        <View style={[styles1.child, { backgroundColor: 'skyblue' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_3.png')} /> 
+                        </View>
 
-            
-            )
-          }} 
-          
-        />
-
-        <ImageBackground
-        imageStyle={{borderRadius:10, marginLeft:20}}
-        style={{borderRadius:10, width:'95%' ,height: 242 , resizeMode: 'stretch'}} source={require('../../assets/img/inicio_1.png')} 
-        >
-            <Icon2 style={{marginLeft:'90%', marginTop:10}} name="heart-outline" size={25} color="white" />
-             <View style={{flexDirection:'column', marginTop:'47%', marginLeft:'45%'}}>
-                            
-                            <View style={{flexDirection:'row', }}>
-                                    <TouchableWithoutFeedback
-                                    onPress={console.log("pan con queso")}
-                                    >
-                                    <Image style={{ }} source={require('../../assets/img/a1_4.png')} />
-                                    </TouchableWithoutFeedback>
-                                                                
-                            </View>
-                                    
-                            </View>
-        </ImageBackground>
-                            {/* <Image style={{borderRadius:10, width:'90%' ,height: 242 , resizeMode: 'stretch'}} source={require('../../assets/img/inicio_1.png')} /> */}
-                    </View>
+                        <View style={[styles1.child, { backgroundColor: 'teal' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_4.png')} /> 
+                        </View>
+                      </SwiperFlatList>
+              </View>   
                    
                 
                    
@@ -275,15 +278,181 @@ console.log("screen ", screen);
                 <Text style={{marginTop:'2%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16,marginBottom:100, fontWeight:'bold',color:'#4d4d4d'   }}>$5.500</Text>
                 <Text style={{marginTop:'2%',marginLeft:0, fontSize:17, marginBottom:100,  }}>/ Dia</Text>
                 </View>
+                   
+                   </View>     
+
+
+
+
+
+
+
+
+                    <View>
+                 <View style={styles1.container}>
+                      <SwiperFlatList  >
+                        
+                        <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s1);
+                          this.setState({s1:!this.state.s1})}
+                        } >
+                        
+                        <ImageBackground   style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
+                        
+                        {this.state.s1== true ?( 
+                        <View style={{marginLeft:'80%'}}>
+<Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
+                        </View>
+                        
+                        ):( <View></View> )}
+                       
+
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
+
+                        </View>
+                        <View style={[styles1.child, { backgroundColor: 'thistle' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_2.png')} /> 
+                        </View>
+
+                        <View style={[styles1.child, { backgroundColor: 'skyblue' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_3.png')} /> 
+                        </View>
+
+                        <View style={[styles1.child, { backgroundColor: 'teal' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_4.png')} /> 
+                        </View>
+                      </SwiperFlatList>
+              </View>   
+                   
                 
-                <View style={{  flex:1, backgroundColor: 'white' , marginTop:'15%'}} >
-                  
+                   
+                <Text style={{color:'#4f4f4f', marginTop:'3%',marginLeft:20, fontFamily:'NunitoSans-Bold',fontSize:18,  }}>Oficina pedro de valdivia</Text>
+                <Text style={{marginTop:'0%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#717172'  }}>Pedro de Valdivia, Concepción</Text>
+                <View style={{flexDirection:'row'}}>
+                <Text style={{marginTop:'2%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16,marginBottom:100, fontWeight:'bold',color:'#4d4d4d'   }}>$5.500</Text>
+                <Text style={{marginTop:'2%',marginLeft:0, fontSize:17, marginBottom:100,  }}>/ Dia</Text>
+                </View>
+                   
+                   </View>         
 
 
-               
 
+
+
+
+
+
+                   <View>
+                 <View style={styles1.container}>
+                      <SwiperFlatList  >
+                        
+                        <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s1);
+                          this.setState({s1:!this.state.s1})}
+                        } >
+                        
+                        <ImageBackground   style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
+                        
+                        {this.state.s1== true ?( 
+                        <View style={{marginLeft:'80%'}}>
+<Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
+                        </View>
+                        
+                        ):( <View></View> )}
+                       
+
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
+
+                        </View>
+                        <View style={[styles1.child, { backgroundColor: 'thistle' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_2.png')} /> 
+                        </View>
+
+                        <View style={[styles1.child, { backgroundColor: 'skyblue' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_3.png')} /> 
+                        </View>
+
+                        <View style={[styles1.child, { backgroundColor: 'teal' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_4.png')} /> 
+                        </View>
+                      </SwiperFlatList>
+              </View>   
+                   
                 
-            </View>
+                   
+                <Text style={{color:'#4f4f4f', marginTop:'3%',marginLeft:20, fontFamily:'NunitoSans-Bold',fontSize:18,  }}>Oficina pedro de valdivia</Text>
+                <Text style={{marginTop:'0%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#717172'  }}>Pedro de Valdivia, Concepción</Text>
+                <View style={{flexDirection:'row'}}>
+                <Text style={{marginTop:'2%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16,marginBottom:100, fontWeight:'bold',color:'#4d4d4d'   }}>$5.500</Text>
+                <Text style={{marginTop:'2%',marginLeft:0, fontSize:17, marginBottom:100,  }}>/ Dia</Text>
+                </View>
+                   
+                   </View>    
+
+
+
+
+
+                   <View>
+                 <View style={styles1.container}>
+                      <SwiperFlatList  >
+                        
+                        <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s1);
+                          this.setState({s1:!this.state.s1})}
+                        } >
+                        
+                        <ImageBackground   style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
+                        
+                        {this.state.s1== true ?( 
+                        <View style={{marginLeft:'80%'}}>
+<Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
+                        </View>
+                        
+                        ):( <View></View> )}
+                       
+
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
+
+                        </View>
+                        <View style={[styles1.child, { backgroundColor: 'thistle' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_2.png')} /> 
+                        </View>
+
+                        <View style={[styles1.child, { backgroundColor: 'skyblue' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_3.png')} /> 
+                        </View>
+
+                        <View style={[styles1.child, { backgroundColor: 'teal' }]}>
+                        <Image style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_4.png')} /> 
+                        </View>
+                      </SwiperFlatList>
+              </View>   
+                   
+                
+                   
+                <Text style={{color:'#4f4f4f', marginTop:'3%',marginLeft:20, fontFamily:'NunitoSans-Bold',fontSize:18,  }}>Oficina pedro de valdivia</Text>
+                <Text style={{marginTop:'0%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#717172'  }}>Pedro de Valdivia, Concepción</Text>
+                <View style={{flexDirection:'row'}}>
+                <Text style={{marginTop:'2%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16,marginBottom:100, fontWeight:'bold',color:'#4d4d4d'   }}>$5.500</Text>
+                <Text style={{marginTop:'2%',marginLeft:0, fontSize:17, marginBottom:100,  }}>/ Dia</Text>
+                </View>
+                   
+                   </View>    
+             
+                
             </ScrollView>
 
 </SafeAreaView>
@@ -299,6 +468,14 @@ console.log("screen ", screen);
 
 
 }
+
+const styles1 = StyleSheet.create({
+  container:  { marginTop:20, width:width-40, backgroundColor: 'white', alignContent:'center', marginLeft:20 },
+  child: { width:width-40,  height:height/3,  },
+  
+});
+
+
 const styles = StyleSheet.create({
     input: {
       marginLeft:30,

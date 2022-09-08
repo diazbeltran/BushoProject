@@ -43,12 +43,11 @@ export default class Perfil extends Component {
             <View style={{ 
               flex:1 }}>
                 
-                <View style={{flexDirection:'row', marginTop:30,marginLeft:20}}>
-
-                <View style={{flex:0.9}}>
-                <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:10, color:'black', fontWeight:'bold' }}>Mi perfil</Text>
+                <View style={{flexDirection:'row', marginTop:30, marginBottom:20,}}>
+                <View style={{flex:0.9,flexDirection:'row'}}>
+                <Text style={{ marginLeft:20,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Mi Perfil</Text>
+                {/* <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold'}}></Text> */}
                 </View>
-
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
                         style={{marginLeft:20}}
@@ -76,6 +75,10 @@ export default class Perfil extends Component {
                 </Svg>
 
                     </TouchableHighlight> 
+                
+
+                
+
 
                 </View>
                 <SafeAreaView >

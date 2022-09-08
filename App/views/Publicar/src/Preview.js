@@ -1,5 +1,10 @@
 import React from 'react';
+import CheckBox from '@react-native-community/checkbox';
 
+import {Logo1} from '../../../assets/img/selecciona.svg'
+import { SvgXml } from 'react-native-svg';
+
+import Icon25 from 'react-native-vector-icons/Feather';
 import {
   View,
   Text,
@@ -10,9 +15,9 @@ import {
   Platform,
   Dimensions
 } from 'react-native';
-
+import { setGestureState } from 'react-native-reanimated/lib/reanimated2/NativeMethods';
 const { width, height } = Dimensions.get('window');
-export default (Preview => ({
+export default (Preview = ({
   style,
   item,
   imageKey,

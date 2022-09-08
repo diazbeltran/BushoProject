@@ -44,20 +44,14 @@ export default class Publicar3 extends Component {
         return (
             <View style={{ 
               flex:1 }}>
-                 <View style={{   backgroundColor: 'white', flexDirection:'row' }} >
-            
-           
-                        <View style={{flexDirection:'row',  marginTop:20,}}>
-                    
-                <View style={{marginLeft:20, width:'63%'}}>                    
-                <Text style={{ marginLeft:0,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Publicar aviso</Text>       
-                
-                
+               <View style={{flexDirection:'row', marginTop:30, marginBottom:20,}}>
+                <View style={{flex:0.9,flexDirection:'row'}}>
+                <Text style={{ marginLeft:20,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Publicar aviso</Text>
+                {/* <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold'}}></Text> */}
                 </View>
-
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
-                        style={{marginLeft:40}}
+                        style={{marginLeft:20}}
                         onPress={() => this.props.navigation.navigate('Mensajes')}
                             >
                        
@@ -84,8 +78,10 @@ export default class Publicar3 extends Component {
                     </TouchableHighlight> 
                 
 
+                
+
+
                 </View>
-            </View>
                 
             <View style={{  flex:1, backgroundColor: 'white' , marginTop:'5%'}} >
                      

@@ -45,8 +45,9 @@ export default class Politicas extends Component {
         return (
             <View style={{ 
               flex:1 }}>
-              <View style={{flexDirection:'row', marginTop:30,}}>
-<TouchableHighlight 
+            <View style={{flexDirection:'row', marginTop:30, marginBottom:20,}}>
+                <View style={{flex:0.9,flexDirection:'row'}}>
+                <TouchableHighlight 
                         underlayColor='white'
                         style={{marginLeft:20, marginTop:5}}
                         title="Press me"
@@ -54,10 +55,9 @@ export default class Politicas extends Component {
 
                         <Icon2 name="arrow-back" size={25} color="#0B121F" />
                         </TouchableHighlight>
-                <View style={{flex:0.9}}>
-                <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:10, color:'black', fontWeight:'bold' }}>Nuestras politicas</Text>
+                <Text style={{ marginLeft:0,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}>Nuestras politicas</Text>
+                {/* <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold'}}></Text> */}
                 </View>
-
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
                         style={{marginLeft:20}}
@@ -85,6 +85,10 @@ export default class Politicas extends Component {
                 </Svg>
 
                     </TouchableHighlight> 
+                
+
+                
+
 
                 </View>
                 
@@ -106,12 +110,12 @@ export default class Politicas extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('PerfilPoliticasTerminos')}  >
 
-                  <View style={{borderWidth:0.2, borderRadius:20, width:'95%', height:40, flexDirection:'row'}}>
-                  <Text style={{paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
+                  <View style={{ borderBottomWidth:0.5,borderColor:'#dadada', width:'95%', height:40, flexDirection:'row'}}>
+                  <Text style={{flex:1, paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
                     Términos y condiciones
                   </Text>
                   
-                  <Icon22 style={{ marginTop:10, marginLeft:'33%'}}  name="right" size={20} color="#0B121F" />
+                  <Icon22 style={{ marginTop:10,flex:0.1 }}  name="right" size={20} color="#0B121F" />
                           </View>
                         </TouchableHighlight>
                         </View>
@@ -123,12 +127,12 @@ export default class Politicas extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('PerfilPoliticasNuestra')}  >
 
-                  <View style={{borderWidth:0.2, borderRadius:20, width:'95%', height:40, flexDirection:'row'}}>
-                  <Text style={{paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
+                  <View style={{ borderBottomWidth:0.5,borderColor:'#dadada',width:'95%', height:40, flexDirection:'row'}}>
+                  <Text style={{flex:1, paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
                     Nuestras Políticas
                   </Text>
                   
-                  <Icon22 style={{ marginTop:10, marginLeft:'44%'}}  name="right" size={20} color="#0B121F" />
+                  <Icon22 style={{ marginTop:10, flex:0.1}}  name="right" size={20} color="#0B121F" />
                           </View>
                         </TouchableHighlight>
                         </View>
@@ -141,12 +145,12 @@ export default class Politicas extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('PerfilPoliticasSanitaria')}  >
 
-                  <View style={{borderWidth:0.2, borderRadius:20, width:'95%', height:40, flexDirection:'row'}}>
-                  <Text style={{paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
+                  <View style={{borderBottomWidth:0.5,borderColor:'#dadada',width:'95%', height:40, flexDirection:'row'}}>
+                  <Text style={{flex:1, paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
                     Políticas sanitarias
                   </Text>
                   
-                  <Icon22 style={{ marginTop:10, marginLeft:'41%'}}  name="right" size={20} color="#0B121F" />
+                  <Icon22 style={{ flex:0.1,  marginTop:10}}  name="right" size={20} color="#0B121F" />
                           </View>
                         </TouchableHighlight>
                         </View>
@@ -159,12 +163,12 @@ export default class Politicas extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('PerfilPoliticasPago')}  >
 
-                  <View style={{borderWidth:0.2, borderRadius:20, width:'95%', height:40, flexDirection:'row'}}>
-                  <Text style={{paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
+                  <View style={{ borderBottomWidth:0.5,borderColor:'#dadada',width:'95%', height:40, flexDirection:'row'}}>
+                  <Text style={{flex:1, paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
                     Políticas de pago y cobro
                   </Text>
                   
-                  <Icon22 style={{ marginTop:10, marginLeft:'27%'}}  name="right" size={20} color="#0B121F" />
+                  <Icon22 style={{flex:0.1, marginTop:10, }}  name="right" size={20} color="#0B121F" />
                           </View>
                         </TouchableHighlight>
                         </View>

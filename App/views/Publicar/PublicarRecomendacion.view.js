@@ -135,6 +135,7 @@ export default class PublicarRecomendacion extends Component {
                     </View>
 
                     <TouchableHighlight 
+                    underlayColor={'white'}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PublicarRecomendacion')}
                             >

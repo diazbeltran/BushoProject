@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableHighlight,TouchableOpacity, SafeAreaView, ScrollView, Dimensions, ImageBackground } from 'react-native';
+import { View, Text,FlatList, TextInput , StyleSheet,Image,Button, Modal, TouchableHighlight, TouchableOpacity,SafeAreaView, ScrollView,ImageBackground } from 'react-native';
+
+
 
 import Svg, { Path, Rect } from 'react-native-svg';
 
-const { width, height } = Dimensions.get('window');
 import {FlatListSlider} from 'react-native-flatlist-slider';
 import Preview from './src/Preview.js';
-import { SwiperFlatList } from 'react-native-swiper-flatlist';
-import Carousel from 'react-native-reanimated-carousel';
+
+
 
 
 
@@ -33,7 +34,7 @@ const images = [
 
 
    
-export default class Publicar1 extends Component {
+export default class PerfilPropiedadAgregar extends Component {
 
     static navigationOptions = {
         header: null,
@@ -54,9 +55,9 @@ export default class Publicar1 extends Component {
             aceptar:true,
             data: [
                 {
-                  //  image:'../../assets/img/inicio_1.png',
+                    image:'../../assets/img/inicio_1.png',
                     //image:require('../../assets/img/inicio_1.png'),
-                  //image:'https://i.ibb.co/xgWb38x/inicio-1.png',
+                  image:'https://i.ibb.co/xgWb38x/inicio-1.png',
                   desc: 'Nombre propiedad',
                   selected: true,
                 },
@@ -90,7 +91,26 @@ export default class Publicar1 extends Component {
 
 
  
-  
+    mostrarCuadrosImagen = ({ item }) => {
+        console.log("weweex", item);
+        let ruta = item.ruta;
+        return (
+            <TouchableOpacity
+        style={{   flex: 1,
+            width: "100%",}}
+            //    onLongPress={() => this.mostrarActionSheetEliminar(item.key)}
+                onPress={() => 
+                    console.log("weweasdas")
+                }
+            >
+                <View style={{ ...styles.circuloAdjuntarImagen, marginRight: 10 }}>
+                    {/* <Image style={styles.foto} source={{ uri: "data:image/jpeg;base64,".concat(item.value) }} /> */}
+                    <Text>{item.title}</Text>
+                    
+                </View>
+            </TouchableOpacity>
+        )
+    }
 
 
 
@@ -110,7 +130,7 @@ export default class Publicar1 extends Component {
                         <View style={{flexDirection:'row',  marginTop:20,}}>
                     
                 <View style={{marginLeft:20, width:'63%'}}>                    
-                <Text style={{ fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:10, color:'black', fontWeight:'bold'}}>Publicar aviso</Text>
+                <Text style={{ fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:10, color:'black', }}>Publicar aviso</Text>
                 
                 </View>
 
@@ -187,78 +207,26 @@ export default class Publicar1 extends Component {
                     
                 <View style={{borderTopWidth:1, borderColor:'#D7D7D7'}}>
                 <Text style={{marginTop:20, marginLeft:20, fontFamily:'NunitoSans-Blod',fontWeight:'bold', fontSize:16, color:'black'}}>Seleccione la propiedad </Text>
-                    <View style={{ flex:0.5, marginTop:20}}>
+                    <View style={{ flex:1, marginTop:20}}>
 
-                    <View style={{ alignItems:'center'  }}>
-            <Carousel
-                loop
-                width={width/1.2}
-                height={width / 2}
-                autoPlay={true}
-                data={[...new Array(6).keys()]}
-                scrollAnimationDuration={1000}
-                onSnapToItem={(index) => console.log('current index:', index)}
-                renderItem={({ index }) => (
-                    <View
-                        style={{
-                            flex: 1,
-                            borderWidth: 1,
-                            justifyContent: 'center',
-                        }}
-                    >
-                        <Text style={{ textAlign: 'center', fontSize: 30 }}>
-                            {index}
-                        </Text>
-                    </View>
-                )}
-            />
-        </View>
+                  
 
-                 
+                    <FlatListSlider 
+                  local
+                    imageKey={'image'}
+                    //width={350}
+                   // separatorWidth={25}
+                    component={<Preview />}
+                    onPress={() => alert(JSON.stringify(item))}
+                   // contentContainerStyle={{paddingHorizontal: 16, paddingHorizontal:20}}
+                    
+                     //   data={images} 
+                        data={this.state.data}
+                    />
 
                        
                     
                     </View>
-                    {/* <SwiperFlatList autoplay  showPagination
-            
-            onPaginationSelectedIndex={item =>{
-                console.log("hay que puro actualizar viejaaaaa!!!",item)
-            }}
-            onMomentumScrollEnd={item =>{
-                console.log("hay que puro actualizar viejaaaaa!!!",item)
-            }}
-            >
-      <View style={[styles1.child, { backgroundColor: 'red' }]}>
-     
-      <ImageBackground
-                source={require('../../assets/img/inicio_1.png')} 
-                //style={styles.slide1}
-                imageStyle={{ height: 200, width: width, }}
-                >
-                 <View style={styles.containerImageBackground} >
-
-                      
-
-                </View>
-                </ImageBackground>
-
-      </View>
-      <View style={[styles1.child, { backgroundColor: 'thistle' }]}>
-      <ImageBackground
-                source={require('../../assets/img/inicio_1.png')} 
-                style={styles.slide1}
-                imageStyle={{ height: 200, width: width, resizeMode: 'stretch' }}
-                >
-                 <View style={styles.containerImageBackground} >
-
-                    
-
-                </View>
-                </ImageBackground>
-      </View>
-      
-    </SwiperFlatList> */}
-    <Text>wewe</Text>
                 </View>
 
                    
@@ -275,7 +243,7 @@ export default class Publicar1 extends Component {
                     
                       
                     <View style={{marginLeft:20, marginTop:20}}>
-                        <TouchableHighlight style={{with:10, height:40, width:'95%',
+                        <TouchableHighlight style={{with:10, height:40, width:'95%',borderRadius:1,
                                   paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
                                   backgroundColor:'#61D3BA', alignItems:'center' }}
                         title="Ingresar"
@@ -292,13 +260,13 @@ export default class Publicar1 extends Component {
                     <View style={{marginLeft:20, flexDirection:'row',
                     marginTop:20, width:'90%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:20, marginBottom:100}} > 
                     
-                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'90%',
+                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'90%',borderRadius:1,
                                   paddingTop:5,paddingBottom:0, paddingLeft:35,paddingRight:35, borderRadius:64,
                                    alignItems:'center'}}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Home')}
                             >
-                                <Text style={{ marginTop:'1%',fontFamily:'NunitoSans-Blod',fontSize:16, color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text style={{ color:'white',marginTop:'1%',fontFamily:'NunitoSans-Blod',fontSize:16, color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
                     </View> 
 
@@ -326,15 +294,6 @@ export default class Publicar1 extends Component {
 
 
 }
-
-const styles1 = StyleSheet.create({
-  container: { flex: 1, backgroundColor: 'white' },
-  child: { width, justifyContent: 'center', height:200 },
-  text: { fontSize: width * 0.5, textAlign: 'center' },
-});
-
-
-
 const styles = StyleSheet.create({
     input: {
       marginLeft:30,

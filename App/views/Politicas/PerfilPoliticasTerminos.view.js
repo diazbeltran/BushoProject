@@ -42,25 +42,22 @@ export default class PoliticasTerminos extends Component {
         return (
             <View style={{ 
               flex:1 }}>
-                <View style={{  flex:0.15, backgroundColor: 'white', flexDirection:'row', marginTop:30 }} >
-            
-                        <TouchableHighlight 
+              <View style={{flexDirection:'row', marginTop:30, marginBottom:20,}}>
+                <View style={{flex:0.9,flexDirection:'row'}}>
+                <TouchableHighlight 
                         underlayColor='white'
-                        style={{height:50,marginLeft:10, marginTop:5}}
+                        style={{marginLeft:20, marginTop:5}}
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('PerfilPoliticas')}  >
 
                         <Icon2 name="arrow-back" size={25} color="#0B121F" />
                         </TouchableHighlight>
-                <View style={{flexDirection:'row', }}>
-                    
-                    <View style={{width:'70%'}}>                    
-                        <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:5,  color:'black', fontWeight:'bold'}}>Nuestras politicas</Text>
-                    </View>
-
-                    <TouchableHighlight  underlayColor='white'
+                <Text style={{ marginLeft:0,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}>Nuestras politicas</Text>
+                {/* <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold'}}></Text> */}
+                </View>
+                <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
-                        style={{marginLeft:10}}
+                        style={{marginLeft:20}}
                         onPress={() => this.props.navigation.navigate('Mensajes')}
                             >
                        
@@ -87,8 +84,10 @@ export default class PoliticasTerminos extends Component {
                     </TouchableHighlight> 
                 
 
+                
+
+
                 </View>
-            </View>
                 
             <View style={{  flex:1, backgroundColor: 'white' , marginTop:'0%'}} >
                      

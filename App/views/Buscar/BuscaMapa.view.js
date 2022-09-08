@@ -356,10 +356,12 @@ export default class BuscarMapa extends Component {
        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
        style={styles.map}
        region={{
-         latitude: 37.78825,
-         longitude: -122.4324,
+
+       
+         latitude:  -36.81332523426898,
+         longitude: -73.06249198263218,
          latitudeDelta: 0.015,
-         longitudeDelta: 0.0121,
+         longitudeDelta: 0.0421,
        }}
      >
      </MapView>

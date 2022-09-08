@@ -41,8 +41,9 @@ export default class PerfilPagoNuevo extends Component {
             <View style={{ 
               flex:1 }}>
 
-<View style={{flexDirection:'row', marginTop:30,}}>
-<TouchableHighlight 
+<View style={{flexDirection:'row', marginTop:30, marginBottom:20,}}>
+                <View style={{flex:0.9,flexDirection:'row'}}>
+                <TouchableHighlight 
                         underlayColor='white'
                         style={{marginLeft:20, marginTop:5}}
                         title="Press me"
@@ -50,10 +51,9 @@ export default class PerfilPagoNuevo extends Component {
 
                         <Icon2 name="arrow-back" size={25} color="#0B121F" />
                         </TouchableHighlight>
-                <View style={{flex:0.9}}>
-                <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:5, color:'black', fontWeight:'bold' }}>Nuevo método de...</Text>
+                <Text style={{ marginLeft:0,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Métodos de pag...</Text>
+                {/* <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold'}}></Text> */}
                 </View>
-
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
                         style={{marginLeft:20}}
@@ -81,9 +81,12 @@ export default class PerfilPagoNuevo extends Component {
                 </Svg>
 
                     </TouchableHighlight> 
+                
+
+                
+
 
                 </View>
-
             
                 
             <View style={{   backgroundColor: 'white' , marginTop:47}} >
