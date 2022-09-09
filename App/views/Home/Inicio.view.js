@@ -1,7 +1,7 @@
 import React, { Component,} from 'react';
 import {Dimensions ,  View, Text, StyleSheet,Image,TouchableHighlight,ImageBackground, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 
-
+import { CustomPagination } from './CustomPagination.js';
 import Icon2 from 'react-native-vector-icons/Ionicons';
 
 import { SwiperFlatList } from 'react-native-swiper-flatlist';
@@ -232,7 +232,8 @@ console.log("screen ", screen);
                
                  <View>
                  <View style={styles1.container}>
-                      <SwiperFlatList  >
+                      <SwiperFlatList showPagination
+                      PaginationComponent={CustomPagination} >
                         
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
@@ -241,11 +242,11 @@ console.log("screen ", screen);
                           this.setState({s1:!this.state.s1})}
                         } >
                         
-                        <ImageBackground   style={{marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
+                        <ImageBackground   style={{ marginTop:0,width:width, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
                         {this.state.s1== true ?( 
                         <View style={{marginLeft:'80%'}}>
-<Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
+                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
                         </View>
                         
                         ):( <View></View> )}
@@ -290,7 +291,8 @@ console.log("screen ", screen);
 
                     <View>
                  <View style={styles1.container}>
-                      <SwiperFlatList  >
+                 <SwiperFlatList showPagination
+                      PaginationComponent={CustomPagination} >
                         
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
@@ -348,7 +350,8 @@ console.log("screen ", screen);
 
                    <View>
                  <View style={styles1.container}>
-                      <SwiperFlatList  >
+                 <SwiperFlatList showPagination
+                      PaginationComponent={CustomPagination} >
                         
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
@@ -403,7 +406,8 @@ console.log("screen ", screen);
 
                    <View>
                  <View style={styles1.container}>
-                      <SwiperFlatList  >
+                 <SwiperFlatList showPagination
+                      PaginationComponent={CustomPagination} >
                         
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
@@ -470,7 +474,7 @@ console.log("screen ", screen);
 }
 
 const styles1 = StyleSheet.create({
-  container:  { marginTop:20, width:width-40, backgroundColor: 'white', alignContent:'center', marginLeft:20 },
+  container:  { borderRadius:20, marginTop:20, width:width-40, backgroundColor: 'white', alignContent:'center', marginLeft:20 },
   child: { width:width-40,  height:height/3,  },
   
 });

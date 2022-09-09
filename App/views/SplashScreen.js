@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
-import { View, Text,  Dimensions, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
-import { SwiperFlatList } from 'react-native-swiper-flatlist';
+import { View, Text, Image, Dimensions, StyleSheet, TouchableOpacity,TouchableHighlight, ImageBackground,TouchableWithoutFeedback } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
-const colors = ['tomato', 'thistle', 'skyblue', 'teal'];
 
 
-import {  verticalScale, moderateScale } from '../styles/scaling.js';
+import { scale, verticalScale, moderateScale } from '../styles/scaling.js';
 import themes from '../styles/theme.style';
 
 
 
-
-
-let box_count = 3;
-let box_height = height / box_count;
+import Swiper from 'react-native-swiper'
 
 
 
+var box_count = 3;
+var box_height = height / box_count;
 
+
+
+//-----------------------------------------------------------------
+
+//import NetInfo from '@react-native-community/netinfo'
+//import FingerprintScanner from 'react-native-fingerprint-scanner';
+//import Hint from '../components/Hint/Hint.component';
 
 
 export default class SplashScreen extends Component {
@@ -44,16 +48,78 @@ export default class SplashScreen extends Component {
             cambiax : true
         };
 
-        
- 
+        this.Hint = React.createRef();
+        //this._bootstrapAsync();
     }
 
 
+ setTimePassed = async () => {
+    let porc = this.state.porcentaje;
+    //let result = porc + (width * 0.001); // ralentiza el inicio
+    let result = porc + (width * 0.1);
+
+    let x = result;
+    switch (true) {
+        case (x < 25):
+            //this.setState({ texto: 'Activando servicios' });
+            break;
+        case (x >= 25 && x < 50):
+            //this.setState({ texto: 'Iniciando componentes de la APP' });
+            break;
+        case (x >= 50 && x < 75):
+            //this.setState({ texto: 'Revisando tus notificaciones' });
+            break;
+        case (x >= 100):
+            this.setState({ texto: '¡Estamos listos!' });
+            this.setState({ barColor: '#06973e' });
+            this.setState({ color: '#5cbb81' });
+            this.setState({ status: true });
+            break;
+    }
+
+    if (result < 100) {
+        this.setState({ porcentaje: result });
+    } else {
+        result = width - (width * 0.40);
+        this.setState({ porcentaje: result });
+    }
+
+    if (result >= 100) {
+        clearInterval(this._interval);
+      
+                console.log("==> Auth");
+                this.props.navigation.navigate('Auth');
+      
+        
+    }
+
+}
 
 
- 
+    //-----------------------------------------------------------------
+
+    async componentDidMount() {
+
+        // try {
+
+           
+                   
+                   
+                   
+        //     this._interval = setInterval(async () => {
+        //         this.setTimePassed();
+        //     }, 1000);
+                        
+                  
 
 
+           
+            
+        // } catch (error) {
+        //     console.log(error)
+        // }
+
+    }
     //-----------------------------------------------------------------
 
     componentWillUnmount() {
@@ -67,6 +133,9 @@ export default class SplashScreen extends Component {
     }
 
 
+    llamada_final(e, state, context){
+        console.log("ajojosdojasdjoaojsdjoasj",state);
+    }
 
 
 
@@ -79,19 +148,27 @@ export default class SplashScreen extends Component {
         return (
             <View  style={{ alignItems:'baseline',flex:1}} >
                
-           
 
-            <SwiperFlatList autoplay  showPagination
-            
-            onPaginationSelectedIndex={item =>{
-                console.log("hay que puro actualizar viejaaaaa!!!",item)
-            }}
-            onMomentumScrollEnd={item =>{
-                console.log("hay que puro actualizar viejaaaaa!!!",item)
-            }}
-            >
-      <View style={[styles1.child, { backgroundColor: 'tomato' }]}>
-     
+
+                <Swiper 
+                showsButtons={false}
+                autoplay={true}
+                style={styles.wrapper} 
+                autoplayTimeout={5}
+                paginationStyle={{marginBottom:100}}
+                onIndexChanged={index => {
+                    console.log("vamos en el ", index);
+                    if (index==0 && this.state.cambiax==true) {
+                        this.setState({cambiax:false})
+                        this.props.navigation.navigate('Auth')
+                        
+                    } else {
+                        console.log("wewewe");
+                    }
+                }}
+             //   onTouchStartCapture={this.llamada_final()}
+                //onIndexChanged={this.llamada_final()}
+                >
                 <ImageBackground
                 source={require('../assets/img/Frame1.jpg')} 
                 style={styles.slide1}
@@ -116,9 +193,8 @@ export default class SplashScreen extends Component {
                 </View>
                 </ImageBackground>
 
-      </View>
-      <View style={[styles1.child, { backgroundColor: 'thistle' }]}>
-      <ImageBackground
+
+                <ImageBackground
                 source={require('../assets/img/Frame2.jpg')} 
                 style={styles.slide1}
                 imageStyle={{ height: height, width: width, resizeMode: 'stretch' }}
@@ -141,9 +217,10 @@ export default class SplashScreen extends Component {
 
                 </View>
                 </ImageBackground>
-      </View>
-      
-    </SwiperFlatList>
+
+
+      </Swiper>
+         
 
 
             </View>
@@ -151,14 +228,6 @@ export default class SplashScreen extends Component {
         );
     }
 }
-
-const styles1 = StyleSheet.create({
-    container: { flex: 1, backgroundColor: 'white' },
-    child: { width, justifyContent: 'center' },
-    text: { fontSize: width * 0.5, textAlign: 'center' },
-  });
-
-
 
 const styles = StyleSheet.create({
     box: {
@@ -212,7 +281,7 @@ const styles = StyleSheet.create({
         height: 10,
         borderRadius: 4,
     },
-   
+    wrapper: {},
   slide1: {
     flex: 1,
     

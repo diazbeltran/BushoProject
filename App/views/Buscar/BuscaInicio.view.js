@@ -67,14 +67,25 @@ export default class Registra extends Component {
             <View style={{ 
               flex:1 }}>
                 
-                <View style={{flexDirection:'row', marginTop:30, marginBottom:20,}}>
-                <View style={{flex:0.9,flexDirection:'row'}}>
-                <Text style={{ marginLeft:20,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Buscar</Text>
-                {/* <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold'}}></Text> */}
+                <View style={{   backgroundColor: 'white', flexDirection:'row', marginTop:10 }} >
+            
+            {/* <TouchableHighlight  underlayColor='white' style={{height:50,marginLeft:10, marginTop:25}}
+                    title="Press me"
+                    onPress={() => this.props.navigation.navigate('PerfilPropiedad')}
+                        >
+                             <Icon2 name="arrow-back" size={25} color="#0B121F" />
+                        </TouchableHighlight> */}
+                        <View style={{flexDirection:'row',  marginTop:20,}}>
+                    
+                <View style={{marginLeft:20, width:'63%'}}>                    
+               
+                <Text style={{ marginLeft:0,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Buscar</Text>
+                
                 </View>
+
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
-                        style={{marginLeft:20}}
+                        style={{marginLeft:40}}
                         onPress={() => this.props.navigation.navigate('Mensajes')}
                             >
                        
@@ -101,12 +112,10 @@ export default class Registra extends Component {
                     </TouchableHighlight> 
                 
 
-                
-
-
                 </View>
+            </View>
                 
-                <View style={{marginLeft:'7%', flexDirection:'row', alignItems:'center', marginTop:5, marginBottom:20, }}>
+                <View style={{marginLeft:'7%', flexDirection:'row', alignItems:'center', marginTop:22, marginBottom:20, }}>
                     <View style={{flexDirection:'row', width:'72%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DBDBDB',paddingLeft:20}} > 
                     {/* <Icon25 style={{marginTop:'6%'}} name="search" size={22} color="#09121F" /> */}
                     <View style={{marginTop:18}}>

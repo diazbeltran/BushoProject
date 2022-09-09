@@ -130,7 +130,8 @@ export default class PerfilPropiedadAgregar extends Component {
                         <View style={{flexDirection:'row',  marginTop:20,}}>
                     
                 <View style={{marginLeft:20, width:'63%'}}>                    
-                <Text style={{ fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:10, color:'black', }}>Publicar aviso</Text>
+               
+                <Text style={{ marginLeft:0,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Publicar aviso</Text>
                 
                 </View>
 

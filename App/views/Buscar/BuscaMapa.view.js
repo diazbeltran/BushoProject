@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Dimensions,View, Text, TextInput , StyleSheet, Modal, TouchableHighlight, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import { Dimensions,View, Text, TextInput , StyleSheet, Modal, TouchableHighlight, TouchableOpacity, ScrollView, PermissionsAndroid,SafeAreaView } from 'react-native';
+import MapView, { AnimatedRegion,Marker, MarkerAnimated,PROVIDER_GOOGLE } from 'react-native-maps';
 
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
+import DeviceInfo from 'react-native-device-info';
 import Svg, { Path, Circle,Rect } from 'react-native-svg';
 
 import Icon2 from 'react-native-vector-icons/Ionicons';
-
+import Geolocation from '@react-native-community/geolocation';
 
 import Icon4 from 'react-native-vector-icons/AntDesign';    
 
@@ -41,15 +42,207 @@ export default class BuscarMapa extends Component {
             apiKey: "AIzaSyDMRG59nygLdl3HLo3jJQNekPrH2T__0eo",
 
 
+            tituloHint: "",
+            tituloHintFinal: "",
+            mensajeError: "",
+            heightDirecccion: 60,
+            heightPatente: 60,
+
+            patente: "",
+            idAsistencia: "",
+            nombreAsistencia: "",
+
+            coordinate: new AnimatedRegion({
+                latitude: -33.438711,
+                longitude: -70.691979,
+              }),
+
+
             region: {
                 latitude: -33.438711,
                 longitude: -70.691979,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
             },
+
+            SolicitudGrua: false,
+            id_solicitud:'',
         };
       
         
+    }
+
+    obtenerInfoTelefono = async () => {
+
+        let version = await DeviceInfo.getApiLevel();
+        let marca = await DeviceInfo.getBrand();
+
+        console.log("la marca del telefono es : ", marca);
+        console.log("la version es : ", version);
+
+        if (marca == "HUAWEI" && version > 24) {
+            console.log("telefono apto para aplicar el nuevo mapa");
+        }
+
+    }
+
+
+
+    componentDidMount = async () => {
+
+        //this.Loading.current.mostrar();
+        Geolocation.getCurrentPosition(info =>{
+           // this.setState({coordinate.latitude:info.latitude})
+            console.log(info)
+        } );
+
+
+        
+
+        this.componenteMontado = true;
+
+        this.setState({ fontLoaded: true })
+
+        await this.obtenerInfoTelefono();
+
+       
+            this.geo2();
+       
+
+
+
+
+        //--damos nombre a la ubicacion gps
+        //this.encontrarCoordenadas();
+       // this.obtenerId_nombreAsistencia();
+    }
+
+
+    geo2 = async () => {
+
+        if (Platform.OS === "ios") {
+            console.log("ios!!!!");
+            Geolocation.requestAuthorization();
+        } else {
+            console.log("android!xxxxx!!!"); 
+
+
+            try{
+
+                const granted = await PermissionsAndroid.request(
+                    PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+                    {
+                      title: "Geolocation Permission",
+                      message:
+                        "Permissions Android Geolocation",
+                      buttonNeutral: "Ask Me Later",
+                      buttonNegative: "Cancel",
+                      buttonPositive: "OK"
+                    }
+                  );
+                  
+                  if (granted === PermissionsAndroid.RESULTS.GRANTED) {    
+                    console.log("sw");
+                  } else {
+                    console.log("Permission to access location was denied");
+                  }   
+            }catch(e){
+                console.log("errire");
+            }
+
+                   
+
+              
+        }
+
+        this.encontrarPosicionPrueba();
+    }
+
+
+    acortarTexto = (texto) => {
+
+        let direccionFinal = "";
+
+        if (texto != undefined) {
+
+
+            let texto2 = texto.split(",")
+            //console.log(texto2);
+
+
+
+            for (let i = 0; i < texto2.length; i++) {
+                if (i < 3) {
+                    if (i == 2) {
+                        direccionFinal += texto2[i];
+                        direccionFinal += ".";
+                    } else {
+                        direccionFinal += texto2[i];
+                        direccionFinal += ",";
+                    }
+                }
+            }
+        }
+
+        return direccionFinal;
+
+    }
+
+
+    encontrarPosicionPrueba = () => {
+
+        Geolocation.getCurrentPosition(info => {
+
+            let latitude = info.coords.latitude;
+            let longitude = info.coords.longitude;
+
+            let nuevaRegion = {
+
+                latitude: latitude,
+                longitude: longitude,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+            }
+
+            this.setState({
+                region: nuevaRegion
+            });
+
+            this.reverseGeocoding2(this.state.apiKey, nuevaRegion.latitude, nuevaRegion.longitude);
+
+        }, error => {
+            //this.setState({ tituloHint: "Gps" });
+            //this.HintError.current.mostrarConParametros("Encienda el GPS para obtener su ubicación actual.");
+           // this.reverseGeocoding2(this.state.apiKey, this.state.region.latitude, this.state.region.longitude);
+
+        });
+
+    }
+
+
+    reverseGeocoding2 = (apiKey, lat, lon) => {
+
+        let arregloLocalidades = [];
+
+        fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + lat + ',' + lon + '&key=' + apiKey)
+
+            .then((response) => response.json())
+            .then((responseJson) => {
+
+
+
+                responseJson.results.forEach(e => {
+                    arregloLocalidades.push(e.formatted_address);
+                });
+
+                let direccionFinal = this.acortarTexto(arregloLocalidades[2]);
+
+                if (this.componenteMontado) {
+                   // this.textoUbicacion.current.actualizarEstado(direccionFinal);
+                    this.setState({ ubicacionActual: direccionFinal });
+                    //this.textoUbicacion.current.msjAlert("");
+                }
+            });
     }
 
 
@@ -69,7 +262,7 @@ export default class BuscarMapa extends Component {
                 
                 <View style={{flexDirection:'row', marginTop:30, marginBottom:20,}}>
                 <View style={{width:'70%',flexDirection:'row'}}>
-                <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold'}}>Buscar</Text>
+                <Text style={{ marginLeft:20,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}>Buscar</Text>
                 </View>
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
@@ -355,15 +548,35 @@ export default class BuscarMapa extends Component {
      <MapView
        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
        style={styles.map}
-       region={{
+       initialRegion={{
+        latitude: this.state.region.latitude,
+        longitude: this.state.region.longitude,
+        latitudeDelta: 0.00922,
+        longitudeDelta: 0.00421,
+    }}
 
-       
-         latitude:  -36.81332523426898,
-         longitude: -73.06249198263218,
-         latitudeDelta: 0.015,
-         longitudeDelta: 0.0421,
-       }}
+    region={{
+        latitude: this.state.region.latitude,
+        longitude: this.state.region.longitude,
+        latitudeDelta: 0.00922,
+        longitudeDelta: 0.00421,
+    }}
      >
+
+<Marker
+                                            zoomEnabled={true}
+                                            minZoomLevel={1}
+                                            key={1}
+                                            coordinate={{ latitude: this.state.region.latitude, longitude: this.state.region.longitude }}
+                                        >
+                                        </Marker>
+
+
+<MarkerAnimated
+        ref={marker => { this.marker = marker }}
+        coordinate={this.state.coordinate}
+      />
+         
      </MapView>
    </View>
 

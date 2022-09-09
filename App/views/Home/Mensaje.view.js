@@ -45,14 +45,24 @@ export default class Home extends Component {
             <View style={{ 
               flex:1 }}>
                 
-                <View style={{flexDirection:'row', marginTop:30,}}>
-                <View style={{width:'72%'}}>
-                <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold' }}>Mis mensajes</Text>
-                </View>
+                <View style={{   backgroundColor: 'white', flexDirection:'row', marginTop:10 }} >
+            
+            {/* <TouchableHighlight  underlayColor='white' style={{height:50,marginLeft:10, marginTop:25}}
+                    title="Press me"
+                    onPress={() => this.props.navigation.navigate('PerfilPropiedad')}
+                        >
+                             <Icon2 name="arrow-back" size={25} color="#0B121F" />
+                        </TouchableHighlight> */}
+                        <View style={{flexDirection:'row',  marginTop:20,}}>
+                    
+                <View style={{marginLeft:20, width:'63%'}}>                    
+                <Text style={{ marginLeft:10,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}>Mis mensajes</Text>
                 
+                </View>
+
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
-                        style={{marginLeft:11}}
+                        style={{marginLeft:40}}
                         onPress={() => this.props.navigation.navigate('Mensajes')}
                             >
                        
@@ -77,12 +87,10 @@ export default class Home extends Component {
                 </Svg>
 
                     </TouchableHighlight> 
-               
                 
-      
-               
 
                 </View>
+            </View>
 
                 <SafeAreaView >
                     
