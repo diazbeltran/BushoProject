@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableHighlight,SafeAreaView, ScrollView  } from 'react-native';
+import {Image, View, Text, StyleSheet, TouchableHighlight,SafeAreaView, ScrollView  } from 'react-native';
 
 import Icon2 from 'react-native-vector-icons/Ionicons';
 
@@ -96,9 +96,92 @@ export default class Politicas extends Component {
                      
                
                 
-                    
-                    
             <SafeAreaView >
+                    
+
+                    <ScrollView >
+                
+                <View style={{  flex:1, backgroundColor: 'white' , marginTop:'5%'}} >
+                                
+                    <View style={{alignItems:'center', marginTop:10}}>
+                    <TouchableHighlight  underlayColor='white'
+                        title="Ingresar"
+                        onPress={() => this.props.navigation.navigate('PerfilPoliticasTerminos')}
+                            >
+                    <View style={{width:'90%',flexDirection:'row', borderBottomWidth:0.5,borderColor:'#dadada', paddingBottom:15}} > 
+
+                    {/* <Image style={{ marginTop:10,marginLeft:7 }} source={require('../../assets/img/busho_icono_0.png')} /> */}
+                   
+                
+                    
+                    <Text  style={{color:'black',  flex:1, marginTop:10, fontFamily:'NunitoSans-Regular',fontSize:16, marginLeft:20}}>Términos y condiciones</Text>
+                    <Icon22 style={{flex:0.1, marginTop:15}}  name="right" size={16} color="#0B121F" />
+                    </View>   
+                    </TouchableHighlight>       
+                    </View>
+
+
+                    <View style={{alignItems:'center', marginTop:15}}>
+                    <TouchableHighlight  underlayColor='white'
+                        title="Ingresar"
+                        onPress={() => this.props.navigation.navigate('PerfilPoliticasNuestra')}
+                            >
+                    <View style={{width:'90%',flexDirection:'row',  borderBottomWidth:0.5,borderColor:'#dadada', paddingBottom:15}} > 
+                    {/* <Image style={{ marginTop:10,marginLeft:7 }} source={require('../../assets/img/busho_icono_2.png')} /> */}
+                   
+                    <Text  style={{ color:'black',flex:1, marginLeft:20, marginTop:10,fontFamily:'NunitoSans-Regular',fontSize:16}}>Nuestras Políticas</Text>
+                    <Icon22 style={{flex:0.1, marginTop:15}}  name="right" size={16} color="#0B121F" />
+                    </View>   
+                    </TouchableHighlight>             
+                    </View>
+
+                    <View style={{alignItems:'center', marginTop:15}}>
+                    <TouchableHighlight  underlayColor='white'
+                        title="Ingresar"
+                        onPress={() => this.props.navigation.navigate('PerfilPoliticasSanitaria')}
+                            >
+                    <View style={{width:'90%',flexDirection:'row', borderBottomWidth:0.5,borderColor:'#dadada', paddingBottom:15}} > 
+                    {/* <Image style={{ marginTop:10,marginLeft:7 }} source={require('../../assets/img/busho_icono_3.png')} /> */}
+                    
+                    <Text  style={{color:'black',marginLeft:20, flex:1, marginTop:10, fontFamily:'NunitoSans-Regular',fontSize:16}}>Políticas sanitarias</Text>
+                    <Icon22 style={{flex:0.1, marginTop:15}}  name="right" size={16} color="#0B121F" />
+                    </View>  
+                    </TouchableHighlight> 
+
+                     
+                                    
+                    </View>
+
+                    <View style={{alignItems:'center', marginTop:15}}>
+
+                    <TouchableHighlight  underlayColor='white'
+                        title="Ingresar"
+                        onPress={() => this.props.navigation.navigate('PerfilPoliticasPago')}
+                            >
+                    <View style={{width:'90%',flexDirection:'row',  borderBottomWidth:0.5,borderColor:'#dadada', paddingBottom:15}} > 
+                    
+                    <Text  style={{ color:'black',flex:1, marginTop:10, fontFamily:'NunitoSans-Regular',fontSize:16, marginLeft:20}}>Políticas de pago y cobro</Text>
+                    <Icon22 style={{flex:0.1, marginTop:15}}  name="right" size={16} color="#0B121F" />
+                    </View>  
+                    </TouchableHighlight>                      
+                                    
+                    </View>
+
+                    
+
+                    
+
+                   
+                    
+
+                
+            </View>
+           
+                </ScrollView>
+
+            </SafeAreaView>           
+                    
+            {/* <SafeAreaView >
                     
 
                     <ScrollView >
@@ -110,7 +193,7 @@ export default class Politicas extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('PerfilPoliticasTerminos')}  >
 
-                  <View style={{ borderBottomWidth:0.5,borderColor:'#dadada', width:'95%', height:40, flexDirection:'row'}}>
+                  <View style={{width:'90%',flexDirection:'row',  borderBottomWidth:0.5,borderColor:'#dadada', paddingBottom:30}} > 
                   <Text style={{flex:1, paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
                     Términos y condiciones
                   </Text>
@@ -127,7 +210,7 @@ export default class Politicas extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('PerfilPoliticasNuestra')}  >
 
-                  <View style={{ borderBottomWidth:0.5,borderColor:'#dadada',width:'95%', height:40, flexDirection:'row'}}>
+<View style={{width:'90%',flexDirection:'row',  borderBottomWidth:0.5,borderColor:'#dadada', paddingBottom:30}} > 
                   <Text style={{flex:1, paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
                     Nuestras Políticas
                   </Text>
@@ -145,7 +228,7 @@ export default class Politicas extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('PerfilPoliticasSanitaria')}  >
 
-                  <View style={{borderBottomWidth:0.5,borderColor:'#dadada',width:'95%', height:40, flexDirection:'row'}}>
+<View style={{width:'90%',flexDirection:'row',  borderBottomWidth:0.5,borderColor:'#dadada', paddingBottom:30}} > 
                   <Text style={{flex:1, paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
                     Políticas sanitarias
                   </Text>
@@ -163,7 +246,7 @@ export default class Politicas extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('PerfilPoliticasPago')}  >
 
-                  <View style={{ borderBottomWidth:0.5,borderColor:'#dadada',width:'95%', height:40, flexDirection:'row'}}>
+<View style={{width:'90%',flexDirection:'row',  borderBottomWidth:0.5,borderColor:'#dadada', paddingBottom:30}} > 
                   <Text style={{flex:1, paddingLeft:20, marginTop:10, color:'black',fontFamily:'NunitoSans-Regular',fontSize:16}}>
                     Políticas de pago y cobro
                   </Text>
@@ -177,7 +260,7 @@ export default class Politicas extends Component {
                     
                 </ScrollView>
     
-    </SafeAreaView>
+    </SafeAreaView> */}
 
                 
             </View>

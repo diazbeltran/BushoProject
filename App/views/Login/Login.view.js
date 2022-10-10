@@ -68,7 +68,7 @@ export default class Login extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Registra')}
                             >
-                                <Text style={{color:'white',marginTop:'9%', fontFamily:'NunitoSans-Regular',fontSize:16}} underlayColor={'white'}>Aquí</Text>
+                                <Text style={{color:'white',marginTop:'9%', maxFontSizeMultiplier:1,fontFamily:'NunitoSans-Regular',fontSize:16}} underlayColor={'white'}>Aquí</Text>
                             </TouchableHighlight>
                             </View>
                 </View>

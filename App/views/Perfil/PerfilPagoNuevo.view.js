@@ -51,7 +51,7 @@ export default class PerfilPagoNuevo extends Component {
 
                         <Icon2 name="arrow-back" size={25} color="#0B121F" />
                         </TouchableHighlight>
-                <Text style={{ marginLeft:0,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Métodos de pag...</Text>
+                <Text style={{ marginLeft:0,color:'black', fontFamily:'NunitoSans-Bold',fontSize:25}}> Nuevo métodos de...</Text>
                 {/* <Text style={{fontFamily:'NunitoSans-Blod',fontSize:25, marginLeft:20, color:'black', fontWeight:'bold'}}></Text> */}
                 </View>
                 <TouchableHighlight  underlayColor='white'
