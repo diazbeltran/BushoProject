@@ -226,7 +226,7 @@ export default class Registra extends Component {
                             <View style={{borderColor:'#464646',borderWidth:1 ,height:40, width:'30%', 
                             borderBottomLeftRadius:20,
                             borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                <Text style={{marginTop:7, marginLeft:15}}>Oficina</Text>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:7, marginLeft:15}}>Oficina</Text>
                             </View>
                             
                             </View>
@@ -240,7 +240,7 @@ export default class Registra extends Component {
                                     >
                                   <View style={{flexDirection:'row', marginTop:15}}>
                             <Icon2 style={{marginTop:'0%', marginLeft:'0%'}} name="add-circle-outline" size={22} color="#00D6B9" />
-                            <Text style={{color:'#00D6B9'}}>Buscar</Text>
+                            <Text  style={{color:'#00D6B9'}}>Buscar</Text>
                             </View>
                                     </TouchableHighlight>
 
@@ -257,20 +257,20 @@ export default class Registra extends Component {
                             <View style={{borderColor:'#464646',borderWidth:1 ,height:40, width:'30%', 
                             borderBottomLeftRadius:20,
                             borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                <Text style={{marginTop:7, marginLeft:15}}>Internet</Text>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:7, marginLeft:15}}>Internet</Text>
                             </View>
 
                             <View style={{borderColor:'#464646',borderWidth:1 ,height:40, width:'20%', 
                             borderBottomLeftRadius:20,
                             borderTopRightRadius:20, borderBottomRightRadius:20,
                             marginLeft:10,}}>
-                                <Text style={{marginTop:7, marginLeft:10}}>Wifi</Text>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:7, marginLeft:10}}>Wifi</Text>
                             </View>
 
                             <View style={{marginLeft:10,borderColor:'#464646',borderWidth:1 ,height:40, width:'20%', 
                             borderBottomLeftRadius:20,
                             borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                <Text style={{marginTop:7, marginLeft:10}}>Baño</Text>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:7, marginLeft:10}}>Baño</Text>
                             </View>
                             
                             </View>
@@ -356,7 +356,7 @@ export default class Registra extends Component {
                                         {this.setState({modalVisible:false})}
                                         }
                                     >
-                                    <Text style={{marginTop:'3%',marginLeft:'25%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Limpiar</Text>
+                                    <Text maxFontSizeMultiplier={1} style={{marginTop:'3%',marginLeft:'25%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Limpiar</Text>
                                     </TouchableHighlight>
 
                                     </View>
@@ -374,7 +374,7 @@ export default class Registra extends Component {
                                     {this.setState({modalVisible:false})}
                                     }
                                 >
-                                <Text style={{color:'white',marginTop:'5%', fontWeight:'bold' }} >Buscar</Text>
+                                <Text maxFontSizeMultiplier={1}  style={{color:'white',marginTop:'5%', fontWeight:'bold' }} >Buscar</Text>
                                 </TouchableHighlight>
 
 

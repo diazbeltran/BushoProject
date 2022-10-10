@@ -399,7 +399,7 @@ export default class Publicar2 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Publicar3')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, color:'white',marginTop:'1%', fontWeight:'bold' }} >Siguiente</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',fontSize:16, color:'white',marginTop:'1%', fontWeight:'bold' }} >Siguiente</Text>
                             </TouchableHighlight>
 
                            
@@ -416,7 +416,7 @@ export default class Publicar2 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Home')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,marginLeft:10, marginTop:'1%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',fontSize:16,marginLeft:10, marginTop:'1%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
                     </View> 
 

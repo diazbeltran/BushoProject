@@ -48,7 +48,7 @@ export default class Login extends Component {
     render() {
 
         return (
-            <View style={{flexDirection:'column', flex:1, backgroundColor:'white'}}>
+            <View  style={{ flexDirection:'column', flex:1, backgroundColor:'white'}}>
  <SafeAreaView >
                     
 
@@ -60,7 +60,7 @@ export default class Login extends Component {
                             <Image style={{width:'45%', marginTop:0,resizeMode: 'center'}} source={require('../../assets/img/busho_2.png')} />
                     </View>
                     <View style={{flexDirection:'row', marginTop:-50}}>
-                   <Text style={{marginTop:5, color:'#4B4B4B', fontFamily:'NunitoSans-Regular',fontSize:16}}>Crea una nueva cuenta</Text>
+                   <Text maxFontSizeMultiplier={1} style={{marginTop:5, color:'#4B4B4B', fontFamily:'NunitoSans-Regular',fontSize:16}}>Crea una nueva cuenta</Text>
 
                     <TouchableHighlight style={{marginTop:0, marginLeft:20, height:35,  width:'15%',
                                    borderRadius:64,
@@ -68,7 +68,9 @@ export default class Login extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Registra')}
                             >
-                                <Text style={{color:'white',marginTop:'9%', maxFontSizeMultiplier:1,fontFamily:'NunitoSans-Regular',fontSize:16}} underlayColor={'white'}>Aquí</Text>
+                                <Text style={{color:'white',marginTop:'9%', fontFamily:'NunitoSans-Regular',fontSize:16}} maxFontSizeMultiplier={1}
+                                underlayColor={'white'}
+                                >Aquí</Text>
                             </TouchableHighlight>
                             </View>
                 </View>
@@ -82,7 +84,7 @@ export default class Login extends Component {
                     <View style={{flexDirection:'row', width:'90%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20}} > 
                     <Icon4 style={{marginTop:'4%'}} name="user" size={22} color="#646464" />
                     <TextInput
-                    
+                    maxFontSizeMultiplier={1}
                     style={{ marginLeft:11, fontFamily:'NunitoSans-Regular',fontSize:16}}
                     placeholder='Email' >
 
@@ -94,7 +96,7 @@ export default class Login extends Component {
                     <View style={{flexDirection:'row', width:'90%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20}} > 
                     <Icon4 style={{marginTop:'4%'}} name="lock" size={22} color="#646464" />
                     <TextInput
-                    
+                    maxFontSizeMultiplier={1}
                     style={{ marginLeft:10,fontFamily:'NunitoSans-Regular',fontSize:16}}
                     placeholder='Contraseña' >
 
@@ -109,7 +111,7 @@ export default class Login extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('App')}
                             >
-                                <Text style={{color:'white',marginTop:'1%',fontFamily:'NunitoSans-Regular',fontSize:16 }} underlayColor={'white'}>Ingresar</Text>
+                                <Text  maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%',fontFamily:'NunitoSans-Regular',fontSize:16 }} underlayColor={'white'}>Ingresar</Text>
                             </TouchableHighlight>
 
                            
@@ -140,10 +142,10 @@ export default class Login extends Component {
                 
                 
                 />   
-                <Text style={{backgroundColor:'white', marginTop:0, fontFamily:'NunitoSans-Regular',fontSize:16}}> 
+                <Text  maxFontSizeMultiplier={1} style={{backgroundColor:'white', marginTop:0, fontFamily:'NunitoSans-Regular',fontSize:16}}> 
                                 
                  Acepto los </Text>
-                 <Text style={{color:'#61D3BA',backgroundColor:'white', marginTop:0,fontFamily:'NunitoSans-Regular',fontSize:16 }}> 
+                 <Text maxFontSizeMultiplier={1}  style={{color:'#61D3BA',backgroundColor:'white', marginTop:0,fontFamily:'NunitoSans-Regular',fontSize:16 }}> 
                                 
                                 términos y condiciones</Text>
                     </View>
@@ -153,7 +155,7 @@ export default class Login extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('Recupera')}
                             >
-                                <Text style={{color:'#61D3BA' ,backgroundColor:'white', fontFamily:'NunitoSans-Regular',fontSize:16}}> 
+                                <Text maxFontSizeMultiplier={1} style={{color:'#61D3BA' ,backgroundColor:'white', fontFamily:'NunitoSans-Regular',fontSize:16}}> 
                                 
                                 ¿Olvidaste tu contraseña?</Text>
                             </TouchableHighlight>
@@ -164,14 +166,14 @@ export default class Login extends Component {
                         title="Press me"
                         onPress={() => this.props.navigation.navigate('Recupera')}
                             >
-                                <Text style={{backgroundColor:'white',fontFamily:'NunitoSans-Regular',fontSize:16 }}> 
+                                <Text maxFontSizeMultiplier={1} style={{backgroundColor:'white',fontFamily:'NunitoSans-Regular',fontSize:16 }}> 
                                 
                                 
                                 Ingresa rápidamente usando</Text>
                             </TouchableHighlight>
                     </View>
 
-                    <View style={{alignItems:'center'}}>
+                    <View maxFontSizeMultiplier={1} style={{alignItems:'center'}}>
                     <View style={{flexDirection:'row', marginTop:20,}}>
                         <TouchableHighlight style={{marginRight:20}}
                         title="Press me"

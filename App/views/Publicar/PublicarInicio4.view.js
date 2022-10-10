@@ -247,7 +247,7 @@ export default class Publicar4 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Publicar5')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Regular', color:'white',marginTop:'1%', fontWeight:'bold' }} >Publicar Aviso</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular', color:'white',marginTop:'1%', fontWeight:'bold' }} >Publicar Aviso</Text>
                             </TouchableHighlight>
 
                            
@@ -264,7 +264,7 @@ export default class Publicar4 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Publicar3')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Regular',marginTop:'2%', color:'#61D3BA', fontWeight:'bold' }} underlayColor={'red'}>Anterior</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',marginTop:'2%', color:'#61D3BA', fontWeight:'bold' }} underlayColor={'red'}>Anterior</Text>
                             </TouchableHighlight>
                     </View> 
 

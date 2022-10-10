@@ -65,7 +65,7 @@ export default class Publicar5 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Home')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Regular',color:'white',marginTop:'3%', fontWeight:'bold' }} >Volver al inicio</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',color:'white',marginTop:'3%', fontWeight:'bold' }} >Volver al inicio</Text>
                             </TouchableHighlight>
 
                            

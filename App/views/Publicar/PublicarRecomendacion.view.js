@@ -110,7 +110,7 @@ export default class PublicarRecomendacion extends Component {
                 title="Ingresar"
                 
                     >
-                        <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'white',marginTop:'1%', }} underlayColor={'red'}>Ver un tutorial</Text>
+                        <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'white',marginTop:'1%', }} underlayColor={'red'}>Ver un tutorial</Text>
                     </TouchableHighlight>
 
 
@@ -130,7 +130,7 @@ export default class PublicarRecomendacion extends Component {
         //value={}
         
         />   
-        <Text style={{backgroundColor:'white', marginTop:20, fontFamily:'NunitoSans-Regular',fontSize:16}}> 
+        <Text maxFontSizeMultiplier={1} style={{backgroundColor:'white', marginTop:20, fontFamily:'NunitoSans-Regular',fontSize:16}}> 
                         
          No volver a mostrar</Text>
         
@@ -141,7 +141,7 @@ export default class PublicarRecomendacion extends Component {
                 title="Ingresar"
                 onPress={() => this.props.navigation.navigate('PublicarRecomendacion')}
                     >
-                      <Text style={{color:'#61D3BA',backgroundColor:'white', marginTop:20,fontFamily:'NunitoSans-Regular',fontSize:16 }}> 
+                      <Text  maxFontSizeMultiplier={1} style={{color:'#61D3BA',backgroundColor:'white', marginTop:20,fontFamily:'NunitoSans-Regular',fontSize:16 }}> 
                         
                         Cerrar</Text>
                     </TouchableHighlight>

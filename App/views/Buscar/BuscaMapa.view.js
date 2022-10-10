@@ -120,6 +120,7 @@ export default class BuscarMapa extends Component {
 
     geo2 = async () => {
 
+        console.log("por aqui vamos jejej");
         if (Platform.OS === "ios") {
             console.log("ios!!!!");
             Geolocation.requestAuthorization();
@@ -312,7 +313,7 @@ export default class BuscarMapa extends Component {
                     <TextInput
                     placeholderTextColor='#09121F'
                     style={{ marginLeft:11, color:'#09121F', fontSize:16}}
-                    
+                    maxFontSizeMultiplier={1}
                     placeholder='¿Qué espacio buscas?' >
 
                         </TextInput>
@@ -401,7 +402,7 @@ export default class BuscarMapa extends Component {
                                     <View style={{borderColor:'#464646',borderWidth:1 ,height:30, width:'30%', 
                                     borderBottomLeftRadius:20,
                                     borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                        <Text style={{marginTop:5, marginLeft:15}}>Oficina</Text>
+                                        <Text maxFontSizeMultiplier={1} style={{marginTop:5, marginLeft:15}}>Oficina</Text>
                                     </View>
                                     
                                     </View>
@@ -421,20 +422,20 @@ export default class BuscarMapa extends Component {
                                     <View style={{borderColor:'#464646',borderWidth:1 ,height:30, width:'30%', 
                                     borderBottomLeftRadius:20,
                                     borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                        <Text style={{marginTop:5, marginLeft:15}}>Internet</Text>
+                                        <Text maxFontSizeMultiplier={1} style={{marginTop:5, marginLeft:15}}>Internet</Text>
                                     </View>
 
                                     <View style={{borderColor:'#464646',borderWidth:1 ,height:30, width:'20%', 
                                     borderBottomLeftRadius:20,
                                     borderTopRightRadius:20, borderBottomRightRadius:20,
                                     marginLeft:10,}}>
-                                        <Text style={{marginTop:5, marginLeft:10}}>Wifi</Text>
+                                        <Text maxFontSizeMultiplier={1} style={{marginTop:5, marginLeft:10}}>Wifi</Text>
                                     </View>
 
                                     <View style={{marginLeft:10,borderColor:'#464646',borderWidth:1 ,height:30, width:'20%', 
                                     borderBottomLeftRadius:20,
                                     borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                        <Text style={{marginTop:5, marginLeft:10}}>Baño</Text>
+                                        <Text maxFontSizeMultiplier={1} style={{marginTop:5, marginLeft:10}}>Baño</Text>
                                     </View>
                                     
                                     </View>
@@ -509,7 +510,7 @@ export default class BuscarMapa extends Component {
                                                 {this.setState({modalVisible:false})}
                                                }
                                             >
-                                            <Text style={{marginTop:'3%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Limpiar</Text>
+                                            <Text maxFontSizeMultiplier={1} style={{marginTop:'3%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Limpiar</Text>
                                             </TouchableHighlight>
 
                                             </View>
@@ -527,7 +528,7 @@ export default class BuscarMapa extends Component {
                                             {this.setState({modalVisible:false})}
                                            }
                                         >
-                                        <Text style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Buscar</Text>
+                                        <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Buscar</Text>
                                         </TouchableHighlight>
 
 

@@ -200,7 +200,7 @@ export default class Publicar3 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Publicar4')}
                             >
-                                <Text style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Siguiente</Text>
+                                <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Siguiente</Text>
                             </TouchableHighlight>
 
                            
@@ -217,7 +217,7 @@ export default class Publicar3 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Home')}
                             >
-                                <Text style={{marginTop:'1%',marginLeft:10, fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:'1%',marginLeft:10, fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
                     </View> 
            </View>

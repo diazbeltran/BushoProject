@@ -250,7 +250,7 @@ export default class PerfilPropiedadAgregar extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Publicar2')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Blod',fontSize:16,color:'white',marginTop:'1%',  }} >Siguiente</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Blod',fontSize:16,color:'white',marginTop:'1%',  }} >Siguiente</Text>
                             </TouchableHighlight>
 
                            
@@ -267,7 +267,7 @@ export default class PerfilPropiedadAgregar extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Home')}
                             >
-                                <Text style={{ color:'white',marginTop:'1%',fontFamily:'NunitoSans-Blod',fontSize:16, color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{ color:'white',marginTop:'1%',fontFamily:'NunitoSans-Blod',fontSize:16, color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
                     </View> 
 

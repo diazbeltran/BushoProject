@@ -171,8 +171,8 @@ export default class MensajeChat extends Component {
                 </View>
                     
                 <View style={{ width:'90%',marginLeft:20, height:43, backgroundColor:'#EBEBEB', borderRadius:30 , flexDirection:'row', marginTop:10,marginBottom:10 }}>
-                <Text style={{marginTop:10,marginBottom:5, marginLeft:20,color:'000000', fontFamily:'NunitoSans-Regular', fontSize:16}}>Enviar mensaje </Text>
-                <Text style={{marginTop:10,marginBottom:5, marginLeft:'40%',color:'#1EB091', fontFamily:'NunitoSans-Regular', fontSize:16}}>Enviar </Text>
+                <Text maxFontSizeMultiplier={1} style={{marginTop:10,marginBottom:5, marginLeft:20,color:'000000', fontFamily:'NunitoSans-Regular', fontSize:16}}>Enviar mensaje </Text>
+                <Text maxFontSizeMultiplier={1} style={{marginTop:10,marginBottom:5, marginLeft:'40%',color:'#1EB091', fontFamily:'NunitoSans-Regular', fontSize:16}}>Enviar </Text>
                 </View>
                 
 

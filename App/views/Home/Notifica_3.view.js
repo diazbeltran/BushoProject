@@ -100,7 +100,7 @@ export default class Recupera extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('MensajeChat')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Regular',color:'white',marginTop:'2%',  }} underlayColor={'red'}>Iniciar conversación</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',color:'white',marginTop:'2%',  }} underlayColor={'red'}>Iniciar conversación</Text>
                             </TouchableHighlight>
                             <Image style={{marginLeft:'70%',marginTop:'25%' }} source={require('../../assets/img/footer.png')} />
                            

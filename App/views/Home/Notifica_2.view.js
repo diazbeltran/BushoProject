@@ -201,7 +201,7 @@ export default class Notifica_2 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Notificacion3')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Blod',fontSize:16,color:'white',marginTop:'1%',  }} >Pagar con Webpay</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Blod',fontSize:16,color:'white',marginTop:'1%',  }} >Pagar con Webpay</Text>
                             </TouchableHighlight>
 
                            

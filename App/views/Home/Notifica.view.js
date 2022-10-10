@@ -139,7 +139,7 @@ export default class Notifica extends Component {
                                         }
                                             }
                                         >
-                                        <Text style={{color:'white',marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16 }} underlayColor={'white'}>Confirmar</Text>
+                                        <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16 }} underlayColor={'white'}>Confirmar</Text>
                                         </TouchableHighlight>
 
                                         <TouchableHighlight 
@@ -150,7 +150,7 @@ export default class Notifica extends Component {
                                         title="Ingresar"
                                         onPress={() => this.props.navigation.navigate('App')}
                                         >
-                                        <Text style={{color:'#00D6B9',marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16 }} underlayColor={'white'}>Rechazar</Text>
+                                        <Text maxFontSizeMultiplier={1} style={{color:'#00D6B9',marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16 }} underlayColor={'white'}>Rechazar</Text>
                                         </TouchableHighlight>
                                         
                                         </View>
@@ -187,7 +187,7 @@ export default class Notifica extends Component {
                                         title="Ingresar"
                                         onPress={() => this.props.navigation.navigate('App')}
                                         >
-                                        <Text style={{color:'white',marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16 }} underlayColor={'white'}>Enviar Mensaje</Text>
+                                        <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16 }} underlayColor={'white'}>Enviar Mensaje</Text>
                                         </TouchableHighlight>
                                         </View>
 
@@ -224,7 +224,7 @@ export default class Notifica extends Component {
                                         title="Ingresar"
                                         onPress={() => this.props.navigation.navigate('App')}
                                         >
-                                        <Text style={{color:'white',marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16 }} underlayColor={'white'}>Enviar Mensaje</Text>
+                                        <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16 }} underlayColor={'white'}>Enviar Mensaje</Text>
                                         </TouchableHighlight>
                                         </View>
 
