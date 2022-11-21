@@ -149,11 +149,7 @@ console.log("screen ", screen);
                 <View style={{alignItems:'center', marginTop:19, flexDirection:'row', }}>
                     <View style={{flex:1, marginLeft:20, }}>
 
-                        {/* <ImageBackground
-                        source={require('../../assets/img/boton_buscar.png')} 
-                        >
-
-                        </ImageBackground> */}
+                        
                     <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Buscar')}
@@ -186,7 +182,7 @@ console.log("screen ", screen);
                     </View>
                 
 
-                    <View style={{flex:1, justifyContent:'flex-end', marginRight:10, }}>
+                    <View style={{flex:1, justifyContent:'flex-end', marginRight:20, }}>
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
                         style={{}}
@@ -244,12 +240,14 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                       {this.state.s1== true ?( 
+                         <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                         <Icon2 name="heart" size={25} color="#ff375e" borderColor="blue" />
+                       </View>
                         
-                        ):( <View></View> )}
+                        ):(  <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -266,12 +264,7 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>
@@ -289,12 +282,7 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>
@@ -313,12 +301,7 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>
@@ -352,18 +335,22 @@ console.log("screen ", screen);
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s2);
+                          this.setState({s2:!this.state.s2})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s2== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):(
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                          <Icon2 name="heart-outline" size={25} color="white" />
+                        </View>
+                         )}
                        
 
                           </ImageBackground>
@@ -374,13 +361,13 @@ console.log("screen ", screen);
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s2);
+                          this.setState({s1:!this.state.s2})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
                         
-                        {this.state.s1== true ?( 
+                        {this.state.s2== true ?( 
                         <View style={{marginLeft:'80%'}}>
                             <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
                         </View>
@@ -397,13 +384,13 @@ console.log("screen ", screen);
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s2);
+                          this.setState({s2:!this.state.s2})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
+                        {this.state.s2== true ?( 
                         <View style={{marginLeft:'80%'}}>
                             <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
                         </View>
@@ -421,13 +408,13 @@ console.log("screen ", screen);
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s2);
+                          this.setState({s1:!this.state.s2})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
-                        {this.state.s1== true ?( 
+                        {this.state.s2== true ?( 
                         <View style={{marginLeft:'80%'}}>
                             <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
                         </View>
@@ -467,19 +454,21 @@ console.log("screen ", screen);
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s3);
+                          this.setState({s3:!this.state.s3})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                      
+                        {this.state.s3== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="#ff375e" borderColor="blue" />
+                      </View>
                         
-                        ):( <View></View> )}
-                       
+                        ):(  <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View>)}
 
                           </ImageBackground>
                          
@@ -495,12 +484,7 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>
@@ -518,12 +502,7 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
-                        
-                        ):( <View></View> )}
+                       
                        
 
                           </ImageBackground>
@@ -542,12 +521,7 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>
@@ -583,18 +557,20 @@ console.log("screen ", screen);
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s4);
+                          this.setState({s4:!this.state.s4})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s4== true ?( 
+                       <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                       <Icon2 name="heart" size={25} color="#ff375e" borderColor="blue" />
+                     </View>
                         
-                        ):( <View></View> )}
+                        ):(  <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -611,12 +587,7 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>
@@ -634,12 +605,7 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>
@@ -658,12 +624,7 @@ console.log("screen ", screen);
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>

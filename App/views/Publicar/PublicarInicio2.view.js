@@ -104,7 +104,7 @@ export default class Publicar2 extends Component {
 </Svg>
                   
                             <View style={{marginLeft:10, flexDirection:'column'}}>
-                                <Text style={{fontFamily:'NunitoSans-Blod',fontWeight:'bold', fontSize:16,color:'black' }}>                           
+                                <Text style={{fontFamily:'NunitoSans-Blod',fontWeight:'bold', fontSize:20,color:'black' }}>                           
                                 Datos del espacio
                                 </Text>
                                 <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>                           
@@ -122,7 +122,7 @@ export default class Publicar2 extends Component {
                <Text style={{marginTop:20, marginLeft:0, fontFamily:'NunitoSans-Blod',fontWeight:'bold', fontSize:18, color:'black'}}>Datos del espacio </Text>
                <View style={{marginTop:25, flexDirection:'row'}}>
                    
-                        <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>
+                        <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'#717171' }}>
                         Título del aviso
                         </Text>
                     </View>
@@ -141,7 +141,7 @@ export default class Publicar2 extends Component {
 
                     <View style={{marginTop:25, flexDirection:'row'}}>
                    
-                   <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>
+                   <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'#717171' }}>
                    Descripción del espacio
                    </Text>
                </View>
@@ -161,7 +161,7 @@ export default class Publicar2 extends Component {
 
                     <View style={{marginTop:30, borderTopWidth:1, width:'95%', borderColor:'#D8D8D8'}}>
                     <View style={{marginTop:25, flexDirection:'row'}}>
-                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Blod',fontSize:18,fontWeight:'bold', color:'black'}}>Tipo de espacio </Text>
+                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Bold',fontSize:18, color:'black'}}>Tipo de espacio </Text>
                     </View>
 
                     <View style={{ marginTop:5, flexDirection:'row'}}>
@@ -214,7 +214,7 @@ export default class Publicar2 extends Component {
 
                     <View style={{marginTop:30, borderTopWidth:1, width:'95%', borderColor:'#D8D8D8'}}>
                     <View style={{marginTop:25, flexDirection:'row'}}>
-                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Blod',fontSize:18, color:'black',fontWeight:'bold'}}>Comodidades </Text>
+                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Bold',fontSize:18, color:'black'}}>Comodidades </Text>
                     </View>
 
                     <View style={{ marginTop:5, flexDirection:'row'}}>
@@ -299,10 +299,10 @@ export default class Publicar2 extends Component {
 
                     <View style={{marginTop:30, borderTopWidth:1, width:'95%', borderColor:'#D8D8D8'}}>
                     <View style={{marginTop:25, flexDirection:'row'}}>
-                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Blod',fontSize:18, color:'black',fontWeight:'bold'}}>Ubicación </Text>
+                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Bold',fontSize:18, color:'black',}}>Ubicación </Text>
                     </View>
 
-                    <View style={{ marginTop:5,}}>
+                    <View style={{ marginTop:22,}}>
                     <View style={{flexDirection:'row', width:'95%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20}} > 
                     <Icon25 style={{marginTop:10}} name="map-pin" size={25} color="#646464" />
                     <TextInput
@@ -322,14 +322,14 @@ export default class Publicar2 extends Component {
 
                     <View style={{marginTop:30, borderBottomWidth:1, borderTopWidth:1, width:'95%', borderColor:'#D8D8D8', marginBottom:10}}>
                     <View style={{marginTop:25, flexDirection:'row'}}>
-                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Blod',fontSize:18, color:'black',fontWeight:'bold'}}>Datos físicos </Text>
+                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Bold',fontSize:18, color:'black',}}>Datos físicos </Text>
                     </View>
 
                     <View style={{flexDirection:'row', marginBottom:20}}>
                     <View style={{flex:1}}>
                             <View style={{marginTop:25, flexDirection:'row'}}>
 
-                            <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>
+                            <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'#717171' }}>
                             Mts2
                             </Text>
                             </View>
@@ -350,7 +350,7 @@ export default class Publicar2 extends Component {
                     <View style={{flex:1}}>
                             <View style={{marginTop:25, flexDirection:'row'}}>
 
-                            <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>
+                            <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'#717171' }}>
                             Máx. personas
                             </Text>
                             </View>

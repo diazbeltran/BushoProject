@@ -106,7 +106,7 @@ export default class Publicar4 extends Component {
 
                   
                             <View style={{marginLeft:10, flexDirection:'column'}}>
-                                <Text style={{fontFamily:'NunitoSans-Blod', fontWeight:'bold' ,fontSize:16,color:'black' }}>                           
+                                <Text style={{fontFamily:'NunitoSans-Bold', fontSize:20,color:'black' }}>                           
                                 Reglas del espacio
                                 </Text>
                                 <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>                           
@@ -127,7 +127,7 @@ export default class Publicar4 extends Component {
 
                     <View style={{marginTop:0,  width:'95%', borderColor:'#D8D8D8'}}>
                     <View style={{marginTop:25, flexDirection:'row'}}>
-                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Blod',fontSize:16, color:'black', fontWeight:'bold'}}>Reglas del espacio </Text>
+                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Bold',fontSize:16, color:'black', }}>Reglas del espacio </Text>
                     </View>
 
                     <View style={{ marginTop:5, flexDirection:'row'}}>
@@ -196,7 +196,7 @@ export default class Publicar4 extends Component {
 
                         <View style={{marginTop:25, flexDirection:'row'}}>
                    
-                   <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>
+                   <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'#717171' }}>
                    Reglas adicionales
                    </Text>
                </View>
@@ -242,12 +242,12 @@ export default class Publicar4 extends Component {
                       
                     <View style={{marginLeft:20, marginTop:20,}}>
                         <TouchableHighlight style={{with:10, height:40, width:'95%',
-                                  paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
+                                  paddingTop:5,paddingBottom:5, paddingLeft:0,paddingRight:0, borderRadius:64,
                                   backgroundColor:'#61D3BA', alignItems:'center' }}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Publicar5')}
                             >
-                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular', color:'white',marginTop:'1%', fontWeight:'bold' }} >Publicar Aviso</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontSize:16,fontFamily:'NunitoSans-Regular', color:'white',marginTop:'1%', fontWeight:'bold' }} >Publicar Aviso</Text>
                             </TouchableHighlight>
 
                            
@@ -256,15 +256,15 @@ export default class Publicar4 extends Component {
 
 
                     <View style={{marginLeft:20, flexDirection:'row',
-                    marginTop:10, width:'90%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:20, marginBottom:100, }} > 
+                    marginTop:10, width:'90%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:0, marginBottom:100, }} > 
                     
-                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'90%',
+                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'100%',
                                   paddingTop:5,paddingBottom:0, paddingLeft:35,paddingRight:35, borderRadius:64,
                                    alignItems:'center'}}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Publicar3')}
                             >
-                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',marginTop:'2%', color:'#61D3BA', fontWeight:'bold' }} underlayColor={'red'}>Anterior</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontSize:16,fontFamily:'NunitoSans-Regular',marginTop:'2%', color:'#61D3BA', fontWeight:'bold' }} underlayColor={'red'}>Anterior</Text>
                             </TouchableHighlight>
                     </View> 
 

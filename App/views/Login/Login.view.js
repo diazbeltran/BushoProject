@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput , StyleSheet,Image, TouchableHighlight,  SafeAreaView, ScrollView } from 'react-native';
+import { View,Appearance, Text, TextInput , StyleSheet,Image, TouchableHighlight,  SafeAreaView, ScrollView } from 'react-native';
 
 
 
@@ -34,14 +34,26 @@ export default class Login extends Component {
             modalVisible:false,
             modal_error:'',
             dato1:'',
-            aceptar:false
+            aceptar:false,
+            colorScheme : Appearance.getColorScheme(),
+            colorx:'black'
         };
-
         
+       // Appearance.getColorScheme() === 'dark'
     }
 
+    componentDidMount =async () =>{
 
-    
+        if (this.state.colorScheme === 'dark') {
+            console.log("wena modo oscurox");
+            this.setState({colorx:'red'})
+            
+          }
+        
+        
+
+    }
+        
 
 
 
@@ -84,6 +96,7 @@ export default class Login extends Component {
                     <View style={{flexDirection:'row', width:'90%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20}} > 
                     <Icon4 style={{marginTop:'4%'}} name="user" size={22} color="#646464" />
                     <TextInput
+                    placeholderTextColor={'#5e5d5f'}
                     maxFontSizeMultiplier={1}
                     style={{ marginLeft:11, fontFamily:'NunitoSans-Regular',fontSize:16}}
                     placeholder='Email' >
@@ -96,8 +109,9 @@ export default class Login extends Component {
                     <View style={{flexDirection:'row', width:'90%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20}} > 
                     <Icon4 style={{marginTop:'4%'}} name="lock" size={22} color="#646464" />
                     <TextInput
+                    placeholderTextColor={'#5e5d5f'}
                     maxFontSizeMultiplier={1}
-                    style={{ marginLeft:10,fontFamily:'NunitoSans-Regular',fontSize:16}}
+                    style={{color:this.state.colorx, marginLeft:10,fontFamily:'NunitoSans-Regular',fontSize:16}}
                     placeholder='Contraseña' >
 
                         </TextInput>

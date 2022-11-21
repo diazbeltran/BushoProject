@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput , StyleSheet,Image,TouchableHighlight,  } from 'react-native';
+import { View, Text, TextInput , StyleSheet,Image,TouchableHighlight,  SafeAreaView, ScrollView  } from 'react-native';
 
 import Icon2 from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/Entypo';
@@ -41,6 +41,11 @@ export default class Recupera extends Component {
         return (
             <View style={{ 
               flex:1 }}>
+                    <View style={{flex:0.86}}>
+                  <SafeAreaView >
+                    
+
+                    <ScrollView >
                 <View style={{  flex:0.2, backgroundColor: 'white' }} >
             
                 <TouchableHighlight style={{height:50,marginLeft:10, marginTop:25}}
@@ -83,7 +88,7 @@ export default class Recupera extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('IngresoCodigo')}
                             >
-                                <Text style={{color:'white',marginTop:'2%', fontFamily:'NunitoSans-Regular',fontSize:16}} underlayColor={'red'}>Enviar código</Text>
+                                <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'2%', fontFamily:'NunitoSans-Regular',fontSize:16}} underlayColor={'red'}>Enviar código</Text>
                             </TouchableHighlight>
 
                            
@@ -95,12 +100,15 @@ export default class Recupera extends Component {
             </View>
            
                 
-            <View style={{alignItems:'flex-end', marginTop:'0%'}}> 
-                    <Image style={{marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
+           
+
+                    </ScrollView>
+
+</SafeAreaView>
+</View>
+<View style={{flex:0.1, marginTop:'0%', alignItems:'flex-end', }}> 
+                    <Image style={{ marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
                     </View>
-
-               
-
           </View>
         );
     }

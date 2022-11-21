@@ -121,7 +121,7 @@ export default class Perfil extends Component {
                 <ScrollView >
                     <View style={{marginLeft:20, flexDirection:'column'}}>
                     <View style={{marginLeft:0, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16}}>
+                        <Text style={{color:'#717171', fontFamily:'NunitoSans-Regular',fontSize:16}}>
                             Informacion personal
                         </Text>
                         {/* <TouchableHighlight 
@@ -163,29 +163,27 @@ export default class Perfil extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PerfilInformacion')}
                             >
-                                <Text style={{color:'white',marginTop:'1%', fontFamily:'NunitoSans-Regular',fontSize:16}} >Guardar</Text>
+                               <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%', fontFamily:'NunitoSans-Bold',fontSize:16}} >Guardar</Text>
+                            </TouchableHighlight>
+
+                           
+                                    
+                    </View>
+                    <View style={{alignItems:'center', marginTop:20, marginBottom:'10%'}}>
+                        <TouchableHighlight style={{borderWidth:1,borderColor:'#61D3BA', with:10, height:40, width:'90%',
+                                  paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
+                                  backgroundColor:'white', alignItems:'center' }}
+                        title="Ingresar"
+                        onPress={() => this.props.navigation.navigate('PerfilInformacion')}
+                            >
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:'1%', fontFamily:'NunitoSans-Bold',fontSize:16, color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
 
                            
                                     
                     </View>
 
-                    <View style={{alignItems:'center', marginTop:10, }}>
-                    <View style={{ flexDirection:'row',
-                    marginTop:10, width:'90%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:20,marginBottom:40}} > 
-                       
-                        <TouchableHighlight underlayColor='white' style={{with:10, height:40, width:'90%',
-                                  paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
-                                   alignItems:'center'}}
-                        title="Ingresar"
-                        onPress={() => this.props.navigation.navigate('Perfil')}
-                            >
-                                <Text style={{marginTop:'1%', fontFamily:'NunitoSans-Regular',fontSize:16, color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
-                            </TouchableHighlight>
-
-                            </View>
-                                    
-                    </View>
+                    
 
 
 

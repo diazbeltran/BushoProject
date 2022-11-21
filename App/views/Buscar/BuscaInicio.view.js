@@ -128,7 +128,7 @@ export default class Registra extends Component {
 </Svg>
                     </View>
 
-                        <View style={{backgroundColor:'white', flex:0.68, marginTop:'0%'}}>
+                        <View style={{backgroundColor:'white', flex:0.73, marginTop:'0%'}}>
                         <TextInput
                     placeholderTextColor='#09121F'
                     style={{ marginLeft:0, color:'#09121F', fontSize:16,}}
@@ -138,11 +138,11 @@ export default class Registra extends Component {
                         </TextInput>
                         </View>
 
-                        <View style={{backgroundColor:'white', flex:0.15, marginTop:'0%', borderRadius:20}}>
+                        <View style={{backgroundColor:'white', flex:0.1, marginTop:'0%', borderRadius:20}}>
                         <TouchableOpacity style={{marginTop:11}} 
                         onPress={() => this.setModalVisible(true)}
                          >
-                        <Icon2 style={{marginLeft:'10%',marginTop:'0%'}} name="options-outline" size={22} color="#09121F" />
+                        <Icon2 style={{marginLeft:'20%',marginTop:'10%'}} name="options-outline" size={22} color="#09121F" />
                         </TouchableOpacity>
                         </View>
 
@@ -175,8 +175,8 @@ export default class Registra extends Component {
 
                 <Modal 
                 style={{height:'100%', width:'100%'}}
-                animationType="fade"
-                // presentationStyle="formSheet"
+                animationType="slide"
+                 //presentationStyle="pageSheet"
                 transparent={true}
                 visible={this.state.modalVisible}
                 onRequestClose={() => {
@@ -204,9 +204,9 @@ export default class Registra extends Component {
                             
                             </View>
                             <View  style={{marginLeft:20, marginTop:20}}>
-                            <Text style={{color:'black', fontSize:18}}>Rango de precios</Text>
-                            <Text> ${this.state.rango_inicio} - ${this.state.rango_fin}  </Text>
-                            <Text>precio por dia </Text>
+                            <Text style={{fontFamily:'NunitoSans-Regular',fontWeight:'bold', fontSize:18, color:'black'}}>Rango de precios</Text>
+                            <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, color:'#636363'}}> ${this.state.rango_inicio} - ${this.state.rango_fin}  </Text>
+                            <Text style={{fontFamily:'NunitoSans-Regular',fontSize:14, color:'#9A9A9A'}}>precio por dia </Text>
                             <MultiSlider 
                             values={[this.state.rango_inicio, this.state.rango_fin]}
                             sliderLength={280}
@@ -221,12 +221,12 @@ export default class Registra extends Component {
                             </View>
 
                             <View  style={{marginLeft:20, marginTop:20, borderTopWidth:1, width:'80%', borderColor:'#DBDBDB'}}>
-                            <Text style={{color:'black', marginTop:15,fontSize:18}}>Tipo de espacio</Text>
+                            <Text style={{marginTop:16,fontFamily:'NunitoSans-Regular',fontWeight:'bold', fontSize:18, color:'black'}}>Tipo de espacio</Text>
                             <View style={{flexDirection:'row', marginTop:15}}>
                             <View style={{borderColor:'#464646',borderWidth:1 ,height:40, width:'30%', 
                             borderBottomLeftRadius:20,
                             borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                <Text maxFontSizeMultiplier={1} style={{marginTop:7, marginLeft:15}}>Oficina</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',marginTop:7, marginLeft:15}}>Oficina</Text>
                             </View>
                             
                             </View>
@@ -240,7 +240,7 @@ export default class Registra extends Component {
                                     >
                                   <View style={{flexDirection:'row', marginTop:15}}>
                             <Icon2 style={{marginTop:'0%', marginLeft:'0%'}} name="add-circle-outline" size={22} color="#00D6B9" />
-                            <Text  style={{color:'#00D6B9'}}>Buscar</Text>
+                            <Text  style={{fontFamily:'NunitoSans-Regular',color:'#00D6B9'}}>Buscar</Text>
                             </View>
                                     </TouchableHighlight>
 
@@ -252,7 +252,7 @@ export default class Registra extends Component {
                             </View>
 
                             <View  style={{marginLeft:20, marginTop:20, borderTopWidth:1, width:'80%', borderColor:'#DBDBDB'}}>
-                            <Text style={{color:'black', marginTop:15,fontSize:18}}>Comodidades</Text>
+                            <Text style={{marginTop:16,fontFamily:'NunitoSans-Regular',fontWeight:'bold', fontSize:18, color:'black'}}>Comodidades</Text>
                             <View style={{flexDirection:'row', marginTop:15}}>
                             <View style={{borderColor:'#464646',borderWidth:1 ,height:40, width:'30%', 
                             borderBottomLeftRadius:20,
@@ -296,33 +296,43 @@ export default class Registra extends Component {
                             </View>
 
                             <View  style={{marginLeft:20, marginTop:20, borderTopWidth:1, width:'90%', borderColor:'#DBDBDB', marginBottom:20}}>
-                            <Text style={{color:'black', marginTop:15,fontSize:18}}>Ubicación</Text>
+                            <Text style={{marginTop:16, fontFamily:'NunitoSans-Regular',fontWeight:'bold', fontSize:18, color:'black'}}>Ubicación</Text>
 
-                            <Text style={{marginTop:10}}>Region</Text>
+                            <Text style={{marginTop:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#636363'}}>Region</Text>
                                 <View style={{alignItems:'center', marginTop:10,}}>
                                 <View style={{width:'100%',flexDirection:'row'}} > 
                                 <TextInput
 
-                                style={{ borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20, width:'100%'}}
+                                style={{ fontFamily:'NunitoSans-Regular',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20, width:'100%'}}
                                 placeholder='Seleccione'  >
 
                                 </TextInput>
-                                <Image style={{marginLeft:'-15%', marginTop:20,resizeMode:'contain'}} source={require('../../assets/img/Polygon_3.png')} />
-                                
+                                <View style={{marginLeft:'-15%', marginTop:20,resizeMode:'contain'}}>
+                                    <Svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M7 11L0.937821 0.500001L13.0622 0.5L7 11Z" fill="#00D6B9"/>
+                                    </Svg>
+
+                                </View>
                                 </View>     
                                 </View>
 
 
-                                <Text style={{marginTop:10}}>Comuna</Text>
+                                <Text style={{marginTop:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#636363'}}>Comuna</Text>
                                 <View style={{alignItems:'center', marginTop:10,}}>
                                 <View style={{width:'100%',flexDirection:'row'}} > 
                                 <TextInput
 
-                                style={{ borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20, width:'100%'}}
+                                style={{fontFamily:'NunitoSans-Regular', borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20, width:'100%'}}
                                 placeholder='Seleccione'  >
 
                                 </TextInput>
-                                <Image style={{marginLeft:'-15%', marginTop:20,resizeMode:'contain'}} source={require('../../assets/img/Polygon_3.png')} />
+                                <View style={{marginLeft:'-15%', marginTop:20,resizeMode:'contain'}}>
+                                    <Svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M7 11L0.937821 0.500001L13.0622 0.5L7 11Z" fill="#00D6B9"/>
+                                    </Svg>
+
+                                </View>
+                                
                                 
                                 </View>     
                                 </View>
@@ -769,7 +779,7 @@ export default class Registra extends Component {
 
                
 
-                    <Text style={{marginTop:21,marginLeft:20,color:'#444444', fontFamily:'NunitoSans-Blod',fontWeight:'bold', fontSize:16,}}>Existen más de 1000 espacios disponibles</Text>
+                    <Text style={{marginTop:21,marginLeft:20,color:'#444444', fontFamily:'NunitoSans-Bold', fontSize:16,}}>Existen más de 1000 espacios disponibles</Text>
                     
                    
                 <View>
@@ -787,11 +797,13 @@ export default class Registra extends Component {
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
                         {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -802,18 +814,20 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s12);
+                          this.setState({s12:!this.state.s12})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s12== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -825,18 +839,20 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s13);
+                          this.setState({s13:!this.state.s13})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s13== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -849,18 +865,20 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s14);
+                          this.setState({s14:!this.state.s14})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s14== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -904,18 +922,20 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s2);
+                          this.setState({s2:!this.state.s2})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s2== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -926,18 +946,20 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s21);
+                          this.setState({s21:!this.state.s21})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s21== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -949,18 +971,20 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s22);
+                          this.setState({s22:!this.state.s22})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
+                        {this.state.s22== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>
@@ -979,12 +1003,7 @@ export default class Registra extends Component {
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
                        
 
                           </ImageBackground>
@@ -1029,19 +1048,21 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s3);
+                          this.setState({s3:!this.state.s3})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
                         
-                        ):( <View></View> )}
-                       
+                        {this.state.s3== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
+                        
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
 
                           </ImageBackground>
                          
@@ -1051,19 +1072,20 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s31);
+                          this.setState({s31:!this.state.s31})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s31== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
-                       
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
 
                           </ImageBackground>
                          
@@ -1074,18 +1096,20 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s32);
+                          this.setState({s32:!this.state.s32})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s32== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -1098,18 +1122,20 @@ export default class Registra extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s33);
+                          this.setState({s33:!this.state.s33})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s33== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):( <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>

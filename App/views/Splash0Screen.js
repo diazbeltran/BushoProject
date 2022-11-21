@@ -83,7 +83,7 @@ export default class SplashScreen extends Component {
                    
             this._interval = setInterval(async () => {
                 this.setTimePassed();
-            }, 1000);
+            }, 500);
                         
         
            
@@ -113,7 +113,8 @@ export default class SplashScreen extends Component {
             <View style={styles.wrapper} >
 
 
-<TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Splash')}>
+<TouchableWithoutFeedback onPress={() => console.log("solucion1 ")}
+>
 <View >
                         <View style={{ backgroundColor: '#58C0AD' }}>
 
@@ -122,8 +123,8 @@ export default class SplashScreen extends Component {
                         <ImageBackground
                         style={{height:'100%',width:'100%'}}
                         imageStyle={{ resizeMode: 'cover'}}
-                        source={require('../assets/img/splash_fondo_1.png')}>
-                                <Image style={{marginTop:'80%', marginLeft:'37%' }} source={require('../assets/img/splash_fondo_2.png')} />
+                        source={require('../assets/img/Splash_fondox.png')}>
+                                {/* <Image style={{marginTop:'80%', marginLeft:'37%' }} source={require('../assets/img/splash_fondo_2.png')} /> */}
                         </ImageBackground>
                        
                         </View>

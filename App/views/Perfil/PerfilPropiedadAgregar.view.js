@@ -108,7 +108,7 @@ export default class PerfilPropiedadAgregar extends Component {
                     </View>
                     
                     <View style={{marginTop:25, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>
+                        <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, color:'#717171' }}>
                             Nombre de la propiedad
                         </Text>
                     </View>
@@ -129,7 +129,7 @@ export default class PerfilPropiedadAgregar extends Component {
 
 
                     <View style={{marginTop:12, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>
+                        <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,  color:'#717171'}}>
                     Ubicación
                         </Text>
                     </View>
@@ -178,12 +178,12 @@ export default class PerfilPropiedadAgregar extends Component {
                       
                     <View style={{ marginTop:20}}>
                         <TouchableHighlight style={{with:10, height:40, width:'95%',
-                                  paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
+                                  paddingTop:5,paddingBottom:5, paddingLeft:0,paddingRight:0, borderRadius:64,
                                   backgroundColor:'#61D3BA', alignItems:'center' }}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PerfilPropiedadAgregarDocto')}
                             >
-                                <Text style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Siguiente</Text>
+                                <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Siguiente</Text>
                             </TouchableHighlight>
 
                            
@@ -192,15 +192,15 @@ export default class PerfilPropiedadAgregar extends Component {
 
 
                     <View style={{flexDirection:'row',
-                    marginTop:10, width:'95%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:20,  marginBottom:100}} > 
+                    marginTop:10, width:'95%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:0,  marginBottom:100}} > 
                     
-                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'90%',
-                                  paddingTop:5,paddingBottom:0, paddingLeft:35,paddingRight:35, borderRadius:64,
+                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'100%',
+                                  paddingTop:5,paddingBottom:0, paddingLeft:0,paddingRight:0, borderRadius:64,
                                    alignItems:'center'}}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PerfilPago')}
                             >
-                                <Text style={{marginTop:'3%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:'1%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
                     </View> 
 

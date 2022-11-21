@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput , StyleSheet,Image,Button, Modal, TouchableHighlight, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, TextInput , StyleSheet,Image,Button, Modal,TouchableWithoutFeedback,Keyboard, TouchableHighlight, KeyboardAvoidingView,TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 
 
 
@@ -44,11 +44,22 @@ export default class Registra extends Component {
     render() {
 
         return (
-            <View style={{ 
-              flex:1 }}>
-                <View style={{   backgroundColor: 'white' }} >
             
-                <TouchableHighlight style={{marginLeft:10, marginTop:25}}
+            <View style={{ 
+                flex: 1,
+                // flexWrap: "wrap",
+                backgroundColor: 'white', }}>
+<SalirDelTeclado>
+<KeyboardAvoidingView  >
+
+
+                 <SafeAreaView >
+                    
+
+                    <ScrollView >
+                <View style={{ flex:.1,  backgroundColor: 'white' }} >
+            
+                <TouchableHighlight underlayColor={'white'} style={{marginLeft:10, marginTop:25}}
                     title="Press me"
                     onPress={() => this.props.navigation.goBack()}
                         >
@@ -57,11 +68,8 @@ export default class Registra extends Component {
                 </View>
 
                 
-                <View style={{flex:1, marginTop:42,  backgroundColor: 'white' }} >
-                <SafeAreaView >
-                    
-
-                    <ScrollView >
+                <View style={{flex:0.9, marginTop:42,  backgroundColor: 'white' }} >
+                
                 <Text style={{fontFamily:'NunitoSans-Bold',fontSize:30, marginLeft:20, color:'black',  }}>Regístrate y comienza</Text>
                 <Text style={{fontFamily:'NunitoSans-Bold',fontSize:30, marginLeft:20, color:'black',}}>tu negocio</Text>
 
@@ -138,7 +146,7 @@ export default class Registra extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('RegistraFoto')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Bold',fontSize:16,color:'white',marginTop:10, }} underlayColor={'red'}>Registrarme</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Bold',fontSize:16,color:'white',marginTop:"1%", }} underlayColor={'red'}>Registrarme</Text>
                             </TouchableHighlight>
 
                             
@@ -146,20 +154,31 @@ export default class Registra extends Component {
                     </View>
                     
                     
-                </ScrollView>
-
-                </SafeAreaView>
+               
                 
             </View>
            
+            
+            
+            <View style={{flex:0.1, marginTop:'30%', alignItems:'flex-end', }}> 
+                    <Image style={{ marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
+                    </View> 
+           
+                    </ScrollView>
+
+</SafeAreaView>   
+
+
+    </KeyboardAvoidingView>
+    </SalirDelTeclado>
+
                 
-            <View style={{ alignItems:'flex-end', }}> 
-                    <Image style={{marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
-                    </View>
-
-               
-
+{/* <View style={{flex:0.1, marginTop:'0%', alignItems:'flex-end', }}> 
+                    <Image style={{ marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
+                    </View> */}
           </View>
+          
+
         );
     }
 
@@ -179,3 +198,9 @@ const styles = StyleSheet.create({
       borderColor: '#dadee3',
     },
   });
+
+  const SalirDelTeclado = ({ children }) => (
+    <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss(), console.log("se ha presionado fuera") }}>
+      {children}
+    </TouchableWithoutFeedback>
+  )

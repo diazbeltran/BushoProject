@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput , StyleSheet,Image,Button, Modal, TouchableHighlight, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput , StyleSheet,Image,Button, Modal, TouchableHighlight,  SafeAreaView, ScrollView  } from 'react-native';
 
 //import WSRestApi from '../../services/wsRestApi.js';
 
@@ -38,6 +38,11 @@ export default class Recuperapass extends Component {
         return (
             <View style={{ 
               flex:1 }}>
+                      <View style={{flex:0.86}}>
+                  <SafeAreaView >
+                    
+
+                    <ScrollView >
                 <View style={{  flex:0.2, backgroundColor: 'white' }} >
             
                 
@@ -49,8 +54,8 @@ export default class Recuperapass extends Component {
 
 
                 <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, marginLeft:20, marginTop:20, color:'black'}}>¡Excelente, el código fue validado de manera</Text>
-                <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, marginLeft:20, marginTop:20, color:'black'}}>exitosa, ahora debes crear tu nueva</Text>
-                <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, marginLeft:20, marginTop:20, color:'black'}}>contraseña</Text>
+                <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, marginLeft:20, marginTop:10, color:'black'}}>exitosa, ahora debes crear tu nueva</Text>
+                <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, marginLeft:20, marginTop:10, color:'black'}}>contraseña</Text>
                 
 
 
@@ -90,7 +95,7 @@ export default class Recuperapass extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Login')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'white',marginTop:'2%',  }} underlayColor={'red'}>Guardar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'white',marginTop:'1%',  }} underlayColor={'red'}>Guardar</Text>
                             </TouchableHighlight>
 
                            
@@ -100,13 +105,16 @@ export default class Recuperapass extends Component {
                 
             </View>
            
-            <View style={{alignItems:'flex-end', marginTop:'0%'}}> 
-                    <Image style={{marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
+            
+
+
+                    </ScrollView>
+
+</SafeAreaView>
+</View>
+<View style={{flex:0.1, marginTop:'0%', alignItems:'flex-end', }}> 
+                    <Image style={{ marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
                     </View>
-
-
-               
-
           </View>
         );
     }

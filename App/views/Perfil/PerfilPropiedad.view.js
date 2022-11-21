@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet,Image, TouchableHighlight, SafeAreaView, ScrollView  ,ImageBackground} from 'react-native';
-
-
+import { Dimensions,View, Text, TouchableOpacity,StyleSheet,Image, TouchableHighlight, SafeAreaView, ScrollView  ,ImageBackground} from 'react-native';
+import { CustomPagination } from './CustomPagination.js';
 import Icon2 from 'react-native-vector-icons/Ionicons';
 
-
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
 import Svg, { Path, Rect } from 'react-native-svg';
+
+const { width, height } = Dimensions.get('window');
+
+import Icon22 from 'react-native-vector-icons/Ionicons';
+
+
+
 
 
 
@@ -79,44 +85,102 @@ export default class PerfilPropiedad extends Component {
                        
                         <View>
                         
-                            <View style={{  flex: 1, backgroundColor: 'white' ,alignItems:'center'}} >
-                                <View style={{ flex: 1,marginTop:'6%', backgroundColor: 'white' , flexDirection: 'row'}}>
+                        <View style={styles1.container}>
+                      <SwiperFlatList showPagination
+                      PaginationComponent={CustomPagination} >
+                        
+                        <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s2);
+                          this.setState({s2:!this.state.s2})}
+                        } >
+                        
+                        <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
+                        
+                      
+                       
 
-                                {/* <Image style={{borderRadius:10, width:'90%' , resizeMode: 'stretch'}} source={require('../../assets/img/inicio_1.png')} /> */}
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
 
-                                <ImageBackground
-        imageStyle={{borderRadius:10, marginLeft:10}}
-        style={{borderRadius:10, width:'95%' ,height: 242 , resizeMode: 'stretch'}} source={require('../../assets/img/inicio_1.png')} 
-        >
-             <View style={{flexDirection:'column', marginTop:'60%', marginLeft:'45%'}}>
-                            
-                            <View style={{flexDirection:'row', }}>
-                                    
-                                
-                                <Image style={{ marginLeft:'2%'}} source={require('../../assets/img/a1_4.png')} />
-                                
-                            </View>
-        
-        
-                                                                
-                            </View>
-        </ImageBackground>
+                        </View>
+                        <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s2);
+                          this.setState({s1:!this.state.s2})}
+                        } >
+                        
+                        <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
+                        
+                       
+                       
+
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
+
+                        </View>
+
+                        <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s2);
+                          this.setState({s2:!this.state.s2})}
+                        } >
+                        
+                        <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
+                        
+                       
+                       
+
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
+
+                        </View>
 
 
-                                </View>
+                        <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s2);
+                          this.setState({s1:!this.state.s2})}
+                        } >
+                        
+                        <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
+                        
+                        
+                       
 
-                            </View>
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
+
+                        </View>
+
+
+
+                        
+                      </SwiperFlatList>
+              </View>   
+
+              
                             <TouchableHighlight  underlayColor='white'
                                 title="Ingresar"
                                 onPress={() => this.props.navigation.navigate('PerfilPropiedadVer')}
                                 >
                                     <View style={{width:'90%',flexDirection:'row', }} > 
-                                    <Text style={{marginTop:'3%',marginLeft:20, fontSize:17,color:'black'  }}>Casa Principal</Text>
+                                    <Text style={{color:'#4f4f4f', marginTop:'3%',marginLeft:20, fontFamily:'NunitoSans-Bold',fontSize:18,  }}>Casa Principal</Text>
                                     </View>   
                                 </TouchableHighlight> 
                             
-                            <Text style={{marginTop:'0%',marginLeft:20, fontSize:14, color:'#717172'  }}>Pedro de Valdivia, Concepción</Text>
-
+                           
+                            <Text style={{marginTop:'0%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#717172'  }}>Pedro de Valdivia, Concepción</Text>
+                           
+                           
 
                             <View style={{flexDirection:'row', marginLeft:20, marginTop:7}}>
                             <Image style={{marginTop:2,resizeMode: 'stretch'}} source={require('../../assets/img/mis_propiedades.png')} /> 
@@ -162,6 +226,14 @@ export default class PerfilPropiedad extends Component {
 
 
 }
+
+const styles1 = StyleSheet.create({
+    container:  { borderRadius:20, marginTop:20, width:width-40, backgroundColor: 'white', alignContent:'center', marginLeft:20,},
+    child: { width:width-40,  height:height/3, borderRadius:20, marginRight:0  },
+    
+  });
+
+
 const styles = StyleSheet.create({
     input: {
       marginLeft:30,

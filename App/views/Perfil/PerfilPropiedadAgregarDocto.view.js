@@ -77,7 +77,7 @@ export default class PerfilPropiedadAgregarDocto extends Component {
                     
 
                 <ScrollView >
-                    <View style={{marginLeft:20, flexDirection:'column'}}>
+                    <View style={{marginLeft:20, flexDirection:'column', marginBottom:200}}>
                     
                     <View style={{marginLeft:0, flexDirection:'row'}}>
                     {/* <Image style={{marginTop:0,height:48,width:48, marginLeft:0}} source={require('../../assets/img/circulo_4.png')} /> */}
@@ -100,7 +100,7 @@ export default class PerfilPropiedadAgregarDocto extends Component {
                     
                     
                     <View style={{marginTop:25, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16 }}>
+                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16, color:'#717171' }}>
                     Documento de propiedad y bien raíz
                         </Text>
                     </View>
@@ -120,7 +120,7 @@ export default class PerfilPropiedadAgregarDocto extends Component {
                    
                     
                     <View style={{marginTop:25, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16 }}>
+                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16, color:'#717171' }}>
                     Certificado de antecedentes
                         </Text>
                     </View>
@@ -141,7 +141,7 @@ export default class PerfilPropiedadAgregarDocto extends Component {
 
                     <View style={{marginTop:10}}>
                     <View>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16, color:'#717171'}}>Foto de carnet por ambos lados</Text>
+                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16,  color:'#717171'}}>Foto de carnet por ambos lados</Text>
                     </View>
 
                 <View style={{flexDirection:'row', marginTop:10,}}>
@@ -191,7 +191,7 @@ export default class PerfilPropiedadAgregarDocto extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PerfilPropiedadAgregarDoctoFinaliza')}
                             >
-                                <Text style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Finalizar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Finalizar</Text>
                             </TouchableHighlight>
 
                            
@@ -200,15 +200,15 @@ export default class PerfilPropiedadAgregarDocto extends Component {
 
 
                     <View style={{flexDirection:'row',
-                    marginTop:10, width:'95%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:20, marginBottom:80}} > 
+                    marginTop:10, width:'95%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:0, marginBottom:80}} > 
                     
-                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'90%',
+                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'100%',
                                   paddingTop:5,paddingBottom:0, paddingLeft:35,paddingRight:35, borderRadius:64,
                                    alignItems:'center'}}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PerfilPago')}
                             >
-                                <Text style={{marginTop:'3%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:'1%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
                     </View> 
 

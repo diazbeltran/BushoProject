@@ -120,16 +120,16 @@ export default class Historial extends Component {
 
 
                       <Text style={{marginTop:'10%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#717172'  }}>Solicitaste esta propiedad</Text>
-                      <View style={{alignItems:'center', marginTop:20}} >
-                      <View style={{height:112, width:'90%', borderWidth:0.2 , borderTopRightRadius:10, borderBottomRightRadius:10, borderBottomLeftRadius:10 }}>
-                      <View style={{flexDirection:'column', marginLeft:20, marginTop:16}}>
+                      <View style={{ alignItems:'center', marginTop:20,}} >
+                      <View style={{ width:'90%', borderWidth:0.2 , borderTopRightRadius:10, borderBottomRightRadius:10, borderBottomLeftRadius:10 }}>
+                      <View style={{ flexDirection:'column', marginLeft:20, marginTop:16}}>
                          <Text style={{fontFamily:'NunitoSans-Bold',fontSize:18,color:'#4F4F4F'}}>Oficina pedro de valdivia</Text> 
                          <View style={{flexDirection:'row'}}>
-                         <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, marginTop:5}}>Pedro de valdivia, Concepción </Text>
+                         <Text maxFontSizeMultiplier={1} style={{ fontFamily:'NunitoSans-Regular',fontSize:16, marginTop:5}}>Pedro de valdivia, Concepción </Text>
                          <Icon22 style={{marginLeft:50,marginTop:10}}  name="right" size={15} color="#0B121F" /> 
                          {/* <Icon22 style={{flex:0.2, marginTop:5}}  name="right" size={20} color="#0B121F" /> */}
                          </View>
-                         <View style={{flexDirection:'row'}}>
+                         <View style={{flexDirection:'row', marginBottom:20}}>
                          <Text style={{fontFamily:'NunitoSans-Bold',fontSize:16,color:'black', marginTop:5}}>$5.500 </Text> 
                          <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16,color:'#9D9D9D', marginTop:5}}> / Dia</Text> 
                          </View>

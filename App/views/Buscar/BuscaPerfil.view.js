@@ -5,6 +5,7 @@ import { View, Text, Dimensions, StyleSheet,Image, TouchableHighlight,SafeAreaVi
 import Icon2 from 'react-native-vector-icons/Ionicons';
 
 
+import Svg, { Path, Rect } from 'react-native-svg';
 import Icon22 from 'react-native-vector-icons/AntDesign';
 
 
@@ -118,7 +119,9 @@ export default class BuscarPerfil extends Component {
                                 <View style={{flex:1}}>
 
                                         <View style={{flexDirection:'column'}}>
-                                        <Text style={{marginTop:20,color:'#A6A6A6'}}><Image style={{marginLeft:0, marginTop:0, }} source={require('../../assets/img/Star_1.png')} /> 5.5</Text>
+                                        <Text style={{marginTop:20,color:'#A6A6A6'}}> <Svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M4 0L4.89806 2.76393H7.80423L5.45308 4.47214L6.35114 7.23607L4 5.52786L1.64886 7.23607L2.54692 4.47214L0.195774 2.76393H3.10194L4 0Z" fill="#545454"/>
+                                    </Svg> 5.5</Text>
                                         <Text style={{color:'black', fontFamily:'NunitoSans-Bold', fontSize:18}}>Paula Carrera</Text>
                                         <Text style={{fontFamily:'NunitoSans-Regular', color:'black', fontSize:16, marginBottom:20}}>Usuario desde el 2022</Text>
 
@@ -143,8 +146,11 @@ export default class BuscarPerfil extends Component {
 
 
                             <Text style={{color:'#4f4f4f', marginTop:'3%',marginLeft:20, fontFamily:'NunitoSans-Bold',fontSize:18,  }}>Acerca de Paula</Text>
-                <Text style={{marginTop:'0%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#717172'  }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</Text>
+                            <View style={{width:'95%'}}>
+                            <Text style={{marginTop:'0%',marginLeft:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#717172'  }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</Text>
                 
+                            </View>
+               
                 
                    
 
@@ -159,70 +165,71 @@ export default class BuscarPerfil extends Component {
 
 
 
-                    <View style={{marginTop:30, borderTopWidth:1, width:'95%', borderColor:'#D8D8D8'}}>
-                    <View style={{marginTop:0, flexDirection:'row'}}>
-                        <TouchableHighlight style={{}}
-                        underlayColor='white'
-                        title="Press me"
-                        onPress={() => this.props.navigation.navigate('BuscarReseña')}  
-                        //onPress={() => this.props.navigation.goBack()}  
-                        >
-                        <View style={{marginTop:25, flexDirection:'row'}}>
-                        <Text style={{marginTop:0, marginLeft:20, fontFamily:'NunitoSans-Blod',fontSize:16, color:'#2D2D2D'}}>Reseñas </Text>
-                        <Text style={{marginLeft:20,color:'#A6A6A6', marginTop:2}}><Image style={{marginLeft:0, marginTop:20, }} source={require('../../assets/img/Star_1.png')} />5.5</Text>
-                        <Icon22 style={{ marginLeft:'50%', marginTop:2}}  name="right" size={16} color="#0B121F" />
-                        </View>
-
-                        </TouchableHighlight>
-
-
+               <View style={{marginTop:30, borderTopWidth:1, width:'95%', borderColor:'#D8D8D8', }}>
                    
+                   <TouchableHighlight style={{}}
+                   underlayColor='white'
+                   title="Press me"
+                   onPress={() => this.props.navigation.navigate('BuscarReseña')}  
+                   //onPress={() => this.props.navigation.goBack()}  
+                   >
+                   <View style={{marginTop:25, flexDirection:'row', flex:1,}}>
+                     <View style={{flex:.9, flexDirection:'row',  }}>
+                     <Text style={{marginTop:0, marginLeft:20, fontFamily:'NunitoSans-Blod',fontSize:16, color:'#2D2D2D'}}>Reseñas </Text>
+                   <Text style={{marginLeft:20,color:'#A6A6A6', marginTop:2}}>
+                       <View>
+                       <Svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<Path d="M4 0L4.89806 2.76393H7.80423L5.45308 4.47214L6.35114 7.23607L4 5.52786L1.64886 7.23607L2.54692 4.47214L0.195774 2.76393H3.10194L4 0Z" fill="#545454"/>
+</Svg>
+
+                       </View>
+                       5.5</Text>
+                     </View>
+                  <View style={{ flex:.2,  flexDirection:'row',}}>
+                  <Icon22 style={{  marginTop:2}}  name="right" size={16} color="#0B121F" />
+                  </View>
                    
-                    </View>
+                   </View>
 
-                    
-                    </View>
-
+                   </TouchableHighlight>
 
 
+              
+              
+               
+
+               
+               </View>
 
 
+               <View style={{height:'27%', marginTop:30, borderBottomWidth:1, borderTopWidth:1, width:'95%', borderColor:'#D8D8D8', marginBottom:100, }}>
+               
 
-                    <View style={{marginTop:30, borderBottomWidth:1, borderTopWidth:1, width:'95%', borderColor:'#D8D8D8', marginBottom:50}}>
-                    <View style={{marginTop:0, flexDirection:'row'}}>
-
-                    <TouchableHighlight style={{}}
-                        underlayColor='white'
-                        title="Press me"
-                        onPress={() => this.props.navigation.navigate('BuscarRegla')}  
-                        //onPress={() => this.props.navigation.goBack()}  
-                        >
-                        <View style={{marginTop:25, flexDirection:'row'}}>
-                        <Text style={{marginTop:0, marginLeft:20, fontFamily:'NunitoSans-Blod',fontSize:16, color:'#2D2D2D'}}>Reglas de este espacio </Text>
-                        
-                        {/* <Icon22 style={{ marginLeft:'50%', marginTop:2}}  name="right" size={16} color="#0B121F" /> */}
-                        <Icon22 style={{ marginLeft:'33%', marginTop:2}}  name="right" size={16} color="#0B121F" />
-                        </View>
-
-                        </TouchableHighlight>
-
-
-                    {/* <Text style={{marginTop:0, marginLeft:20, fontFamily:'NunitoSans-Blod',fontSize:16, color:'#2D2D2D'}}>Reglas de este espacio </Text> */}
-                    
-                    </View>
-
-                    <View style={{flexDirection:'row', marginBottom:20}}>
-                    
-
-                    
-
-                    </View>
+               <TouchableHighlight style={{marginBottom:20 }}
+                   underlayColor='white'
+                   title="Press me"
+                   onPress={() => this.props.navigation.navigate('BuscarRegla')}  
+                   //onPress={() => this.props.navigation.goBack()}  
+                   >
+                   <View style={{marginTop:25, flexDirection:'row' }}>
+                     <View style={{flex:.9}}>
+                     <Text style={{marginTop:0, marginLeft:20, fontFamily:'NunitoSans-Blod',fontSize:16, color:'#2D2D2D'}}>Reglas de este espacio </Text>
+                     </View>
                    
-                    
 
-                    
-                    
-                    </View>
+                     <View style={{flex:.2}}>
+                       <Icon22 style={{ marginLeft:'0%', marginTop:2, }}  name="right" size={16} color="#0B121F" />
+                     </View>
+                  
+                   
+                   </View>
+
+                   </TouchableHighlight>
+
+
+               {/* <Text style={{marginTop:0, marginLeft:20, fontFamily:'NunitoSans-Blod',fontSize:16, color:'#2D2D2D'}}>Reglas de este espacio </Text> */}
+               
+               </View>
                    
                </View>
                 </View>

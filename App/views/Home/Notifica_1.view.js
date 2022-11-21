@@ -102,7 +102,7 @@ export default class Notifica_1 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Notificacion2')}
                             >
-                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',color:'white',marginTop:'2%',  }} underlayColor={'red'}>Ir a pagar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{ fontSize:16,fontWeight:'bold', fontFamily:'NunitoSans-Regular',color:'white',marginTop:'1%',  }} underlayColor={'red'}>Ir a pagar</Text>
                             </TouchableHighlight>
                             <Image style={{marginLeft:'70%',marginTop:'25%' }} source={require('../../assets/img/footer.png')} />
                            

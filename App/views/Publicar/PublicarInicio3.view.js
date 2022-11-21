@@ -95,7 +95,7 @@ export default class Publicar3 extends Component {
             {/* <Image style={{marginTop:0,height:48,width:48, marginLeft:0}} source={require('../../assets/img/circulo_1_3.png')} /> */}
                   
                             <View style={{marginLeft:10, flexDirection:'column'}}>
-                                <Text style={{fontFamily:'NunitoSans-Blod', fontWeight:'bold'  ,fontSize:16,color:'black' }}>                           
+                                <Text style={{fontFamily:'NunitoSans-Bold', fontSize:20,color:'black' }}>                           
                                 Imágenes del lugar
                                 </Text>
                                 <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>                           
@@ -125,10 +125,10 @@ export default class Publicar3 extends Component {
 
                     <View style={{marginTop:20}}>
                     <View>
-                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Blod',fontSize:16, color:'black', fontWeight:'bold'}}>Imágenes del lugar </Text>
+                    <Text style={{marginTop:0, marginLeft:0, fontFamily:'NunitoSans-Bold',fontSize:18, color:'black', }}>Imágenes del lugar </Text>
                     </View>
 
-                    <View style={{width:'96%'}} >
+                    <View style={{width:'95%'}} >
                     <Text style={{marginTop:15, marginLeft:0, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#717171', lineHeight:26 }}>Recuerda subir imágenes donde se vea claramente el espacio, con buena iluminación y distintas perspectivas </Text>
                     </View>
 
@@ -163,7 +163,7 @@ export default class Publicar3 extends Component {
                     >
                     <View style={{width:'90%',flexDirection:'row', }} > 
                     <Icon2 style={{marginLeft:'0%',paddingTop:'0%'}}  name="add-circle-outline" size={30} color="#61D3BA" />
-                    <Text style={{fontFamily:'NunitoSans-Regular', fontWeight:'bold' ,fontSize:16,color:'#61D3BA',  marginTop:'3%', marginLeft:'5%'}}>
+                    <Text style={{fontFamily:'NunitoSans-Bold', fontSize:16,color:'#61D3BA',  marginTop:'3%', marginLeft:'5%'}}>
                     Agregar otras 5 fotos
                     </Text>
                     </View>   
@@ -200,7 +200,7 @@ export default class Publicar3 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Publicar4')}
                             >
-                                <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Siguiente</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontSize:16,fontFamily:'NunitoSans-Regular',fontWeight:'bold',color:'white',marginTop:'1%',  }} >Siguiente</Text>
                             </TouchableHighlight>
 
                            
@@ -217,7 +217,7 @@ export default class Publicar3 extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Home')}
                             >
-                                <Text maxFontSizeMultiplier={1} style={{marginTop:'1%',marginLeft:10, fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontSize:16,marginTop:'1%',marginLeft:10, fontFamily:'NunitoSans-Regular',fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
                     </View> 
            </View>

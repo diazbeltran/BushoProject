@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput , StyleSheet,Image,Button, Modal, TouchableHighlight, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput , StyleSheet,Image,Button, Modal, TouchableHighlight, TouchableOpacity,  SafeAreaView, ScrollView  } from 'react-native';
 
 
 import Icon2 from 'react-native-vector-icons/Ionicons';
@@ -41,6 +41,12 @@ export default class Recuperacodigo extends Component {
         return (
             <View style={{ 
               flex:1 }}>
+                    <View style={{flex:0.86}}>
+                  <SafeAreaView >
+                    
+
+                    <ScrollView >
+                 
                 <View style={{  flex:0.2, backgroundColor: 'white' }} >
             
                 <TouchableHighlight style={{height:50,marginLeft:10, marginTop:25}}
@@ -50,6 +56,7 @@ export default class Recuperacodigo extends Component {
                              <Icon2 name="arrow-back" size={25} color="#383838" />
                         </TouchableHighlight>
                 </View>
+                
                 <View style={{  flex:1, backgroundColor: 'white' }} >
             
                 <Text style={{fontFamily:'NunitoSans-Bold',fontSize:30,color:'black', marginLeft:20}}>Ingresa el código </Text>
@@ -61,7 +68,7 @@ export default class Recuperacodigo extends Component {
                 <Text style={{ffontFamily:'NunitoSans-Regular',fontSize:16,color:'black', marginLeft:20, marginTop:20}}>de recuperar tu contraseña</Text>
                 
 
-
+                
                 <View style={{alignItems:'center', marginTop:30,}}>
                     <View style={{width:'90%'}} > 
                     <TextInput
@@ -84,7 +91,7 @@ export default class Recuperacodigo extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('CreaContraseña')}
                             >
-                                <Text style={{color:'white',marginTop:'2%', fontFamily:'NunitoSans-Regular',fontSize:16 }} underlayColor={'red'}>Recuperar mi contraseña</Text>
+                                <Text  maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%', fontFamily:'NunitoSans-Regular',fontSize:16 }} underlayColor={'red'}>Recuperar mi contraseña</Text>
                             </TouchableHighlight>
 
                            
@@ -93,14 +100,17 @@ export default class Recuperacodigo extends Component {
                  
                 
             </View>
-           
+            
                 
-            <View style={{alignItems:'flex-end', marginTop:'0%'}}> 
-                    <Image style={{marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
-                    </View>
+           
 
-               
+                    </ScrollView>
 
+</SafeAreaView>
+</View>
+<View style={{flex:0.1, marginTop:'0%', alignItems:'flex-end', }}> 
+                    <Image style={{ marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
+                    </View>    
           </View>
         );
     }

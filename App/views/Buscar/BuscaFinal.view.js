@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet,Image,TouchableHighlight} from 'react-native';
+import {SafeAreaView,ScrollView, TouchableWithoutFeedback,Keyboard,  KeyboardAvoidingView, View, Text, StyleSheet,Image,TouchableHighlight} from 'react-native';
 
 
 export default class BuscarFinal extends Component {
@@ -36,37 +36,45 @@ export default class BuscarFinal extends Component {
         return (
             <View style={{ 
               flex:1 ,alignItems:'center' }}>
-                
-                <View style={{ marginTop:'50%',alignItems:'center'  }}>
-                    <View style={{ width:'80%'}}>
-                    <Text style={{ marginLeft:'15%', color:'black', fontFamily:'NunitoSans-Bold',fontSize:25 }}>
+
+<SalirDelTeclado>
+<KeyboardAvoidingView  >
+
+
+                 <SafeAreaView >
+                    
+
+                    <ScrollView >
+                    <View style={{ marginTop:'50%',  }}>
+                    <View style={{ alignItems:'center'}}>
+                    <Text style={{ marginLeft:'0%', color:'black', fontFamily:'NunitoSans-Bold',fontSize:25 }}>
                         ¡Tu solicitud ha 
                         </Text>
 
-                        <Text style={{ marginLeft:'20%',  color:'black', fontFamily:'NunitoSans-Bold',fontSize:25 }}>
+                        <Text style={{ marginLeft:'0%',  color:'black', fontFamily:'NunitoSans-Bold',fontSize:25 }}>
                         sido  enviada!
                         </Text>
                         
                         
 
 
-                        <Text style={{marginTop:20, color:'#5B5B5B', fontFamily:'NunitoSans-Regular',fontSize:16, }}>
-                        Te llegará una notificación cuando esté 
+                        <Text style={{width:'80%', marginTop:20, color:'#5B5B5B', fontFamily:'NunitoSans-Regular',fontSize:16, }}>
+                        Te llegará una notificación cuando esté aprobada
                         </Text>
                         <Text style={{ marginLeft:'30%',color:'#5B5B5B', fontFamily:'NunitoSans-Regular',fontSize:16, }}>
-                     aprobada
+                     
                         </Text>
                     </View>
                        
 
-                    <View style={{ marginTop:20, }}>
+                    <View style={{ marginTop:20, alignItems:'center'}}>
                         <TouchableHighlight style={{with:10, height:40, width:'70%',
                                   paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
                                   backgroundColor:'#61D3BA', alignItems:'center' }}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Perfil')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Bold',color:'white',marginTop:'3%',  }} >Ir a mi perfil</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Bold',color:'white',marginTop:'2%',  }} >Ir a mi perfil</Text>
                             </TouchableHighlight>
 
                            
@@ -79,6 +87,18 @@ export default class BuscarFinal extends Component {
                     <View style={{alignItems:'flex-end', marginTop:'55%'}}> 
                     <Image style={{marginLeft:'70%',marginTop:'0%' }} source={require('../../assets/img/footer.png')} />
                     </View>
+           
+                    </ScrollView>
+
+</SafeAreaView>   
+
+
+    </KeyboardAvoidingView>
+    </SalirDelTeclado>
+
+
+                
+              
                 
                 
                 
@@ -109,3 +129,9 @@ const styles = StyleSheet.create({
       borderColor: '#dadee3',
     },
   });
+
+  const SalirDelTeclado = ({ children }) => (
+    <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss(), console.log("se ha presionado fuera") }}>
+      {children}
+    </TouchableWithoutFeedback>
+  )

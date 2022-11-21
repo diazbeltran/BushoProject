@@ -159,15 +159,17 @@ export default class PerfilPago extends Component {
                         
                         </View>
                         <View style={{marginTop:16, borderColor:'#d2d2d2',flexDirection:'row', borderWidth:1, width:'95%', borderTopRightRadius:20, borderBottomRightRadius:20, height:80, borderBottomLeftRadius:20}}>
-                        
+                        <View style={{flexDirection:'row', flex:1,}}>
                         <Icon30 style={{marginLeft:20,marginTop:'5%', marginRight:20}}  name="payment" size={30} color="#0B121F" />
                         <View style={{flexDirection:'column', marginTop:'5%'}}>
                         <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16}}>Banco de Chile</Text>
                         <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16}}>Cuenta Corriente</Text>
                         </View>
+                        </View>
+                       
                         
 
-                        <Icon22 style={{marginLeft:'30%',marginTop:'10%', marginRight:20}}  name="checkcircleo" size={20} color="#00d6b9" />
+                        <Icon22 style={{ marginLeft:'30%',marginTop:'10%', marginRight:40}}  name="checkcircleo" size={20} color="#00d6b9" />
 
                         </View>
                         {/* <View style={{flexDirection:'row', marginTop:'5%'}}>

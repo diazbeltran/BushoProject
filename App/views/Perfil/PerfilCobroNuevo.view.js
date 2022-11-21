@@ -44,7 +44,7 @@ export default class PerfilCobroNuevo extends Component {
 
         return (
             <View style={{ 
-              flex:1 }}>
+              flex:1 , }}>
 
 
 <View style={{flexDirection:'row', marginTop:30, marginBottom:20,}}>
@@ -94,7 +94,7 @@ export default class PerfilCobroNuevo extends Component {
 
                 </View>
                
-            <View style={{  flex:1, backgroundColor: 'white' , marginTop:'5%'}} >
+            <View style={{  flex:1, backgroundColor: 'white' , marginTop:'5%', borderTopWidth:1, borderTopColor:'#EAEAEA'}} >
                      
                
                 
@@ -104,9 +104,9 @@ export default class PerfilCobroNuevo extends Component {
                     
 
                 <ScrollView >
-                    <View style={{marginLeft:20, flexDirection:'column'}}>
+                    <View style={{marginLeft:20,marginTop:20, flexDirection:'column'}}>
                     <View style={{marginLeft:0, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16}}>
+                        <Text style={{color:'#717171', fontFamily:'NunitoSans-Regular', fontSize:16}}>
                             Nombre del títular
                         </Text>
                     </View>
@@ -124,7 +124,7 @@ export default class PerfilCobroNuevo extends Component {
                     </View> 
 
                     <View style={{marginTop:12, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16 }}>
+                        <Text style={{color:'#717171',fontFamily:'NunitoSans-Regular', fontSize:16 }}>
                             Rut
                         </Text>
                     </View>
@@ -143,41 +143,57 @@ export default class PerfilCobroNuevo extends Component {
 
 
                     <View style={{marginTop:12, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16 }}>
+                        <Text style={{color:'#717171',fontFamily:'NunitoSans-Regular', fontSize:16 }}>
                             Banco
                         </Text>
                     </View>
 
                     <View style={{ marginTop:5,}}>
-                    <View style={{flexDirection:'row', width:'95%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20}} > 
-                    
-                    <TextInput
-                    
-                    style={{ marginLeft:0}}
-                    placeholder='Seleccione' >
-
-                        </TextInput>
-                        <Image style={{marginLeft:'60%', marginTop:20,resizeMode:'contain'}} source={require('../../assets/img/Polygon_3.png')} />
-                    </View>        
-                    </View> 
-
-
-                    <View style={{marginTop:12, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16 }}>
-                            Tipo de cuenta
-                        </Text>
-                    </View>
-
-                    <View style={{ marginTop:5,}}>
-                    <View style={{flexDirection:'row', width:'95%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20}} > 
-                    
+                    <View style={{flex:1, flexDirection:'row', width:'95%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20}} > 
+                    <View style={{flex:.9}}>
                     <TextInput
                     
                     style={{ marginLeft:0}}
                     placeholder='Seleccione' >
                         
                         </TextInput>
-                        <Image style={{marginLeft:'60%', marginTop:20,resizeMode:'contain'}} source={require('../../assets/img/Polygon_3.png')} />
+                    </View>
+                   
+                        <View style={{flex:0.1, marginTop:20,resizeMode:'contain'}}>
+                                    <Svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M7 11L0.937821 0.500001L13.0622 0.5L7 11Z" fill="#00D6B9"/>
+                                    </Svg>
+
+                                </View>
+                        
+                    </View>        
+                    </View> 
+
+
+                    <View style={{marginTop:12, flexDirection:'row'}}>
+                        <Text style={{color:'#717171',fontFamily:'NunitoSans-Regular', fontSize:16 }}>
+                            Tipo de cuenta
+                        </Text>
+                    </View>
+
+                    <View style={{ marginTop:5,}}>
+                    <View style={{flex:1, flexDirection:'row', width:'95%',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20}} > 
+                    <View style={{flex:.9}}>
+                    <TextInput
+                    
+                    style={{ marginLeft:0}}
+                    placeholder='Seleccione' >
+                        
+                        </TextInput>
+                    </View>
+                   
+                        <View style={{flex:0.1, marginTop:20,resizeMode:'contain'}}>
+                                    <Svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M7 11L0.937821 0.500001L13.0622 0.5L7 11Z" fill="#00D6B9"/>
+                                    </Svg>
+
+                                </View>
+                        
                     </View>        
                     </View> 
 
@@ -185,7 +201,7 @@ export default class PerfilCobroNuevo extends Component {
 
                    
                     <View style={{marginTop:12, flexDirection:'row'}}>
-                        <Text style={{fontFamily:'NunitoSans-Regular', fontSize:16}}>
+                        <Text style={{color:'#717171',fontFamily:'NunitoSans-Regular', fontSize:16}}>
                             Número de cuenta
                         </Text>
                     </View>
@@ -201,30 +217,17 @@ export default class PerfilCobroNuevo extends Component {
                         </TextInput>
                     </View>        
                     </View> 
-                    <View style={{flexDirection:'row'}}>
-
-                    <CheckBox
-              onCheckColor='red'
-              value={true}
-            //   lineWidth={3}
-            //   boxType='square'
-            //   onCheckColor='red'
-            //   onTintColor='#61D3BA'
-            //   onFillColor='#61D3BA'
-                        style={{marginTop:'6%', height:20}}
-                //value={}
-                
-                />   
-                <Text style={{backgroundColor:'white', marginTop:20,fontFamily:'NunitoSans-Regular', fontSize:16 }}> 
-                                
-                 Utilizar como tarjeta principal </Text>
-                    </View>
+                    
+                    
 
                     
                       
-                    <View style={{ marginTop:20}}>
-                        <TouchableHighlight style={{with:10, height:40, width:'95%',
-                                  paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
+                  
+
+                    
+                    <View style={{alignItems:'center', marginTop:20, marginRight:20}}>
+                        <TouchableHighlight style={{with:10, height:40, width:'100%',
+                                  paddingTop:5,paddingBottom:5,  borderRadius:64,
                                   backgroundColor:'#61D3BA', alignItems:'center' }}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PerfilPago')}
@@ -236,20 +239,21 @@ export default class PerfilCobroNuevo extends Component {
                                     
                     </View>
 
-
+                    <View style={{alignItems:'center', marginTop:10, marginRight:20 }}>
                     <View style={{flexDirection:'row',
-                    marginTop:10, width:'95%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:20, marginBottom:50}} > 
-                    
-                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'90%',
-                                  paddingTop:5,paddingBottom:0, paddingLeft:35,paddingRight:35, borderRadius:64,
-                                   alignItems:'center'}}
+                    marginTop:10, width:'100%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',}} > 
+                        <TouchableHighlight underlayColor='white' style={{with:10, height:40, width:'100%',
+                                  paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
+                                 alignItems:'center',}}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PerfilPago')}
                             >
-                                <Text style={{marginTop:'3%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text style={{marginTop:'1%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
-                    </View> 
 
+                           
+                            </View>          
+                    </View>     
                     
 
 

@@ -3,7 +3,7 @@ import { View, Text,  StyleSheet,Image,TouchableHighlight, ScrollView, SafeAreaV
 
 
 
-
+import Svg, { Path, Rect } from 'react-native-svg';
 
 import Icon2 from 'react-native-vector-icons/Ionicons';
 
@@ -73,7 +73,11 @@ export default class Reseña extends Component {
 
                 <ScrollView >
                     <View style={{flexDirection:'row'}}>
-                    <Text style={{marginLeft:20,color:'#A6A6A6', fontSize:18}}><Image style={{marginLeft:0, marginTop:20, }} source={require('../../assets/img/Star_1.png')} />5.5</Text>
+                    <Text style={{marginLeft:20,color:'#A6A6A6', fontSize:18}}>
+                    <Svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M4 0L4.89806 2.76393H7.80423L5.45308 4.47214L6.35114 7.23607L4 5.52786L1.64886 7.23607L2.54692 4.47214L0.195774 2.76393H3.10194L4 0Z" fill="#545454"/>
+                                    </Svg> 
+                        5.5</Text>
                     <Text style={{marginLeft:20,color:'#2B2A2A', fontSize:18, fontFamily:'NunitoSans-Bold'}}>14 reseñas</Text>
                     </View>
                     <View style={{alignItems:'center', marginTop:19, marginBottom:100}}>
@@ -91,8 +95,33 @@ export default class Reseña extends Component {
                                         <Text style={{marginTop:20,color:'black', fontFamily:'NunitoSans-Bold', fontSize:18}}>Fernando Garrido</Text>
                                         <Text style={{color:'#A6A6A6'}}>Hace 1 semana</Text>                                        
                                         
+                                        <View style={{flexDirection:'row'}}>
+                                        <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" fill="#3A3A3A" stroke="#3A3A3A"/>
+                                        </Svg>
 
-                                        <Image style={{marginLeft:0, marginTop:0, }} source={require('../../assets/img/img_rese_star.png')} />
+                                        <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" fill="#3A3A3A" stroke="#3A3A3A"/>
+                                        </Svg>
+
+                                        <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" fill="#3A3A3A" stroke="#3A3A3A"/>
+                                        </Svg>
+
+
+                                    <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" stroke="#3A3A3A"/>
+                                    </Svg>
+
+                                    <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" stroke="#3A3A3A"/>
+                                    </Svg>
+
+
+
+                                        </View>
+                                       
+                                       
 
 
 
@@ -126,7 +155,31 @@ export default class Reseña extends Component {
                                         <Text style={{color:'#A6A6A6'}}>Hace 1 semana</Text>                                        
                                         
 
-                                        <Image style={{marginLeft:0, marginTop:0, }} source={require('../../assets/img/img_rese_star.png')} />
+                                        <View style={{flexDirection:'row'}}>
+                                        <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" fill="#3A3A3A" stroke="#3A3A3A"/>
+                                        </Svg>
+
+                                        <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" fill="#3A3A3A" stroke="#3A3A3A"/>
+                                        </Svg>
+
+                                        <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" fill="#3A3A3A" stroke="#3A3A3A"/>
+                                        </Svg>
+
+
+                                    <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" stroke="#3A3A3A"/>
+                                    </Svg>
+
+                                    <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" stroke="#3A3A3A"/>
+                                    </Svg>
+
+
+
+                                        </View>
 
 
 
@@ -161,7 +214,31 @@ export default class Reseña extends Component {
                                         <Text style={{color:'#A6A6A6'}}>Hace 1 semana</Text>                                        
                                         
 
-                                        <Image style={{marginLeft:0, marginTop:0, }} source={require('../../assets/img/img_rese_star.png')} />
+                                        <View style={{flexDirection:'row'}}>
+                                        <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" fill="#3A3A3A" stroke="#3A3A3A"/>
+                                        </Svg>
+
+                                        <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" fill="#3A3A3A" stroke="#3A3A3A"/>
+                                        </Svg>
+
+                                        <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" fill="#3A3A3A" stroke="#3A3A3A"/>
+                                        </Svg>
+
+
+                                    <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" stroke="#3A3A3A"/>
+                                    </Svg>
+
+                                    <Svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M10.2606 14.5733L9.99999 14.4141L9.73938 14.5733L4.88722 17.5368L6.20635 12.006L6.2772 11.7089L6.04527 11.5103L1.72832 7.81239L7.39492 7.3584L7.69937 7.33401L7.81666 7.052L9.99999 1.80209L12.1833 7.052L12.3006 7.33401L12.6051 7.3584L18.2725 7.81239L13.9548 11.5102L13.7228 11.7089L13.7936 12.006L15.1128 17.5368L10.2606 14.5733Z" stroke="#3A3A3A"/>
+                                    </Svg>
+
+
+
+                                        </View>
 
 
 
@@ -180,7 +257,7 @@ export default class Reseña extends Component {
                         
                            
 
-                            <Image style={{marginLeft:0, marginTop:10,marginBottom:20 }} source={require('../../assets/img/img_rese_footer.png')} />
+                            
 
 
 

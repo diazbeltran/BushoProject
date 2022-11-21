@@ -37,7 +37,7 @@ export default class PerfilPropiedadAgregarDoctoFinaliza extends Component {
 
         return (
             <View style={{ 
-              flex:1 ,alignItems:'center' }}>
+              flex:1 }}>
                 
                 <ImageBackground source={require('../../assets/img/a3.jpg')} resizeMode={'cover'}
                 style={{ flex: 1, width: '100%', }}>
@@ -45,40 +45,50 @@ export default class PerfilPropiedadAgregarDoctoFinaliza extends Component {
                 <ImageBackground source={require('../../assets/img/a1.png')} resizeMode={'cover'}
                 style={{ flex: 1, width: '100%' }}>
 
-                    <View style={{ marginTop:'10%', }}>
-                        <Text style={{color:'white', fontFamily:'NunitoSans-Bold',fontSize:25,width:'80%', marginLeft:50 }}>
+                    <View style={{alignItems:'center', marginTop:'50%',flexDirection:'column'}}>
+                        <View style={{alignItems:'center', width:'80%'}}>
+                        <Text maxFontSizeMultiplier={1} style={{color:'white', fontFamily:'NunitoSans-Bold',fontSize:25, marginLeft:0,  }}>
                         Tu publicación está en proceso de validación
-                        </Text>
+                        </Text>    
+                        </View>
+                        
 
-                       
+                        <View style={{alignItems:'center', width:'64%'}}>
+                        <Text maxFontSizeMultiplier={1} style={{marginTop:0, color:'white', fontFamily:'NunitoSans-Regular',fontSize:16}}>
+                        Te llegará una notificación cuando 
+                        </Text> 
+                        </View>
+                        <View style={{alignItems:'center', width:'64%'}}>
+                        <Text maxFontSizeMultiplier={1} style={{marginTop:0, color:'white', fontFamily:'NunitoSans-Regular',fontSize:16}}>
+                        esté aprobada. 
+                        </Text> 
+                        </View>
+                        
 
-                        <Text style={{marginTop:23, color:'white', fontFamily:'NunitoSans-Regular',fontSize:16,width:'80%',marginLeft:'10%'}}>
-                        Te llegará una notificación cuando esté  
-                        </Text>
-                        <Text style={{color:'white', fontFamily:'NunitoSans-Regular',fontSize:16,width:'80%',marginLeft:'40%'}}>
-                        aprobada. 
-                        </Text>
+                        <View style={{alignItems:'center', width:'64%'}}>
+                        <Text maxFontSizeMultiplier={1} style={{marginTop:0, color:'white', fontFamily:'NunitoSans-Regular',fontSize:16}}>
+                        Durante 48 horas 
+                        </Text> 
+                        </View>
+
+                     
+                        <View style={{alignItems:'center', width:'80%'}}>
+                        <Text maxFontSizeMultiplier={1} style={{marginTop:14,color:'white',  fontFamily:'NunitoSans-Bold',fontSize:15,marginLeft:'0%'}}>
+                     Continúa generando ingresos con Busho
+                     </Text>  
+                        </View>
+
 
                         
 
-                        <Text style={{color:'white', fontFamily:'NunitoSans-Regular',fontSize:16,width:'80%',marginLeft:'30%'}}>
-                    Durante 48 horas
-                        </Text>
-
-
-
-                        <Text style={{marginTop:14,color:'white',  fontFamily:'NunitoSans-Bold',fontSize:15,marginLeft:'10%'}}>
-                     Continúa generando ingresos con Busho
-                     </Text>
-
-                    <View style={{ marginTop:20, marginLeft:'25%'}}>
+                    <View style={{alignItems:'center', marginTop:20,}}>
                         <TouchableHighlight style={{with:10, height:40, width:'70%',
                                   paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
                                   backgroundColor:'#61D3BA', alignItems:'center' }}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Buscar')}
                             >
-                                <Text style={{fontFamily:'NunitoSans-Regular',color:'white',marginTop:'3%', fontWeight:'bold' }} >Seguir buscando</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Bold',color:'white',marginTop:'1%', fontSize:16  }} >Seguir buscando</Text>
                             </TouchableHighlight>
 
                            

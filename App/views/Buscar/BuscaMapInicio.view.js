@@ -220,7 +220,12 @@ export default class BuscarMap extends Component {
                                         placeholder='Seleccione'  >
 
                                         </TextInput>
-                                       
+                                        <View style={{marginLeft:'-15%', marginTop:20,resizeMode:'contain'}}>
+                                    <Svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M7 11L0.937821 0.500001L13.0622 0.5L7 11Z" fill="#00D6B9"/>
+                                    </Svg>
+
+                                </View>
                                         
                                         </View>     
                                         </View>

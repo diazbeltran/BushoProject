@@ -7,7 +7,7 @@ import DeviceInfo from 'react-native-device-info';
 import Svg, { Path, Circle,Rect } from 'react-native-svg';
 
 import Icon2 from 'react-native-vector-icons/Ionicons';
-import Geolocation from '@react-native-community/geolocation';
+import Geolocation from 'react-native-geolocation-service';
 
 import Icon4 from 'react-native-vector-icons/AntDesign';    
 
@@ -350,198 +350,230 @@ export default class BuscarMapa extends Component {
                     </View>
 
                     <Modal 
-                     style={{height:'100%', width:'100%'}}
-                    animationType="fade"
-                   // presentationStyle="formSheet"
-                    transparent={true}
-                    visible={this.state.modalVisible}
-                    onRequestClose={() => {
-                        this.setModalVisible(false);
-                       
-                    }}>
-                        <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.5)',justifyContent:'center', alignItems:'center'}}>
-                            <View style={{width:'95%',height:'95%' ,backgroundColor:'white'}}>
+                style={{height:'100%', width:'100%'}}
+                animationType="slide"
+                 //presentationStyle="pageSheet"
+                transparent={true}
+                visible={this.state.modalVisible}
+                onRequestClose={() => {
+                this.setModalVisible(false);
+               
+                }}>
+                <View style={{flex:1, backgroundColor:'rgba(0,0,0,0.5)',justifyContent:'center', alignItems:'center'}}>
+                    <View style={{width:'95%',height:'95%' ,backgroundColor:'white'}}>
 
-                                    <ScrollView>
+                            <ScrollView>
 
-                                   
-                                    <View >
+                            
+                            <View >
 
-                                    <TouchableHighlight underlayColor='white' 
-                                            title="Ingresar"
-                                            onPress={() => 
-                                                {this.setState({modalVisible:false})}
-                                               }
-                                            >
-                                           <Icon4 style={{marginTop:'6%', marginLeft:'6%'}} name="close" size={22} color="#09121F" />
-                                            </TouchableHighlight>
-
-
-                                    
-                                    </View>
-                                    <View  style={{marginLeft:20, marginTop:20}}>
-                                    <Text style={{color:'black'}}>Rango de precios</Text>
-                                    <Text> ${this.state.rango_inicio} - ${this.state.rango_fin}  </Text>
-                                    <Text>precio por dia </Text>
-                                    <MultiSlider 
-                                    values={[this.state.rango_inicio, this.state.rango_fin]}
-                                    sliderLength={280}
-                                    onValuesChange={ (data) => {
-                                        console.log("wewe");
-                                        this.setState({rango_inicio:data[0], rango_fin:data[1]})
-                                    }}
-                                    min={0}
-                                    max={100000}
-                                    step={1}
-                                    />
-                                    </View>
-
-                                    <View  style={{marginLeft:20, marginTop:20, borderTopWidth:1, width:'80%', borderColor:'#DBDBDB'}}>
-                                    <Text style={{color:'black', marginTop:15}}>Tipo de espacio</Text>
-                                    <View style={{flexDirection:'row', marginTop:15}}>
-                                    <View style={{borderColor:'#464646',borderWidth:1 ,height:30, width:'30%', 
-                                    borderBottomLeftRadius:20,
-                                    borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                        <Text maxFontSizeMultiplier={1} style={{marginTop:5, marginLeft:15}}>Oficina</Text>
-                                    </View>
-                                    
-                                    </View>
-                                    
-                                    <View style={{flexDirection:'row', marginTop:15}}>
-                                    <Icon2 style={{marginTop:'0%', marginLeft:'0%'}} name="add-circle-outline" size={22} color="#00D6B9" />
-                                    <Text style={{color:'#00D6B9'}}>Buscar</Text>
-                                    </View>
-                                    
+                            <TouchableHighlight underlayColor='white' 
+                                    title="Ingresar"
+                                    onPress={() => 
+                                        {this.setState({modalVisible:false})}
+                                        }
+                                    >
+                                    <Icon4 style={{marginTop:'6%', marginLeft:'6%'}} name="close" size={22} color="#09121F" />
+                                    </TouchableHighlight>
 
 
-                                    </View>
+                            
+                            </View>
+                            <View  style={{marginLeft:20, marginTop:20}}>
+                            <Text style={{fontFamily:'NunitoSans-Regular',fontWeight:'bold', fontSize:18, color:'black'}}>Rango de precios</Text>
+                            <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, color:'#636363'}}> ${this.state.rango_inicio} - ${this.state.rango_fin}  </Text>
+                            <Text style={{fontFamily:'NunitoSans-Regular',fontSize:14, color:'#9A9A9A'}}>precio por dia </Text>
+                            <MultiSlider 
+                            values={[this.state.rango_inicio, this.state.rango_fin]}
+                            sliderLength={280}
+                            onValuesChange={ (data) => {
+                                console.log("wewe");
+                                this.setState({rango_inicio:data[0], rango_fin:data[1]})
+                            }}
+                            min={0}
+                            max={100000}
+                            step={1}
+                            />
+                            </View>
 
-                                    <View  style={{marginLeft:20, marginTop:20, borderTopWidth:1, width:'80%', borderColor:'#DBDBDB'}}>
-                                    <Text style={{color:'black', marginTop:15}}>Comodidades</Text>
-                                    <View style={{flexDirection:'row', marginTop:15}}>
-                                    <View style={{borderColor:'#464646',borderWidth:1 ,height:30, width:'30%', 
-                                    borderBottomLeftRadius:20,
-                                    borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                        <Text maxFontSizeMultiplier={1} style={{marginTop:5, marginLeft:15}}>Internet</Text>
-                                    </View>
-
-                                    <View style={{borderColor:'#464646',borderWidth:1 ,height:30, width:'20%', 
-                                    borderBottomLeftRadius:20,
-                                    borderTopRightRadius:20, borderBottomRightRadius:20,
-                                    marginLeft:10,}}>
-                                        <Text maxFontSizeMultiplier={1} style={{marginTop:5, marginLeft:10}}>Wifi</Text>
-                                    </View>
-
-                                    <View style={{marginLeft:10,borderColor:'#464646',borderWidth:1 ,height:30, width:'20%', 
-                                    borderBottomLeftRadius:20,
-                                    borderTopRightRadius:20, borderBottomRightRadius:20}}>
-                                        <Text maxFontSizeMultiplier={1} style={{marginTop:5, marginLeft:10}}>Baño</Text>
-                                    </View>
-                                    
-                                    </View>
-                                    
-                                    <View style={{flexDirection:'row', marginTop:15}}>
-                                    <Icon2 style={{marginTop:'0%', marginLeft:'0%'}} name="add-circle-outline" size={22} color="#00D6B9" />
-                                    <Text style={{color:'#00D6B9'}}>Buscar</Text>
-                                    </View>
-                                    
-
-
-                                    </View>
-
-                                    <View  style={{marginLeft:20, marginTop:20, borderTopWidth:1, width:'80%', borderColor:'#DBDBDB'}}>
-                                    <Text style={{color:'black', marginTop:15}}>Ubicación</Text>
-
-                                    <Text>Region</Text>
-                                        <View style={{alignItems:'center', marginTop:0,}}>
-                                        <View style={{width:'100%',flexDirection:'row'}} > 
-                                        <TextInput
-
-                                        style={{ borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20, width:'100%'}}
-                                        placeholder='Seleccione'  >
-
-                                        </TextInput>
-                                       
-                                        
-                                        </View>     
-                                        </View>
-
-
-                                        <Text>Comuna</Text>
-                                        <View style={{alignItems:'center', marginTop:0,}}>
-                                        <View style={{width:'100%',flexDirection:'row'}} > 
-                                        <TextInput
-
-                                        style={{ borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20, width:'100%'}}
-                                        placeholder='Seleccione'  >
-
-                                        </TextInput>
-                                       
-                                        
-                                        </View>     
-                                        </View>
-
-
-                                    
-                                  
-                                    
-
-
-                                    </View>
-
-                                    
-
-
-
-                                    
-                                  
-                                    </ScrollView>
-                                  <View style={{flexDirection:'row', marginBottom:20}}>
-
-                                            <View style={{flex:1, alignItems:'center', marginTop:10, }}>
-                                            <View style={{ flexDirection:'row',
-                                            marginTop:10, borderRadius:64 ,height:30,borderWidth:1,borderColor:'#61D3BA',}} > 
-
-                                            <TouchableHighlight underlayColor='white' style={{with:10, height:40, 
-                                            paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
-                                            alignItems:'center',}}
-                                            title="Ingresar"
-                                            onPress={() => 
-                                                {this.setState({modalVisible:false})}
-                                               }
-                                            >
-                                            <Text maxFontSizeMultiplier={1} style={{marginTop:'3%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Limpiar</Text>
-                                            </TouchableHighlight>
-
-                                            </View>
-
-                                            </View>
-
-
-
-                                        <View style={{flex:1, alignItems:'center', marginTop:20}}>
-                                        <TouchableHighlight style={{with:10, height:30, 
-                                        paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
-                                        backgroundColor:'#61D3BA', alignItems:'center' }}
-                                        title="Ingresar"
-                                        onPress={() => 
-                                            {this.setState({modalVisible:false})}
-                                           }
-                                        >
-                                        <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Buscar</Text>
-                                        </TouchableHighlight>
-
-
-
-                                        </View>
-
-
-                                  </View>
+                            <View  style={{marginLeft:20, marginTop:20, borderTopWidth:1, width:'80%', borderColor:'#DBDBDB'}}>
+                            <Text style={{marginTop:16,fontFamily:'NunitoSans-Regular',fontWeight:'bold', fontSize:18, color:'black'}}>Tipo de espacio</Text>
+                            <View style={{flexDirection:'row', marginTop:15}}>
+                            <View style={{borderColor:'#464646',borderWidth:1 ,height:40, width:'30%', 
+                            borderBottomLeftRadius:20,
+                            borderTopRightRadius:20, borderBottomRightRadius:20}}>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',marginTop:7, marginLeft:15}}>Oficina</Text>
                             </View>
                             
-                        
-                        </View>
-                        
+                            </View>
+                            
+
+                            <TouchableHighlight underlayColor='white' 
+                                    title="Ingresar"
+                                    onPress={() => 
+                                        {this.setState({modalVisible1:true})}
+                                        }
+                                    >
+                                  <View style={{flexDirection:'row', marginTop:15}}>
+                            <Icon2 style={{marginTop:'0%', marginLeft:'0%'}} name="add-circle-outline" size={22} color="#00D6B9" />
+                            <Text  style={{fontFamily:'NunitoSans-Regular',color:'#00D6B9'}}>Buscar</Text>
+                            </View>
+                                    </TouchableHighlight>
+
+
+                            
+                            
+
+
+                            </View>
+
+                            <View  style={{marginLeft:20, marginTop:20, borderTopWidth:1, width:'80%', borderColor:'#DBDBDB'}}>
+                            <Text style={{marginTop:16,fontFamily:'NunitoSans-Regular',fontWeight:'bold', fontSize:18, color:'black'}}>Comodidades</Text>
+                            <View style={{flexDirection:'row', marginTop:15}}>
+                            <View style={{borderColor:'#464646',borderWidth:1 ,height:40, width:'30%', 
+                            borderBottomLeftRadius:20,
+                            borderTopRightRadius:20, borderBottomRightRadius:20}}>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:7, marginLeft:15}}>Internet</Text>
+                            </View>
+
+                            <View style={{borderColor:'#464646',borderWidth:1 ,height:40, width:'20%', 
+                            borderBottomLeftRadius:20,
+                            borderTopRightRadius:20, borderBottomRightRadius:20,
+                            marginLeft:10,}}>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:7, marginLeft:10}}>Wifi</Text>
+                            </View>
+
+                            <View style={{marginLeft:10,borderColor:'#464646',borderWidth:1 ,height:40, width:'20%', 
+                            borderBottomLeftRadius:20,
+                            borderTopRightRadius:20, borderBottomRightRadius:20}}>
+                                <Text maxFontSizeMultiplier={1} style={{marginTop:7, marginLeft:10}}>Baño</Text>
+                            </View>
+                            
+                            </View>
+
+                            <TouchableHighlight underlayColor='white' 
+                                    title="Ingresar"
+                                    onPress={() => 
+                                        {this.setState({modalVisible2:true})}
+                                        }
+                                    >
+                                  <View style={{flexDirection:'row', marginTop:15}}>
+                            <Icon2 style={{marginTop:'0%', marginLeft:'0%'}} name="add-circle-outline" size={22} color="#00D6B9" />
+                            <Text style={{color:'#00D6B9'}}>Buscar</Text>
+                            </View>
+                                    </TouchableHighlight>
+
+
+                            
+                            
+                            
+
+
+                            </View>
+
+                            <View  style={{marginLeft:20, marginTop:20, borderTopWidth:1, width:'90%', borderColor:'#DBDBDB', marginBottom:20}}>
+                            <Text style={{marginTop:16, fontFamily:'NunitoSans-Regular',fontWeight:'bold', fontSize:18, color:'black'}}>Ubicación</Text>
+
+                            <Text style={{marginTop:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#636363'}}>Region</Text>
+                                <View style={{alignItems:'center', marginTop:10,}}>
+                                <View style={{width:'100%',flexDirection:'row'}} > 
+                                <TextInput
+
+                                style={{ fontFamily:'NunitoSans-Regular',borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20, width:'100%'}}
+                                placeholder='Seleccione'  >
+
+                                </TextInput>
+                                <View style={{marginLeft:'-15%', marginTop:20,resizeMode:'contain'}}>
+                                    <Svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M7 11L0.937821 0.500001L13.0622 0.5L7 11Z" fill="#00D6B9"/>
+                                    </Svg>
+
+                                </View>
+                                </View>     
+                                </View>
+
+
+                                <Text style={{marginTop:20, fontFamily:'NunitoSans-Regular',fontSize:16, color:'#636363'}}>Comuna</Text>
+                                <View style={{alignItems:'center', marginTop:10,}}>
+                                <View style={{width:'100%',flexDirection:'row'}} > 
+                                <TextInput
+
+                                style={{fontFamily:'NunitoSans-Regular', borderRadius:64 ,height:50,borderWidth:1,borderColor:'#DEDFDF',paddingLeft:20, width:'100%'}}
+                                placeholder='Seleccione'  >
+
+                                </TextInput>
+                                <View style={{marginLeft:'-15%', marginTop:20,resizeMode:'contain'}}>
+                                    <Svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Path d="M7 11L0.937821 0.500001L13.0622 0.5L7 11Z" fill="#00D6B9"/>
+                                    </Svg>
+
+                                </View>
+                                
+                                
+                                </View>     
+                                </View>
+
+
+                            
+                          
+                            
+
+
+                            </View>
+
+                            
+
+
+
+                            
+                          
+                            </ScrollView>
+                          <View style={{flexDirection:'row', marginBottom:20, borderTopWidth:1, borderColor:'#D4D4D4'}}>
+
+                                    <View style={{flex:1, alignItems:'center', marginTop:10, }}>
+                                    <View style={{ flexDirection:'row',width:'80%',
+                                    marginTop:10, borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',}} > 
+
+                                    <TouchableHighlight underlayColor='white' style={{with:10, height:40, 
+                                    paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
+                                    alignItems:'center',}}
+                                    title="Ingresar"
+                                    onPress={() => 
+                                        {this.setState({modalVisible:false})}
+                                        }
+                                    >
+                                    <Text maxFontSizeMultiplier={1} style={{marginTop:'3%',marginLeft:'25%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Limpiar</Text>
+                                    </TouchableHighlight>
+
+                                    </View>
+
+                                    </View>
+
+
+
+                                <View style={{flex:1, alignItems:'center', marginTop:20,}}>
+                                <TouchableHighlight style={{width:'80%',with:10, height:40, 
+                                paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
+                                backgroundColor:'#61D3BA', alignItems:'center' }}
+                                title="Ingresar"
+                                onPress={() => 
+                                    {this.setState({modalVisible:false})}
+                                    }
+                                >
+                                <Text maxFontSizeMultiplier={1}  style={{color:'white',marginTop:'5%', fontWeight:'bold' }} >Buscar</Text>
+                                </TouchableHighlight>
+
+
+
+                                </View>
+
+
+                          </View>
+                    </View>
+                    
+
+                </View>
+
                 </Modal>
                
 

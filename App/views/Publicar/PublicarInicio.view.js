@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text,FlatList, TextInput , StyleSheet,Image,Button, Modal, TouchableHighlight, TouchableOpacity,SafeAreaView, ScrollView,ImageBackground } from 'react-native';
-
-
-
+import { View, Text,FlatList, Dimensions,TextInput , StyleSheet,Image,Button, Modal, TouchableHighlight, TouchableOpacity,SafeAreaView, ScrollView,ImageBackground } from 'react-native';
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
+const { width, height } = Dimensions.get('window');
+import { CustomPagination } from '../Home/CustomPagination2.js';
 import Svg, { Path, Rect } from 'react-native-svg';
 
 import {FlatListSlider} from 'react-native-flatlist-slider';
@@ -137,7 +137,7 @@ export default class PerfilPropiedadAgregar extends Component {
 
                 <TouchableHighlight  underlayColor='white'
                         title="Ingresar"
-                        style={{marginLeft:40}}
+                        style={{marginLeft:33}}
                         onPress={() => this.props.navigation.navigate('Mensajes')}
                             >
                        
@@ -193,7 +193,7 @@ export default class PerfilPropiedadAgregar extends Component {
 
                     {/* <Image style={{marginTop:0,height:48,width:48, marginLeft:0}} source={require('../../assets/img/circulo_1_1.png')} /> */}
                             <View style={{marginLeft:10, flexDirection:'column'}}>
-                                <Text style={{fontFamily:'NunitoSans-Blod',fontWeight:'bold', fontSize:16,color:'black' }}>                           
+                                <Text style={{fontFamily:'NunitoSans-Bold', fontSize:20,color:'black' }}>                           
                                 Seleccione propiedad
                                 </Text>
                                 <Text style={{fontFamily:'NunitoSans-Regular',fontSize:16, }}>                           
@@ -207,27 +207,117 @@ export default class PerfilPropiedadAgregar extends Component {
 
                     
                 <View style={{borderTopWidth:1, borderColor:'#D7D7D7'}}>
-                <Text style={{marginTop:20, marginLeft:20, fontFamily:'NunitoSans-Blod',fontWeight:'bold', fontSize:16, color:'black'}}>Seleccione la propiedad </Text>
-                    <View style={{ flex:1, marginTop:20}}>
-
-                  
-
-                    <FlatListSlider 
-                  local
-                    imageKey={'image'}
-                    //width={350}
-                   // separatorWidth={25}
-                    component={<Preview />}
-                    onPress={() => alert(JSON.stringify(item))}
-                   // contentContainerStyle={{paddingHorizontal: 16, paddingHorizontal:20}}
-                    
-                     //   data={images} 
-                        data={this.state.data}
-                    />
-
+                <Text style={{marginTop:20, marginLeft:20, fontFamily:'NunitoSans-Bold', fontSize:16, color:'black'}}>Seleccione la propiedad </Text>
+                <View style={styles1.container}>
+                      <SwiperFlatList showPagination
+                      PaginationComponent={CustomPagination} >
+                        
+                        <View style={[styles1.child, {alignItems:'center', position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                        
-                    
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s3);
+                          this.setState({s3:!this.state.s3})}
+                        } >
+                          
+                          <View>
+                          <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
+                        
+                        {this.state.s3== true ?( 
+                        <View style={{marginLeft:'90%'}}>
+                        <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
                     </View>
+                        
+                        ):( <View></View> )}
+                       
+
+                          </ImageBackground>
+                          
+                          </View>
+                        
+                          
+                        </TouchableOpacity>
+                        <Text style={{ marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16,
+    color:'black'}}>Nombre propiedad </Text>
+                        </View>
+                        <View style={[styles1.child, {alignItems:'center', position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s3);
+                          this.setState({s3:!this.state.s3})}
+                        } >
+                        
+                        <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
+                        
+                        {this.state.s3== true ?( 
+                        <View style={{marginLeft:'90%'}}>
+                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
+                        </View>
+                        
+                        ):( <View></View> )}
+                       
+
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
+                        <Text style={{ marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16,
+    color:'black'}}>Nombre propiedad </Text>
+                        </View>
+
+                        <View style={[styles1.child, {alignItems:'center', position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s3);
+                          this.setState({s3:!this.state.s3})}
+                        } >
+                        
+                        <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
+                        
+                        {this.state.s3== true ?( 
+                        <View style={{marginLeft:'90%'}}>
+                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
+                        </View>
+                        
+                        ):( <View></View> )}
+                       
+
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
+                        <Text style={{ marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16,
+    color:'black'}}>Nombre propiedad </Text>
+                        </View>
+
+
+                        <View style={[styles1.child, {alignItems:'center', position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
+                        <TouchableOpacity  onPress={() => 
+                        {
+                          console.log(this.state.s1);
+                          this.setState({s1:!this.state.s1})}
+                        } >
+                        
+                        <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
+                        
+                        {this.state.s1== true ?( 
+                        <View style={{marginLeft:'90%'}}>
+                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
+                        </View>
+                        
+                        ):( <View></View> )}
+                       
+
+                          </ImageBackground>
+                         
+                        </TouchableOpacity>
+                        <Text style={{ marginTop:'1%',fontFamily:'NunitoSans-Bold',fontSize:16,
+    color:'black'}}>Nombre propiedad </Text>
+                        </View>
+
+
+
+                        
+                      </SwiperFlatList>
+              </View>   
                 </View>
 
                    
@@ -245,12 +335,12 @@ export default class PerfilPropiedadAgregar extends Component {
                       
                     <View style={{marginLeft:20, marginTop:20}}>
                         <TouchableHighlight style={{with:10, height:40, width:'95%',borderRadius:1,
-                                  paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
+                                  paddingTop:5,paddingBottom:5, paddingLeft:0,paddingRight:0, borderRadius:64,
                                   backgroundColor:'#61D3BA', alignItems:'center' }}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Publicar2')}
                             >
-                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Blod',fontSize:16,color:'white',marginTop:'1%',  }} >Siguiente</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',fontWeight:'bold' ,fontSize:16,color:'white',marginTop:'1%',  }} >Siguiente</Text>
                             </TouchableHighlight>
 
                            
@@ -259,15 +349,15 @@ export default class PerfilPropiedadAgregar extends Component {
 
 
                     <View style={{marginLeft:20, flexDirection:'row',
-                    marginTop:20, width:'90%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:20, marginBottom:100}} > 
+                    marginTop:20, width:'90%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:0, marginBottom:100}} > 
                     
-                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'90%',borderRadius:1,
-                                  paddingTop:5,paddingBottom:0, paddingLeft:35,paddingRight:35, borderRadius:64,
+                    <TouchableHighlight underlayColor='white' style={{ height:40, width:'100%',borderRadius:1,
+                                  paddingTop:5,paddingBottom:0, paddingLeft:0,paddingRight:0, borderRadius:64,
                                    alignItems:'center'}}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Home')}
                             >
-                                <Text maxFontSizeMultiplier={1} style={{ color:'white',marginTop:'1%',fontFamily:'NunitoSans-Blod',fontSize:16, color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{ color:'white',marginTop:'1%',fontFamily:'NunitoSans-Regular', fontWeight:'bold', fontSize:16, color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
                             </TouchableHighlight>
                     </View> 
 
@@ -295,6 +385,15 @@ export default class PerfilPropiedadAgregar extends Component {
 
 
 }
+
+const styles1 = StyleSheet.create({
+  container:  { borderRadius:20, marginTop:20, width:width-40, backgroundColor: 'white', alignContent:'center', marginLeft:20,},
+  child: { width:width-40,  height:height/2.6, borderRadius:20, marginRight:0  },
+  
+});
+
+
+
 const styles = StyleSheet.create({
     input: {
       marginLeft:30,

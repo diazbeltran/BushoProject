@@ -101,7 +101,7 @@ export default class PerfilPagoNuevo extends Component {
                 <ScrollView >
                     <View style={{ flexDirection:'column'}}>
                     <View style={{marginLeft:0, flexDirection:'row'}}>
-                        <Text style={{marginLeft:20,fontFamily:'NunitoSans-Regular', fontSize:16 }}>
+                        <Text style={{marginLeft:20,fontFamily:'NunitoSans-Regular', fontSize:16, color:'#717171' }}>
                             Número de tarjeta
                         </Text>
                     </View>
@@ -119,11 +119,11 @@ export default class PerfilPagoNuevo extends Component {
                     </View> 
 
                     <View style={{marginTop:20, flexDirection:'row'}}>
-                        <Text style={{marginLeft:20,fontFamily:'NunitoSans-Regular', fontSize:16  }}>
+                        <Text style={{marginLeft:20,fontFamily:'NunitoSans-Regular', fontSize:16,color:'#717171'   }}>
                             Vencimiento
                         </Text>
 
-                        <Text style={{marginLeft:'25%', fontFamily:'NunitoSans-Regular', fontSize:16  }}>
+                        <Text style={{marginLeft:'25%', fontFamily:'NunitoSans-Regular', fontSize:16 ,color:'#717171'  }}>
                             CVV
                         </Text>
                         
@@ -179,7 +179,7 @@ export default class PerfilPagoNuevo extends Component {
                        //value={}
                        
                        />   
-                       <Text style={{backgroundColor:'white', marginTop:20,fontFamily:'NunitoSans-Regular', fontSize:16  }}> 
+                       <Text style={{backgroundColor:'white', marginTop:20,fontFamily:'NunitoSans-Regular',  fontSize:16  }}> 
                                        
                         Utilizar como tarjeta principal </Text>
                         
@@ -191,28 +191,30 @@ export default class PerfilPagoNuevo extends Component {
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PerfilPago')}
                             >
-                                <Text style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Guardar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{color:'white',marginTop:'1%', fontWeight:'bold' }} >Guardar</Text>
                             </TouchableHighlight>
 
                            
                                     
                     </View>
 
-                    <View style={{alignItems:'center', marginTop:10, }}>
-                    <View style={{flexDirection:'row',
-                    marginTop:10, width:'90%',borderRadius:64 ,height:40,borderWidth:1,borderColor:'#61D3BA',paddingLeft:20}} > 
-                        <TouchableHighlight underlayColor='white' style={{with:10, height:40, width:'90%',
+                    <View style={{alignItems:'center', marginTop:20}}>
+                        <TouchableHighlight style={{with:10, borderWidth:1,height:40, width:'90%',borderColor:'#61D3BA',
                                   paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
-                                 alignItems:'center',}}
+                                   alignItems:'center' }}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('PerfilPago')}
                             >
-                                <Text style={{marginTop:'3%', fontWeight:'bold', color:'#61D3BA' }} underlayColor={'red'}>Cancelar</Text>
+                                <Text maxFontSizeMultiplier={1} style={{color:'#61D3BA',marginTop:'1%', fontWeight:'bold' }} >Cancelar</Text>
                             </TouchableHighlight>
 
                            
-                            </View>          
-                    </View>     
+                                    
+                    </View>
+
+                    
+
+                    
 
                     
                         

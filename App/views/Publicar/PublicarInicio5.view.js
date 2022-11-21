@@ -44,28 +44,28 @@ export default class Publicar5 extends Component {
                 <ImageBackground source={require('../../assets/img/publica_fondo2.png')} resizeMode={'cover'}
                 style={{ flex: 1, width: '100%' }}>
 
-                    <View style={{ marginTop:'70%', }}>
-                        <Text style={{color:'white', fontFamily:'NunitoSans-Regular',fontSize:25, marginLeft:'25%'}}>
+                    <View style={{ marginTop:'70%', alignItems:'center' }}>
+                        <Text style={{color:'white', fontFamily:'NunitoSans-Regular',fontSize:25, marginLeft:'0%'}}>
                         Tu espacio fue 
                         </Text>
 
-                        <Text style={{color:'white', fontFamily:'NunitoSans-Regular',fontSize:25, marginLeft:'20%'}}>
+                        <Text style={{color:'white', fontFamily:'NunitoSans-Regular',fontSize:25, marginLeft:'0%'}}>
                         publicado con éxito
                         </Text>
 
 
-                        <Text style={{color:'white', fontFamily:'NunitoSans-Regular',fontSize:16, marginLeft:'15%'}}>
+                        <Text style={{color:'white', fontFamily:'NunitoSans-Regular',fontSize:16, marginLeft:'0%'}}>
                         Bienvenido a la comunidad Busho
                         </Text>
 
-                    <View style={{ marginTop:20, marginLeft:'25%'}}>
+                    <View style={{ marginTop:20, marginLeft:'0%'}}>
                         <TouchableHighlight style={{with:10, height:40, width:'70%',
                                   paddingTop:5,paddingBottom:5, paddingLeft:35,paddingRight:35, borderRadius:64,
                                   backgroundColor:'#61D3BA', alignItems:'center' }}
                         title="Ingresar"
                         onPress={() => this.props.navigation.navigate('Home')}
                             >
-                                <Text maxFontSizeMultiplier={1} style={{fontFamily:'NunitoSans-Regular',color:'white',marginTop:'3%', fontWeight:'bold' }} >Volver al inicio</Text>
+                                <Text maxFontSizeMultiplier={1} style={{fontSize:16,fontFamily:'NunitoSans-Regular',color:'white',marginTop:'1%', fontWeight:'bold' }} >Volver al inicio</Text>
                             </TouchableHighlight>
 
                            

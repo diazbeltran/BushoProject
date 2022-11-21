@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Dimensions,View, Text, StyleSheet,Image, Modal, TouchableHighlight,SafeAreaView, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
 import { CustomPagination } from '../Home/CustomPagination.js';
 import { SwiperFlatList } from 'react-native-swiper-flatlist';
-//import Svg, { Path, Rect } from 'react-native-svg';
-
+import Svg, { Path, Rect } from 'react-native-svg';
+import Icon2 from 'react-native-vector-icons/Ionicons';
 const { width, height } = Dimensions.get('window');
 
 
@@ -81,11 +81,13 @@ export default class Perfil extends Component {
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
                         {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -96,18 +98,20 @@ export default class Perfil extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s11);
+                          this.setState({s11:!this.state.s11})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s11== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -125,12 +129,14 @@ export default class Perfil extends Component {
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s11== true ?( 
+                       <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                       <Icon2 name="heart" size={25} color="red" />
+                     </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -149,12 +155,18 @@ export default class Perfil extends Component {
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
+                        {this.state.s11== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <Path d="M10.08 1.55881C12.4444 -0.564061 16.0983 -0.4936 18.3762 1.78831C20.6531 4.07124 20.7316 7.707 18.6138 10.0785L10.078 18.6264L1.5442 10.0785C-0.573646 7.707 -0.494126 4.0652 1.78175 1.78831C4.06165 -0.49058 7.70849 -0.567081 10.08 1.55881ZM16.9509 3.21061C15.441 1.69873 13.0051 1.63733 11.4248 3.0566L10.081 4.26249L8.7362 3.05761C7.15084 1.63632 4.71995 1.69873 3.20606 3.21262C1.70626 4.71243 1.63076 7.11312 3.0128 8.69949L10.079 15.7767L17.1452 8.70049C18.5282 7.11312 18.4527 4.71545 16.9509 3.21061Z" fill="white"/>
+                        </Svg>
+
+                           
                         </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -197,18 +209,20 @@ export default class Perfil extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s2);
+                          this.setState({s2:!this.state.s2})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s2== true ?( 
+                       <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                       <Icon2 name="heart" size={25} color="red" />
+                     </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -219,18 +233,20 @@ export default class Perfil extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s2);
+                          this.setState({s2:!this.state.s2})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_1.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s2== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart-outline" size={25} color="white" />
+                      </View> )}
                        
 
                           </ImageBackground>
@@ -242,18 +258,20 @@ export default class Perfil extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s2);
+                          this.setState({s2:!this.state.s2})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s2== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                          <Icon2 name="heart-outline" size={25} color="white" />
+                        </View> )}
                        
 
                           </ImageBackground>
@@ -273,11 +291,13 @@ export default class Perfil extends Component {
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
                         {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                          <Icon2 name="heart-outline" size={25} color="white" />
+                        </View> )}
                        
 
                           </ImageBackground>
@@ -321,18 +341,20 @@ export default class Perfil extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s3);
+                          this.setState({s3:!this.state.s3})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s3== true ?( 
+                       <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                       <Icon2 name="heart" size={25} color="red" />
+                     </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                          <Icon2 name="heart-outline" size={25} color="white" />
+                        </View> )}
                        
 
                           </ImageBackground>
@@ -343,18 +365,20 @@ export default class Perfil extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s3);
+                          this.setState({s3:!this.state.s3})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_2.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s3== true ?( 
+                         <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                         <Icon2 name="heart" size={25} color="red" />
+                       </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                          <Icon2 name="heart-outline" size={25} color="white" />
+                        </View> )}
                        
 
                           </ImageBackground>
@@ -366,18 +390,20 @@ export default class Perfil extends Component {
                         <View style={[styles1.child, { position:'relative', borderRadius:20, backgroundColor: 'white' }]}>
                         <TouchableOpacity  onPress={() => 
                         {
-                          console.log(this.state.s1);
-                          this.setState({s1:!this.state.s1})}
+                          console.log(this.state.s3);
+                          this.setState({s3:!this.state.s3})}
                         } >
                         
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_3.png')} >
                         
-                        {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                        {this.state.s3== true ?( 
+                        <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                        <Icon2 name="heart" size={25} color="red" />
+                      </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                          <Icon2 name="heart-outline" size={25} color="white" />
+                        </View> )}
                        
 
                           </ImageBackground>
@@ -397,11 +423,13 @@ export default class Perfil extends Component {
                         <ImageBackground imageStyle={{borderRadius:20}}   style={{ marginTop:0,width:width-40, height:height/3 }} source={require('../../assets/img/inicio_4.png')} >
                         
                         {this.state.s1== true ?( 
-                        <View style={{marginLeft:'80%'}}>
-                            <Image   style={{marginTop:10, }} source={require('../../assets/img/ss22.png')} /> 
-                        </View>
+                         <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                         <Icon2 name="heart" size={25} color="red" />
+                       </View>
                         
-                        ):( <View></View> )}
+                        ):(   <View style={{marginLeft:'90%', marginTop:'5%'}}>
+                          <Icon2 name="heart-outline" size={25} color="white" />
+                        </View> )}
                        
 
                           </ImageBackground>
